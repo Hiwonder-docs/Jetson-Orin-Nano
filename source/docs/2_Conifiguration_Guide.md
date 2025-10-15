@@ -52,7 +52,7 @@ Users can use the SDK Manger in a virtual machine to flash image on Jetson Orin 
 
 * **Virtual Machine Configuration**
 
-Install the virtual machine software "**[VMware Workstation Pro]()**" and create a virtual machine. For the detailed operation method, please refer to ther relevant content.
+Install the virtual machine software "**[VMware Workstation Pro](https://drive.google.com/drive/folders/1UcCOwynkVlhPwAvY0srWcv6i3fJNugTb?usp=sharing)**" and create a virtual machine. For the detailed operation method, please refer to ther relevant content.
 
 * **Register for NVIDIA DEVELOPER Account**
 
@@ -60,7 +60,7 @@ Since using SDK manager requires to log in with an NVIDAI DEVELOPER account, ple
 
 > [!Note]
 >
-> **If you already have an NVIDIA DEVELOPER account, you can start with "[2.2.2 Software Preparations ->Install SDK Manager]()".**
+> **If you already have an NVIDIA DEVELOPER account, you can start with "[2.2.2 Software Preparations ->Install SDK Manager](#anchor_2_2_2_3)".**
 
 1. Access NVIDAI DEVELOPE website at "[**<u>https://developer.nvidia.com/</u>**](https://developer.nvidia.com/)" and click "**Join**" in the upper-right corner.
 
@@ -79,6 +79,8 @@ Since using SDK manager requires to log in with an NVIDAI DEVELOPER account, ple
 5. Additionally, you need to check "**Join the NVIDIA Developer Program to access downloads (like cuDNN), how-to-video, and more.**"
 
 <img class="common_img" src="../_static/media/chapter_2/section_2/media/image5.png" style="width:600px" />
+
+<p id="anchor_2_2_2_3"></p>
 
 * **Install SDK Manager**
 
@@ -381,7 +383,7 @@ Compared to the official image, the provided image includes some additional file
 | <img src="../_static/media/chapter_2/section_3/media/image33.png" style="width:70px" /> |    data_gather.py     |           Used to take photos and collect datasets           |
 | <img src="../_static/media/chapter_2/section_3/media/image34.png" style="width:120px" /> |      xml2yolo.py      | Used to convert the xml files to txt files for YOLO model training |
 
-<img src="../_static/media/chapter_2/section_3/media/image35.png" style="width:500px" />
+<img src="../_static/media/chapter_2/section_3/media/image35.png" class="common_img" style="width:500px" />
 
 |                           **Icon**                           |  **Name**   |                   **Function Instruction**                   |
 | :----------------------------------------------------------: | :---------: | :----------------------------------------------------------: |
@@ -409,11 +411,10 @@ You need to install an SD card initialization tool (SD Card Formatter) and an im
 > [!Note]
 >
 > * **After inserting the SD card into the card reader and connecting it to the computer’s USB port, the computer may detect multiple partitions and display a 'format reminder.' This happens because the SD card already contains an image, which is a Linux system version that includes multiple partitions by default. These partitions are recognized as multiple separate disks, which is normal and nothing to worry about.**
-> * **Before flashing the image, you can use the SD card initialization tool (the installation package can be found in the** **"[Appendix/SD Card Initialization Tool]()") to format the SD card, and then proceed with the flashing process.**
+> * **Before flashing the image, you can use the SD card initialization tool (the installation package can be found in the** **"[Appendix/SD Card Initialization Tool](https://drive.google.com/drive/folders/1nRVGTVdliUONP6THDKa_WLbvdO_5meaq?usp=sharing)") to format the SD card, and then proceed with the flashing process.**
 > * **Similarly, after the flashing is complete, multiple independent disk prompts may appear. Do not click format; simply cancel the prompt.**
-> 
 
-<img class="common_img" src="../_static/media/chapter_2/section_4/media/image2.png" style="width:3.57917in;height:1.53819in" alt="取消" />
+<img class="common_img" src="../_static/media/chapter_2/section_4/media/image2.png" style="width:3.57917in;height:1.53819in" />
 
 ###  2.4.2 Format SD Card
 

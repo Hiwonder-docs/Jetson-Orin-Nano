@@ -18,7 +18,7 @@
 
 <img class="common_img" src="../_static/media/chapter_3/section_1/media/image5.jpeg" style="width:5.76806in;height:5.5125in"  />
 
-## 3.2 Introduction to System **Desktop**
+## 3.2 Introduction to System Desktop
 
 The Jetson Orin Nano system desktop is shown in the figure below:
 
@@ -189,7 +189,7 @@ Check the IP address on the wlan0 line. In my case, the IP is 192.168.2.211
 
 * **Check Device IP Address**
 
-1. Right-click on the network connection as shown in the image below and select '**Open Network and Internet settings’**.
+1. Right-click on the network connection as shown in the image below and select '**Open Network and Internet settings'**.
 
 <img class="common_img" src="../_static/media/chapter_3/section_3/media/image29.png" style="width:2.57292in;height:1.19792in" />
 
@@ -231,7 +231,7 @@ Before getting started, some preparations are necessary. In addition to the deve
 
 1. A mobile phone
 
-2. A laptop (If you’re using a desktop, a USB wireless network adapter needs to be prepared.)
+2. A laptop (If you're using a desktop, a USB wireless network adapter needs to be prepared.)
 
 3. A wireless network adapter for Jetson Orin Nano. Insert the network adapter into any USB port on the development board.
 
@@ -243,7 +243,7 @@ Before getting started, some preparations are necessary. In addition to the deve
 
 * **Check IP without a Screen**
 
-You can find the corresponding IP address of the development board by referring to the content in "**[2. Configuration Guide -\>2.2 Flashing Firmware Using SDK Manger Tool ]()**"
+You can find the corresponding IP address of the development board by referring to the content in "**[2. Configuration Guide -\>2.2 Flashing Firmware Using SDK Manger Tool ](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/2_Conifiguration_Guide.html#flashing-firmware-using-sdk-manger-tool)**"
 
 * **Check IP with a Screen**
 
@@ -271,7 +271,7 @@ Follow the steps below to obtain the IP address of the development board:
 ifconfig
 ```
 
-5. The device "wlan0" in the image below displays the current status of the current development board’s network adapter. After connecting to the hotspot, the assigned IP address is "192.168.1.102". Please record the IP address.
+5. The device "wlan0" in the image below displays the current status of the current development board's network adapter. After connecting to the hotspot, the assigned IP address is "192.168.1.102". Please record the IP address.
 
 <img class="common_img" src="../_static/media/chapter_3/section_4/media/image10.png" style="width:500px" />
 
@@ -305,6 +305,8 @@ ifconfig
 
 <img class="common_img" src="../_static/media/chapter_3/section_4/media/image15.png" style="width:500px" />
 
+<p id="anchor_3_4_1_6"></p>
+
 * **Transfer Files from PC to Jetson Orin Nano**
 
 1. After connecting via SSH, drag the target file into the MobaXterm file area.
@@ -327,7 +329,7 @@ If you want to use this development without connecting to an external screen, pl
 
 * **Check the IP of Development Board**
 
-You can find the corresponding IP address of the development board by referring to the content in "**[2. Configuration Guide -\>2.2 Flashing Firmware Using SDK Manger Tool ]()**"
+You can find the corresponding IP address of the development board by referring to the content in "**[2. Configuration Guide -\>2.2 Flashing Firmware Using SDK Manger Tool ](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/2_Conifiguration_Guide.html#flashing-firmware-using-sdk-manger-tool)**"
 
 * **Connect to Development Board**
 
@@ -417,7 +419,7 @@ Before getting started, some preparations are necessary. In addition to the deve
 
 1. A mobile phone
 
-2. A laptop (If you’re using a desktop, a USB wireless network adapter needs to be prepared.)
+2. A laptop (If you're using a desktop, a USB wireless network adapter needs to be prepared.)
 
 3. A wireless network adapter for Jetson Orin Nano. Insert the network adapter into any USB port on the development board.
 
@@ -429,7 +431,7 @@ Before getting started, some preparations are necessary. In addition to the deve
 
 * **Check IP without a Screen**
 
-You can find the corresponding IP address of the development board by referring to the content in "**[2. Configuration Guide ->2.2 Flashing Firmware Using SDK Manger Tool]()**"
+You can find the corresponding IP address of the development board by referring to the content in "**[2. Configuration Guide ->2.2 Flashing Firmware Using SDK Manger Tool](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/2_Conifiguration_Guide.html#flashing-firmware-using-sdk-manger-tool)**"
 
 * **Configure NoMachine on Jetson Orin Nano**
 
@@ -447,7 +449,7 @@ Find "**NoMachine for ARM**" on the page, and click it to enter the ARM version 
 
 <img class="common_img" src="../_static/media/chapter_3/section_4/media/image28.png" style="width:5.7625in;height:1.90625in" />
 
-4. Connect to the development board using the obtained IP address, and then follow "**[3.4.1 SSH Remote Connection ->Transfer Files from PC to Jetson Orin Nano]()**", drag the installation package to the root directory.
+4. Connect to the development board using the obtained IP address, and then follow "**[3.4.1 SSH Remote Connection -> Transfer Files from PC to Jetson Orin Nano](#anchor_3_4_1_6)**", drag the installation package to the root directory.
 
 5. Enter the command, replacing "**nomachine_8.13.1_1_arm64.deb**" with the actual file name you downloaded. Press Enter to execute, and wait for the installation to complete.
 
@@ -465,7 +467,7 @@ sudo dpkg -i nomachine_8.13.1_1_arm64.deb
 
 <img class="common_img" src="../_static/media/chapter_3/section_4/media/image30.png" style="width:500px" />
 
-3. Select the installation language as "**English**", check "I accept the agreement" and click "**Next**".
+3. Select the installation language as "**English**", check "**I accept the agreement**" and click "**Next**".
 
 <img class="common_img" src="../_static/media/chapter_3/section_4/media/image31.png" style="width:500px" />
 
@@ -500,7 +502,7 @@ You can improve performance by enabling a remote NDIS compatible device. The spe
 >**If you need to use this method to connect the development board, you will need to use another method to enter the system for configuration.**
 >* Open a terminal and enter the command:
 >**sudo sed -i 's#exit 0#echo device \> /sys/class/usb_role/usb2-0-role-switch/role\nexit 0#g' /opt/nvidia/l4t-usb-device-mode/nv-l4t-usb-device-mode-start.sh**
->* Or use our pre-configured image. You can refer to the content"**[2. Conifiguration Guide -> 2.4 Flashing the System Using an SSD]()**" to perform the system flashing.
+>* Or use our pre-configured image. You can refer to the content"**[2. Conifiguration Guide -> 2.3 Flashing the System Using an SSD](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/2_Conifiguration_Guide.html#flashing-system-using-an-ssd)**" to perform the system flashing.
 
 1. Power on the Jetson Orin Nano, then connect a USB cable (a standard Type-C data cable will work) to the location highlighted in the red box on the Jetson Orin Nano as shown in the image below, with the other end connected to your computer.
 
@@ -526,7 +528,7 @@ You can improve performance by enabling a remote NDIS compatible device. The spe
 >
 >* Open a terminal and enter the command:
 >**sudo sed -i 's#exit 0#echo device \> /sys/class/usb_role/usb2-0-role-switch/role\nexit 0#g' /opt/nvidia/l4t-usb-device-mode/nv-l4t-usb-device-mode-start.sh**
->* Or use our pre-configured image. You can refer to the content"**[2. Conifiguration Guide -\> 2.4 Flashing the System Using an SSD]()**" to perform the system flashing".
+>* Or use our pre-configured image. You can refer to the content"**[2. Conifiguration Guide -\> 2.3 Flashing the System Using an SSD](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/2_Conifiguration_Guide.html#flashing-system-using-an-ssd)**" to perform the system flashing".
 
 * **Connection**
 
@@ -540,7 +542,7 @@ You can improve performance by enabling a remote NDIS compatible device. The spe
 
 * **Check Device IP Address**
 
-1. As shown in the image, right-click the network connection icon and select ‘**Open 'Network & Internet**' settings.
+1. As shown in the image, right-click the network connection icon and select '**Open 'Network & Internet**' settings.
 
 <img class="common_img" src="../_static/media/chapter_3/section_4/media/image40.png" style="width:300px" />
 
@@ -753,10 +755,9 @@ You can see the output process in the previous command line:
 >[!Note]
 >
 >* **This method requires that you have used the SDK Manager within the virtual machine to flash the image in order to have the corresponding resources available.**
->* **Before performing a backup or flashing, make sure to put the development board into Force Recovery mode. You can refer to '[2. Conifiguration Guide -\> 2.2 SDK Management Tool Firmware Flashing -\> 2.2.3 Install System]()' to learn how to put the development board into Force Recovery mode before starting the backup or flashing process.**
+>* **Before performing a backup or flashing, make sure to put the development board into Force Recovery mode. You can refer to '[2. Conifiguration Guide -\> 2.2 SDK Management Tool Firmware Flashing -\> 2.2.3 Install System](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/2_Conifiguration_Guide.html#flash-image)' to learn how to put the development board into Force Recovery mode before starting the backup or flashing process.**
 >* **When backing up, ensure that the virtual machine has enough space to store the image. For example, if the SSD is 256GB, the virtual machine should have more than 256GB of available space.**
->* **Enter the command ‘df -h’ to check the remaining space.**
->
+>* **Enter the command 'df -h' to check the remaining space.**
 
 1. Enter the command to navigate to the backup script location:
 

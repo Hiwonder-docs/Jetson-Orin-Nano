@@ -12,17 +12,17 @@ Jetson Orin Nano features a 40-pin GPIO interface. The GPIO voltage on the Jetso
 
 The GPIO interface functions as shown below:
 
-<img class="common_img" src="../_static/media/chapter_5\section_1/media/image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_5/section_1/media/image2.png" style="width:500px" />
 
 ## 5.2 Read GPIO Pin Input
 
 **1. Introduction to GPIO Pin**
 
-GPIO, a general-purpose input/output, is a set of pins on an electronic circuit board which can be used to receive or transmit electrical signals. It’s a standard interface used to connect with external hardware device to realize external communication, external hardware control or external hardware data collection.
+GPIO, a general-purpose input/output, is a set of pins on an electronic circuit board which can be used to receive or transmit electrical signals. It's a standard interface used to connect with external hardware device to realize external communication, external hardware control or external hardware data collection.
 
 **2. Introduction to GPIO Input**
 
-Input involves detecting the voltage levels on each pin, which are categorized as high or low. High voltage is represented by the symbol “1” and indicates an active voltage state; low voltage, often referring to a ground connection, is represented by the symbol “0”.
+Input involves detecting the voltage levels on each pin, which are categorized as high or low. High voltage is represented by the symbol "1" and indicates an active voltage state; low voltage, often referring to a ground connection, is represented by the symbol "0".
 
 **3. Introduction to GPIO Pin**
 
@@ -30,34 +30,34 @@ Jetson Orin Nano development board features a 40-pin interface used to connect e
 
 The pins layout is as follow:
 
-<img class="common_img" src="../_static/media/chapter_5\section_2\media\image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_5/section_2/media/image2.png" style="width:500px" />
 
 **4. Run Program**
 
-If you are using the system image we provide, you can find the corresponding program in the folder “[**3. Basic Operation Course -> 3.2 Introduction to System Desktop** ]().” 
+If you are using the system image we provide, you can find the corresponding program in the folder "[**3. Basic Operation Course -> 3.2 Introduction to System Desktop** ](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html#introduction-to-system-desktop)." 
 This method requires that the purchased kit includes the expansion board.
 
 1. Install the expansion board as shown in the image below:
 
-   <img class="common_img" src="../_static/media/chapter_5\section_2\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_5/section_2/media/image3.png" style="width:500px" />
 
-   <img class="common_img" src="../_static/media/chapter_5\section_2\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_5/section_2/media/image4.png" style="width:500px" />
 
-   <img class="common_img" src="../_static/media/chapter_5\section_2\media\image5.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_5/section_2/media/image5.jpeg" style="width:500px" />
 
-2. After connecting the power and powering on, import the “**button_demo.py**” program file from the same directory into the main directory of the board's system. You can refer to “**[3. Basic Operation Course -> 3.4 Remote Connection]()**” for the import method.
+2. After connecting the power and powering on, import the "**button_demo.py**" program file from the same directory into the main directory of the board's system. You can refer to "**[3. Basic Operation Course -> 3.4 Remote Connection](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html#remote-connection)**" for the import method.
 
-<img class="common_img" src="../_static/media/chapter_5\section_2\media\image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_5/section_2/media/image6.png" style="width:500px" />
 
-3. Double click <img class="common_img" src="../_static/media/chapter_5\section_2\media\image7.png" style="width:50px" /> to open the terminal. Enter the command, and press Enter to execute the program. After execution, the program will print the input data for pin 37. It will print 1 for voltage input and 0 for no voltage input.
+3. Double click <img src="../_static/media/chapter_5/section_2/media/image7.png" style="width:50px" /> to open the terminal. Enter the command, and press Enter to execute the program. After execution, the program will print the input data for pin 37. It will print 1 for voltage input and 0 for no voltage input.
 
-   ```py
-   python3 button_demo.py
-   ```
+```bash
+python3 button_demo.py
+```
 
-   <img class="common_img" src="../_static/media/chapter_5\section_2\media\image8.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_5/section_2/media/image8.png" style="width:500px" />
 
-4. To close the program, you can use the shortcut key “**Ctrl+C”**.
+4. To close the program, you can use the shortcut key "**Ctrl+C"**.
 
 **5. Project Outcome**
 
@@ -65,15 +65,15 @@ After starting, the command line terminal will display the current status of key
 
 For example, if you press and hold `key1`, the number following `key1` will change from `1` to `0`. When you release the key, the number will change back from `0` to `1`.
 
-<img class="common_img" src="../_static/media/chapter_5\section_2\media\image9.png" style="width:4.72441in;height:0.33071in" />
+<img class="common_img" src="../_static/media/chapter_5/section_2/media/image9.png" style="width:4.72441in;height:0.33071in" />
 
-<img class="common_img" src="../_static/media/chapter_5\section_2/media/image10.png" style="width:4.72441in;height:0.33071in" />
+<img class="common_img" src="../_static/media/chapter_5/section_2/media/image10.png" style="width:4.72441in;height:0.33071in" />
 
 ## 5.3 GPIO PIN Output Configuration
 
 **1. Introduction to GPIO Pin**
 
-GPIO, a general-purpose input/output, is a set of pins on an electronic circuit board which can be used to receive or transmit electrical signals. It’s a standard interface used to connect with external hardware device to realize external communication, external hardware control or external hardware data collection.
+GPIO, a general-purpose input/output, is a set of pins on an electronic circuit board which can be used to receive or transmit electrical signals. It's a standard interface used to connect with external hardware device to realize external communication, external hardware control or external hardware data collection.
 
 **2. GPIO Output**
 
@@ -89,69 +89,69 @@ The pins layout is as follow:
 
 **4. Run Program**
 
-If you are using the system image we provide, you can find the corresponding program in the folder “**[3. Basic Operation Course -> 3.2 Introduction to System Desktop]()** .”  
+If you are using the system image we provide, you can find the corresponding program in the folder "**[3. Basic Operation Course -> 3.2 Introduction to System Desktop](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html#introduction-to-system-desktop)** ."  
 
 This method requires that the purchased kit includes the expansion board.
 
 1. Install the expansion board as shown in the image below:
 
-   <img class="common_img" src="../_static/media/chapter_5/section_3/media/image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_5/section_3/media/image3.png" style="width:500px" />
 
-   <img class="common_img" src="../_static/media/chapter_5/section_3/media/image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_5/section_3/media/image4.png" style="width:500px" />
 
-   <img class="common_img" src="../_static/media/chapter_5/section_3/media/image5.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_5/section_3/media/image5.jpeg" style="width:500px" />
 
-2. Import the program file “**led_demo.py**” program file from the same directory into the main directory of the board's system. You can refer to “**[3. Basic Operation Course -> 3.4 Remote Connection]()**” for the import method.
+2. Import the program file "**led_demo.py**" program file from the same directory into the main directory of the board's system. You can refer to "**[3. Basic Operation Course -> 3.4 Remote Connection](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html#remote-connection)**" for the import method.
 
 <img class="common_img" src="../_static/media/chapter_5/section_3/media/image6.png" style="width:5.7625in;height:1.61736in" />
 
-3. Double click <img class="common_img" src="../_static/media/chapter_5/section_3/media/image7.png" style="width:0.55139in;height:0.39028in" /> to open the terminal. Enter the command, and press Enter to execute the program.
+3. Double click <img src="../_static/media/chapter_5/section_3/media/image7.png" style="width:0.55139in;height:0.39028in" /> to open the terminal. Enter the command, and press Enter to execute the program.
 
-   ```py
-   python3 led_demo.py
-   ```
+```bash
+python3 led_demo.py
+```
 
 4. When running the program, the LED light will blink rapidly twice, stay on continuously once, and then repeat this sequence in a loop.
 
 **5. GPIO Output Configuration**
 
-1. Double click <img class="common_img" src="../_static/media/chapter_5/section_3/media/image7.png" style="width:0.55139in;height:0.39028in" />. Enter the command to install the busybox.
+1. Double click <img src="../_static/media/chapter_5/section_3/media/image7.png" style="width:0.55139in;height:0.39028in" />. Enter the command to install the busybox.
 
-   ```py
-   sudo apt-get install busybox -y
-   ```
+```bash
+sudo apt-get install busybox -y
+```
 
 2. Select the pins to be driven. In here, we will use BCM encoding 24 as an example. (24 presents the pins for driving the small light on the expansion board.) According to the table below, its physical pin number is 18.
 
-   <img class="common_img" src="../_static/media/chapter_5/section_3/media/image10.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_5/section_3/media/image10.png" style="width:500px" />
 
-3. You’ll need to find the Soc Pin Name corresponding the physical pin 18 from the below table. Here it is “**GP39_SPI3_CS0_N**”. You need to take note of it for future reference.
+3. You'll need to find the Soc Pin Name corresponding the physical pin 18 from the below table. Here it is "**GP39_SPI3_CS0_N**". You need to take note of it for future reference.
 
-   <img class="common_img" src="../_static/media/chapter_5/section_3/media/image11.png" style="width:600px" />
+<img class="common_img" src="../_static/media/chapter_5/section_3/media/image11.png" style="width:600px" />
 
 <img class="common_img" src="../_static/media/chapter_5/section_3/media/image12.png" style="width:600px" />
 
-4)  Open the “**Orin-TRM_DP10508002_v1.2p.pdf**” in the same directory, and search for “**SPI3_CS0**” within the file. Locate “**PADCTL_G2_SPI3_CS0_0**” and record the Offset parameter：0X10
+4)  Open the "**Orin-TRM_DP10508002_v1.2p.pdf**" in the same directory, and search for "**SPI3_CS0**" within the file. Locate "**PADCTL_G2_SPI3_CS0_0**" and record the Offset parameter：0X10
 
 <img class="common_img" src="../_static/media/chapter_5/section_3/media/image13.png" style="width:600px" />
 
-5. Locate the character corresponding to “G2” according to the table below, which is “PADCTL_A13”
+5. Locate the character corresponding to "G2" according to the table below, which is "PADCTL_A13"
 
-   <img class="common_img" src="../_static/media/chapter_5/section_3/media/image14.png" style="width:600px" />
+<img class="common_img" src="../_static/media/chapter_5/section_3/media/image14.png" style="width:600px" />
 
-   <img class="common_img" src="../_static/media/chapter_5/section_3/media/image15.png" style="width:600px" />
+<img class="common_img" src="../_static/media/chapter_5/section_3/media/image15.png" style="width:600px" />
 
-6. Open the file “**Orin-TRM_DP10508002_v1.2p.pdf**” file in the same directory, and search for “System Address Map”. You need note the parameter corresponding to “**PADCTL_A13**”: 0x0243d000. Calculate the corresponding Pinmux register address: 0x0243d000 + 0X10 = 0x0243d010
+6. Open the file "**Orin-TRM_DP10508002_v1.2p.pdf**" file in the same directory, and search for "System Address Map". You need note the parameter corresponding to "**PADCTL_A13**": 0x0243d000. Calculate the corresponding Pinmux register address: 0x0243d000 + 0X10 = 0x0243d010
 
 <img class="common_img" src="../_static/media/chapter_5/section_3/media/image16.png" style="width:600px" />
 
-7. Double click <img class="common_img" src="../_static/media/chapter_5/section_3/media/image7.png" style="width:0.55139in;height:0.39028in" />. Enter the command and press Enter to check the value corresponding to 0x0243d010. The recorded value: 0x00000055.
+7. Double click <img src="../_static/media/chapter_5/section_3/media/image7.png" style="width:0.55139in;height:0.39028in" />. Enter the command and press Enter to check the value corresponding to 0x0243d010. The recorded value: 0x00000055.
 
-   ```py
-   sudo busybox devmem 0x0243d010
-   ```
+```bash
+sudo busybox devmem 0x0243d010
+```
 
-   <img class="common_img" src="../_static/media/chapter_5/section_3/media/image17.png" style="width:5.76181in;height:0.33681in" />
+<img class="common_img" src="../_static/media/chapter_5/section_3/media/image17.png" style="width:5.76181in;height:0.33681in" />
 
 8. Convert 0x00000055 to binary: 1010101
 
@@ -163,15 +163,15 @@ This method requires that the purchased kit includes the expansion board.
 
 12. Convert 101 to hexadecimal: 0x005.
 
-13. Double click <img class="common_img" src="../_static/media/chapter_5/section_3/media/image7.png" style="width:0.55139in;height:0.39028in" />. Enter the command to set the offset value. Then, run the .py program that requires GPIO output.
+13. Double click <img src="../_static/media/chapter_5/section_3/media/image7.png" style="width:0.55139in;height:0.39028in" />. Enter the command to set the offset value. Then, run the .py program that requires GPIO output.
 
-    ```py
-    sudo busybox devmem 0x0243d010 w 0x005
-    ```
+```bash
+sudo busybox devmem 0x0243d010 w 0x005
+```
 
 You can also place this command inside the .py file, as shown in the inage below:
 
-<img class="common_img" src="../_static/media/chapter_5\section_3/media/image19.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_5/section_3/media/image19.png" style="width:500px" />
 
 ## 5.4 UART Communication Configuration and Programming
 
@@ -197,7 +197,7 @@ The primary purpose of the transmitter and receiver lines in each device is to s
 
 The UART sends data to the control data bus, which transmits data in parallel form. As a result, the data is now serially transmitted bit by bit over the transmission line (wire) to the receiving UART. In turn, this converts the serial data back into parallel data for the receiving device.
 
-The UART lines serve as a communication medium, sending and receiving data from one to another. It’s important to note that UART devices have dedicated transmit and receive pins for sending or receiving data.
+The UART lines serve as a communication medium, sending and receiving data from one to another. It's important to note that UART devices have dedicated transmit and receive pins for sending or receiving data.
 
 For UART and most serial communication, the same baud rate needs to be set on both the transmitting and receiving devices. The baud rate is the rate at which information is transmitted to the communication channel. In the context of a serial port, the baud rate set will determine the maximum number of bits transmitted per second.
 
@@ -207,29 +207,29 @@ In UART, data is transmitted in the form of packets. The process of connecting t
 
 - **Start Bit**
 
-  The UART data transmission line usually remains at a high voltage level when not transmitting data. To begin data transmission, the transmitting UART pulls the transmission line low for one (1) clock cycle. When the receiving UART detects the voltage transition from high to low, it starts reading the bits in the data frame at the baud rate frequency.
+The UART data transmission line usually remains at a high voltage level when not transmitting data. To begin data transmission, the transmitting UART pulls the transmission line low for one (1) clock cycle. When the receiving UART detects the voltage transition from high to low, it starts reading the bits in the data frame at the baud rate frequency.
 
 <img class="common_img" src="../_static/media/chapter_5/section_4/media/image4.png" style="width:500px" />
 
 - **Data Frame**
 
-  The data frame contains the actual data being transmitted. If a parity bit is used, the data frame can be five (5) to eight (8) bits long. If no parity bit is used, the data frame can be nine (9) bits long. In most cases, the least significant bit is transmitted first.
+The data frame contains the actual data being transmitted. If a parity bit is used, the data frame can be five (5) to eight (8) bits long. If no parity bit is used, the data frame can be nine (9) bits long. In most cases, the least significant bit is transmitted first.
 
 <img class="common_img" src="../_static/media/chapter_5/section_4/media/image5.png" style="width:500px" />
 
 - **Parity**
 
-  Parity describes whether a number is even or odd. The parity bit is a method used by the receiving UART to check if the data has changed during transmission. Bits can be altered due to electromagnetic interference, mismatched baud rates, or long-distance data transmission.
+Parity describes whether a number is even or odd. The parity bit is a method used by the receiving UART to check if the data has changed during transmission. Bits can be altered due to electromagnetic interference, mismatched baud rates, or long-distance data transmission.
 
-  After the receiving UART reads the data frame, it counts the number of bits that are 1 and checks whether the total count is even or odd. If the parity bit is 0 (even parity), the number of 1s or logic high levels in the data frame should total to an even number. If the parity bit is 1 (odd parity), the number of 1s or logic high levels in the data frame should total to an odd number.
+After the receiving UART reads the data frame, it counts the number of bits that are 1 and checks whether the total count is even or odd. If the parity bit is 0 (even parity), the number of 1s or logic high levels in the data frame should total to an even number. If the parity bit is 1 (odd parity), the number of 1s or logic high levels in the data frame should total to an odd number.
 
-  When the parity bit matches the data, the UART knows that the transmission is error-free. However, if the parity bit is 0 and the total count is odd, or if the parity bit is 1 and the total count is even, the UART knows that the bits in the data frame have changed.
+When the parity bit matches the data, the UART knows that the transmission is error-free. However, if the parity bit is 0 and the total count is odd, or if the parity bit is 1 and the total count is even, the UART knows that the bits in the data frame have changed.
 
 <img class="common_img" src="../_static/media/chapter_5/section_4/media/image6.png" style="width:500px" />
 
 - **Stop Bit**
 
-  To signal the end of a data packet, the transmitting UART drives the data transmission line from low voltage to high voltage, maintaining this state for one (1) to two (2) bit durations.
+To signal the end of a data packet, the transmitting UART drives the data transmission line from low voltage to high voltage, maintaining this state for one (1) to two (2) bit durations.
 
 <img class="common_img" src="../_static/media/chapter_5/section_4/media/image7.png" style="width:500px" />
 
@@ -237,7 +237,7 @@ In UART, data is transmitted in the form of packets. The process of connecting t
 
 * **Install Serial Debugging Tool**
 
-Double click “**serial_port_utility_539_3728.exe**” in the same the folder to install program. Please refer to the following steps.
+Double click "**serial_port_utility_539_3728.exe**" in the same the folder to install program. Please refer to the following steps.
 
 <img class="common_img" src="../_static/media/chapter_5/section_4/media/image8.png" style="width:300px" />
 
@@ -261,38 +261,38 @@ It is recommended to select other installation path.
 
 * **Install Library Files**
 
-Power on Jetson Orin Nano board. Double click <img class="common_img" src="../_static/media/chapter_5/section_4/media/image16.png" style="width:50px" /> to open the terminal. Enter the command and press Enter to execute the program. Then open the terminal and install the serial function library by entering the command:
+Power on Jetson Orin Nano board. Double click <img src="../_static/media/chapter_5/section_4/media/image16.png" style="width:50px" /> to open the terminal. Enter the command and press Enter to execute the program. Then open the terminal and install the serial function library by entering the command:
 
-```py
+```bash
 sudo apt-get install python3-serial
 ```
 
 * **Set Serial Port Permissions**
 
-If you are using the system image we provide, you can find the corresponding program in the folder “**[3. Basic Operation Course -> 3.2 Introduction to System Desktop]()** .”  
+If you are using the system image we provide, you can find the corresponding program in the folder "**[3. Basic Operation Course -> 3.2 Introduction to System Desktop](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html#introduction-to-system-desktop)** ."  
 This method requires that the purchased kit includes the expansion board.
 
 1. Power on Jetson Orin Nano and connect it to the remote system desktop via NoMachine.
 
 2. Minimize the NoMachine window and drag the "**UART.rules**" file to the NoMachine system desktop.
 
-   <img class="common_img" src="../_static/media/chapter_5/section_4/media/image18.png" style="width:5.76111in;height:1.95in" />
+<img class="common_img" src="../_static/media/chapter_5/section_4/media/image18.png" style="width:5.76111in;height:1.95in" />
 
-3. Double click <img class="common_img" src="../_static/media/chapter_5/section_4/media/image16.png" style="width:0.55139in;height:0.39028in" />. Enter the following command, and press Enter to copy the serial port rule file into the system.
+3. Double click <img src="../_static/media/chapter_5/section_4/media/image16.png" style="width:0.55139in;height:0.39028in" />. Enter the following command, and press Enter to copy the serial port rule file into the system.
 
-   ```py
-   sudo cp ~/Desktop/UART.rules /etc/udev/rules.d/
-   ```
+```bash
+sudo cp ~/Desktop/UART.rules /etc/udev/rules.d/
+```
 
-4. Double click <img class="common_img" src="../_static/media/chapter_5/section_4/media/image16.png" style="width:0.55139in;height:0.39028in" /> to open a new terminal. Enter the command, and press Enter to read and update the rules.
+4. Double click <img src="../_static/media/chapter_5/section_4/media/image16.png" style="width:0.55139in;height:0.39028in" /> to open a new terminal. Enter the command, and press Enter to read and update the rules.
 
-   ```py
-   sudo udevadm control --reload-rules
-   sudo service udev restart
-   sudo udevadm trigger
-   ```
+```bash
+sudo udevadm control --reload-rules
+sudo service udev restart
+sudo udevadm trigger
+```
 
-   <img class="common_img" src="../_static/media/chapter_5/section_4/media/image20.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_5/section_4/media/image20.png" style="width:500px" />
 
 * **Hardware Wiring Instructions**
 
@@ -302,7 +302,7 @@ According to the Jetson Orin Nano pinout diagram, the pins below will be used:
 
 Use a USB-to-TTL module to connect Jetson Orin Nano to PC using a female-to-female Dupond wire, as follow:
 
-```py
+```bash
 Jetson Orin Nano Pin 8 (TXD) <--> USB-to-TTL Module RXD
 Jetson Orin Nano Pin 10 (RXD) <--> USB-to-TTL Module TXD
 Jetson Orin Nano Pin 6 (GND) <--> USB-to-TTL Module GND
@@ -320,11 +320,11 @@ After inserting the USB-to-TTL tool into any USB port on the computer, open the 
 
 If the port with the CH340 identifier does not appear, check if the CH340 driver is installed on the computer (the driver package can be found in the directory of this section). If the driver is installed but the port is still not recognized, try using a different USB port for troubleshooting.
 
-Double-click the installed “Serial Port Utility”.
+Double-click the installed "Serial Port Utility".
 
 <img class="common_img" src="../_static/media/chapter_5/section_4/media/image23.png" style="width:100px" />
 
-After opening the Serial Port Utility, select the port with the CH340 identifier. Set the baud rate, data bits, and other properties according to the settings shown in the image below. Then, click <img class="common_img" src="../_static/media/chapter_5/section_4/media/image24.png" style="width:0.18889in;height:0.18611in" /> to proceed.
+After opening the Serial Port Utility, select the port with the CH340 identifier. Set the baud rate, data bits, and other properties according to the settings shown in the image below. Then, click <img src="../_static/media/chapter_5/section_4/media/image24.png" style="width:0.18889in;height:0.18611in" /> to proceed.
 
 <img class="common_img" src="../_static/media/chapter_5/section_4/media/image25.png" style="width:500px" />
 
@@ -340,29 +340,29 @@ After opening the Serial Port Utility, select the port with the CH340 identifier
 
 3. Enter the command to add execution permission to the program.
 
-   ```py
-   chmod a+x /home/ubuntu/Desktop/UART.py
-   ```
+```bash
+chmod a+x /home/ubuntu/Desktop/UART.py
+```
 
 * **Run Program**
 
 1. Turn on Jetson Orin Nano, and connect it to the remote system desktop via NoMachine.
 
-2. Double click <img class="common_img" src="../_static/media/chapter_5/section_4/media/image29.png" style="width:50px" /> to open the terminal.
+2. Double click <img src="../_static/media/chapter_5/section_4/media/image29.png" style="width:50px" /> to open the terminal.
 
 3. Enter the command to switch the desktop.
 
-   ```py
-   cd Desktop/
-   ```
+```bash
+cd Desktop/
+```
 
 <img class="common_img" src="../_static/media/chapter_5/section_4/media/image30.png" style="width:5.76389in;height:0.30833in" />
 
 4. Run the test code by entering the command:
 
-   ```py
-   python3 UART.py
-   ```
+```bash
+python3 UART.py
+```
 
 <img class="common_img" src="../_static/media/chapter_5/section_4/media/image31.png" style="width:5.76667in;height:0.61181in" />
 
@@ -382,7 +382,7 @@ You can type something in the field below, for example, "hello," and then click 
 
 On the command line interface of Jetson Orin Nano, you can receive messages sent from the computer.
 
-<img class="common_img" src="../_static/media/chapter_5\section_4/media/image34.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_5/section_4/media/image34.png" style="width:500px" />
 
 ## 5.5 IIC Communication
 
@@ -474,7 +474,7 @@ According to the Jetson Orin Nano pinout diagram, the following pins will be use
 
 Here, we use an I2C interface accelerometer sensor as an example. Other modules with I2C interfaces can follow the same connection method. The module is connected to the Jetson Orin Nano pins using female-to-female Dupont wires, as shown below:
 
-```py
+```bash
 PIN 3 (Jetson Orin Nano) \<--\> SDA (Accelerometer)
 PIN 5 (Jetson Orin Nano) \<--\> SCL (Accelerometer)
 PIN 6 (Jetson Orin Nano) \<--\> GND (Accelerometer)
@@ -486,15 +486,15 @@ PIN 6 (Jetson Orin Nano) \<--\> GND (Accelerometer)
 
 1. Start Jetson Orin Nano board. Then open the terminal, enter the following command command to update the library list.
 
-   ```py
-   sudo apt-get update
-   ```
+```bash
+sudo apt-get update
+```
 
 <img class="common_img" src="../_static/media/chapter_5/section_5/media/image9.png" style="width:500px" />
 
 2)  Enter the command to install I2C library.
 
-```py
+```bash
 sudo apt-get install -y i2c-tools
 ```
 
@@ -504,7 +504,7 @@ After entering the command, you will be prompted to input a password. For this e
 
 After installation is complete, check whether the installation is successful by entering the following command:
 
-```py
+```bash
 apt-cache policy i2c-tools
 ```
 
@@ -518,13 +518,13 @@ i2cdetect is used to detect the I2C BUS status on the system.
 
 Enter the following commands in sequence to list all installed buses.
 
-```py
+```bash
 i2cdetect -F 2
 ```
 
 <img class="common_img" src="../_static/media/chapter_5/section_5/media/image12.png" style="width:500px" />
 
-```py
+```bash
 i2cdetect -l
 ```
 
@@ -532,7 +532,7 @@ i2cdetect -l
 
 Enter the following command to scan for the devices connected to the bus, such as bus number 1.
 
-```py
+```bash
 i2cdetect -y -r -a 1
 ```
 
@@ -550,7 +550,7 @@ If devices are detected, their addresses will be listed. For example, on bus num
 
 Enter the following command to view the values of all registers for the device at address 0x68 on bus number 1:
 
-```py
+```bash
 i2cdump -y 1 0x68
 ```
 
@@ -566,7 +566,7 @@ Here, you can see that the default value of the register, 68, is displayed.
 
 For example, to read the value of register **0x6b** on the device at address **0x68**, enter the following command:
 
-```py
+```bash
 i2cget -y 1 0x68 0x6b
 ```
 
@@ -576,7 +576,7 @@ i2cget -y 1 0x68 0x6b
 
 **i2ctransfer** is used for reading and writing device register values and is suitable for double-byte registers. For example, to read 16 bytes of data starting from register address 0x6b on the device at address 0x68 on bus number 1, enter the following command:
 
-```py
+```bash
 i2ctransfer -f -y 1 w2@0x68 0x01 0x6b r16
 ```
 
@@ -586,8 +586,8 @@ i2ctransfer -f -y 1 w2@0x68 0x01 0x6b r16
 
 For example, to write 3 bytes of data to the device at address 0x68 on bus number 1, starting from register address 0x6b, write the value 0x25 and then read it back for verification.
 
-```py
+```bash
 i2ctransfer -f -y 1 w3@0x68 0x01 0x6b 0x25
 ```
 
-<img class="common_img" src="../_static/media/chapter_5\section_5/media/image22.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_5/section_5/media/image22.png" style="width:500px" />

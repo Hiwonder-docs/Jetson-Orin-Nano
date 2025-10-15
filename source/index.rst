@@ -22,4 +22,4 @@ Jetson Orin Nano (Offical Version)
    docs/9_ROS1_Basic_Lesson.md
    docs/10_ROS2_Basic_Lesson.md
    docs/Appendix.md
-   Download <https://drive.google.com/drive/folders/1YnkCw2kj3h7xoksMqJepphW3FIqwawi5>
+   Download <https://drive.google.com/drive/folders/1W0Esz_inD5t0X_bMcHDDBZNl2UY6exOO?usp=drive_link>

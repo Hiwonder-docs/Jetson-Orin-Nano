@@ -10,37 +10,37 @@ The camera needs to be used in various vision-based gameplay, allowing for quick
 
 1. Connect the USB camera to any of ports highlighted in the below red box on Jetson Orin Nano.
 
-   <img class="common_img" src="../_static/media/chapter_6_1\section_1\media\image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_1/media/image2.png" style="width:500px" />
 
 * **Start Testing**
 
 > [!NOTE]
 >
-> **The input command should be case sensitive, and the “Tab” key can be used to complement the key words.**
+> **The input command should be case sensitive, and the "Tab" key can be used to complement the key words.**
 >
-> **If you’re using the pre-installed system image, you can located the corresponding program by referring the content in “[2. Configuration Guide -\> Flashing System Using an SSD -\> 5. System Image Directory Instructions]()”.**
+> **If you're using the pre-installed system image, you can located the corresponding program by referring the content in "[2. Configuration Guide -\> Flashing System Using an SSD -\> 5. System Image Directory Instructions](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/2_Conifiguration_Guide.html#system-image-directory-instruction)".**
 
 1. Power on Jetson Orin Nano board, then connect to the remote system desktop via NoMachine.
 
-2. Drag the program file “ **usb_camera_test.py**” in “Program Files” into the system desktop.
+2. Drag the program file "**usb_camera_test.py**" in "**Program Files**" into the system desktop.
 
-   <img class="common_img" src="../_static/media/chapter_6_1\section_1\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_1/media/image3.png" style="width:500px" />
 
-3. Right click on a blank area of the system desktop to select “**Open in Terminal**” to open the terminal:
+3. Right click on a blank area of the system desktop to select "**Open in Terminal**" to open the terminal:
 
-   <img class="common_img" src="../_static/media/chapter_6_1\section_1\media\image4.png" style="width:300px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_1/media/image4.png" style="width:300px" />
 
 4. Enter the command and press Enter to run the program.
 
-   ```py
-   python3 usb_camera_test.py
-   ```
+```bash
+python3 usb_camera_test.py
+```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_1\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_1/media/image5.png" style="width:500px" />
 
-5. If you need to close the program, press the shortcut key “**Ctrl+C**” in the terminal to exit the program.
+5. If you need to close the program, press the shortcut key "**Ctrl+C**" in the terminal to exit the program.
 
-   <img class="common_img" src="../_static/media/chapter_6_1\section_1\media\image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_1/media/image6.png" style="width:500px" />
 
 * **Code Analysis**
 
@@ -65,7 +65,7 @@ if __name__ == "__main__":
         print("打开摄像头失败")
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_1\media\image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_1/media/image7.png" style="width:500px" />
 
 Import opencv library:
 
@@ -73,7 +73,7 @@ Import opencv library:
 import cv2
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_1\media\image8.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_1/media/image8.png" style="width:500px" />
 
 Select the camera to be used. Since we only have one camera connected, you only need to set the parameter to 0.
 
@@ -81,16 +81,16 @@ Select the camera to be used. Since we only have one camera connected, you only 
 cap = cv2.VideoCapture(0)
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_1\media\image9.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_1/media/image9.png" style="width:500px" />
 
-Set up the window for display the live camera feed, with the window name “**D435**” and video size as “**cv2.WINDOW_AUTOSIZE**”
+Set up the window for display the live camera feed, with the window name "**D435**" and video size as "**cv2.WINDOW_AUTOSIZE**"
 
 ```py
 if cap.isOpened():
         window_handle = cv2.namedWindow("D435", cv2.WINDOW_AUTOSIZE)
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_1\media\image10.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_1/media/image10.png" style="width:500px" />
 
 Read the transmitted camera image data and display it.
 
@@ -101,9 +101,9 @@ Read the transmitted camera image data and display it.
             cv2.imshow("D435", img)
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_1\media\image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_1/media/image11.png" style="width:500px" />
 
-Set up to close the window by pressing the “Esc” key.
+Set up to close the window by pressing the "Esc" key.
 
 ```py
 keyCode = cv2.waitKey(30) & 0xFF         
@@ -111,9 +111,9 @@ keyCode = cv2.waitKey(30) & 0xFF
                 break
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_1\media\image12.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_1/media/image12.png" style="width:500px" />
 
-If the camera is not detected or if another error occurs, “Failed to open camera” will be printed.
+If the camera is not detected or if another error occurs, "Failed to open camera" will be printed.
 
 ```py
 cap.release()
@@ -122,7 +122,7 @@ cap.release()
         print("打开摄像头失败")
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_1/media/image13.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_1/media/image13.png" style="width:500px" />
 
 ### 6.1.2 Color Recognition
 
@@ -136,28 +136,28 @@ The color is processed through the Lab color space. First, the RGB color space i
 
 > [!NOTE]
 >
-> If you use the system image we provide, you can find the corresponding program in the folder “[**3. Basic Operation Course -> 3.2 Introduction to System Desktop** ]().”  
+> If you use the system image we provide, you can find the corresponding program in the folder "[**3. Basic Operation Course -> 3.2 Introduction to System Desktop** ](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html#introduction-to-system-desktop)."  
 > This method requires that the purchased kit includes the expansion board.
 
-Prior to operations, you need to transfer the routine “**color_discern.py**” stored in “**[6. OpenCV Computer Vision Course\\ Program Files]()**” to the Jetson Orin Nano.
+Prior to operations, you need to transfer the routine "**color_discern.py**" stored in "**[6. OpenCV Computer Vision Course\\ Program Files](https://drive.google.com/drive/folders/1DRVmEnNGL5I2QRLI-omYGNMxISlWY7sG?usp=sharing)**" to the Jetson Orin Nano.
 
-For the file transfer method, you can refer to the content in “**[3. Basic Operation Course]()**”.
+For the file transfer method, you can refer to the content in "**[3. Basic Operation Course](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html)**".
 
 > [!NOTE]
 >
-> **The input command should be case sensitive, and the “Tab” key is able to implement the key works.**
+> **The input command should be case sensitive, and the "Tab" key is able to implement the key works.**
 
-Open Nocmahine. Double click on <img class="common_img" src="../_static/media/chapter_6_1\section_2\media\image2.png" style="width:50px" />, or use the shortcut key to open the terminal. After entering the command, it will start color recognition.
+Open Nocmahine. Double click on <img src="../_static/media/chapter_6_1/section_2/media/image2.png" style="width:50px" />, or use the shortcut key to open the terminal. After entering the command, it will start color recognition.
 
-```py
+```bash
 python3 color_discern.py
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_2\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_2/media/image3.png" style="width:500px" />
 
-At this point, the live camera feed will display in the terminal. When recognizing the objects of red, green or blue, the target object will be outlined with a circle of the corresponding color. To close this program, press “Esc”.
+At this point, the live camera feed will display in the terminal. When recognizing the objects of red, green or blue, the target object will be outlined with a circle of the corresponding color. To close this program, press "Esc".
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_2\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_2/media/image4.png" style="width:500px" />
 
 * **Program Analysis**
 
@@ -165,47 +165,47 @@ The program is stored in:
 
 **/home/ubuntu/Opencv/color_discern.py**
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_2\media\image5.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_2/media/image5.jpeg" style="width:500px" />
 
 **1. Import Library File**
 
 Import the cv2, sys, time math libraries from openCV, and also import and instantiate the numpy library as np.
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_2\media\image6.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_2/media/image6.jpeg" style="width:500px" />
 
 **2. Set Color Threshold**
 
 Set the threshold for color recognition. In the routine, the target threshold for the target recognition color by the camera has been set (the default color model in OpenCV is BGR, i.e, `'red': (0, 0, 255),'blue': (255, 0, 0),'green': (0, 255, 0) )`, and then a range is set for the threshold, as shown in the figure below:
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_2\media\image7.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_2/media/image7.jpeg" style="width:500px" />
 
 **3. Acquiring the Recognition Frame**
 
 1)  The second parameter calls the `VideoCapture()` function to define the camera object, where the parameter 0 represents the first camera. If there are multiple cameras, the parameter can be changed to 1, 2, 3, etc.
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_2\media\image8.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_2/media/image8.png" style="width:500px" />
 
 2)  In the while loop, use the `read()` function of the camera object to capture a frame of the video and display it.
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_2\media\image9.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_2/media/image9.jpeg" style="width:500px" />
 
 3)  Then wait for 1 unit of time. If the "ESC" key is detected during this period, exit and close the window.
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_2\media\image10.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_2/media/image10.jpeg" style="width:500px" />
 
 4)  Call the `destroyAllWindows()` function to close all image windows.
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_2\media\image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_2/media/image11.png" style="width:500px" />
 
 **4. Color Recognition**
 
 After capturing the recognition frame through the camera, use the `getAreaMaxContour()` function to process the frame and obtain the object's contour. The specific processing method is shown in the image below:
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_2\media\image12.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_2/media/image12.jpeg" style="width:500px" />
 
 Then, use the `putText()` function from the cv2 library to print the recognition information, as shown in the image below (partial function screenshot):
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_2\media\image13.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_2/media/image13.png" style="width:500px" />
 
 The parameter analysis for the code cv2.putText`img, "Color: " + detect_color, (10, img.shape[0] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.65, draw_color, 2` is as follows:
 
@@ -231,28 +231,28 @@ Firstly, load the pre-trained Haar feature classifier model. Then create a windo
 
 * **Operation Steps**
 
-If you use the system image we provide, you can find the corresponding program in the folder “**[3. Basic Operation Course -> 3.2 Introduction to System Desktop]()** .”  
+If you use the system image we provide, you can find the corresponding program in the folder "**[3. Basic Operation Course -> 3.2 Introduction to System Desktop](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html#introduction-to-system-desktop)** ."  
 This method requires that the purchased kit includes the expansion board.
 
-Prior to operations, you need to transfer the routine “face.p andhaarcascade_frontalface_default.xml” stored in “[**6. OpenCV Computer Vision Course\ Program Files**]()” to the Jetson Orin Nano.
+Prior to operations, you need to transfer the routine "**face.p andhaarcascade_frontalface_default.xml**" stored in "[**6. OpenCV Computer Vision Course\ Program Files**](https://drive.google.com/drive/folders/1DRVmEnNGL5I2QRLI-omYGNMxISlWY7sG?usp=sharing)" to the Jetson Orin Nano.
 
-For the file transfer method, you can refer to the content in “**[3. Basic Operation Course]()**”.
+For the file transfer method, you can refer to the content in "**[3. Basic Operation Course](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html)**".
 
 > [!NOTE]
 >
-> **The input command should be case sensitive, and the “Tab” key is able to implement the key works.**
+> **The input command should be case sensitive, and the "Tab" key is able to implement the key works.**
 
-1. Open Nocmahine. Double click on <img class="common_img" src="../_static/media/chapter_6_1\section_3\media\image2.png" style="width:50px" />, or use the shortcut key to open the terminal. After entering the command, it will start face detection.
+1. Open Nocmahine. Double click on <img src="../_static/media/chapter_6_1/section_3/media/image2.png" style="width:50px" />, or use the shortcut key to open the terminal. After entering the command, it will start face detection.
 
-   ```py
-   python3 face.py
-   ```
+```py
+python3 face.py
+```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_3\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_3/media/image3.png" style="width:500px" />
 
 2)  At this point, the terminal will display the live camera feed, and the camera will automatically outline the detected face, as shown in the image below. To close this program, press the "ESC" key.
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_3\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_3/media/image4.png" style="width:500px" />
 
 * **Program Analysis**
 
@@ -284,7 +284,7 @@ def video_face_detect():
             break
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_3\media\image5.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_3/media/image5.jpeg" style="width:500px" />
 
 * **Import Library File**
 
@@ -295,7 +295,7 @@ import cv2 as cv
 import numpy as np
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_3\media\image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_3/media/image6.png" style="width:500px" />
 
 * **Main Function Analysis**
 
@@ -306,83 +306,83 @@ if __name__ == '__main__':
     video_face_detect()#实时检测人脸
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_3\media\image7.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_3/media/image7.jpeg" style="width:500px" />
 
 1. Invoke the `video_face_detect()` function to run the face detection and display it.
 
-   ```py
-   def video_face_detect():
-       capture = cv.VideoCapture(0)#设置使用的相机
-       while True:
-           ret, frame = capture.read()#读取相机图像
-           frame = cv.flip(frame, 1)#将回传画面设置图像水平翻转
-           face_detect(frame)#人脸检测
-           c = cv.waitKey(10)
-           if c==27:  #按下ESC键退出
-               break
-   ```
+```py
+def video_face_detect():
+    capture = cv.VideoCapture(0)#设置使用的相机
+    while True:
+        ret, frame = capture.read()#读取相机图像
+        frame = cv.flip(frame, 1)#将回传画面设置图像水平翻转
+        face_detect(frame)#人脸检测
+        c = cv.waitKey(10)
+        if c==27:  #按下ESC键退出
+            break
+```
 
-   <img class="common_img" src="../_static/media/chapter_6_1\section_3\media\image8.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_3/media/image8.jpeg" style="width:500px" />
 
 2. In the `video_face_detect()` function, use the `VideoCapture()` function from the cv2 library to define the camera object.
 
-   ```py
-   capture = cv.VideoCapture(0)
-   ```
+```py
+capture = cv.VideoCapture(0)
+```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_3\media\image9.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_3/media/image9.png" style="width:500px" />
 
 The parameter 0 in `VideoCapture()` represents the first camera. If there are multiple cameras, you can use parameters 1, 2, 3, etc.
 
 3. In the while loop, use the `read()` function of the camera object to capture a frame of the video, and then use the `flip()` function from the cv2 library to horizontally flip the transmitted camera.
 
-   ```py
-   while True:
-           ret, frame = capture.read()#读取相机图像
-           frame = cv.flip(frame, 1)#将回传画面设置图像水平翻转
-           face_detect(frame)#人脸检测
-   ```
+```py
+while True:
+        ret, frame = capture.read()#读取相机图像
+        frame = cv.flip(frame, 1)#将回传画面设置图像水平翻转
+        face_detect(frame)#人脸检测
+```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_3\media\image10.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_3/media/image10.jpeg" style="width:500px" />
 
 4. Call the `face_detect()` function to perform detection on the image.
 
-   ```py
-   face_detect(frame)
-   ```
+```py
+face_detect(frame)
+```
 
-   ```py
-   def face_detect(image):
-       gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY) #转化图像为灰度图
-       face_detector = cv.CascadeClassifier("./haarcascade_frontalface_default.xml")#读取人脸数据
-       faces = face_detector.detectMultiScale(gray,1.02,20)#进行人脸检测
-   ```
+```py
+def face_detect(image):
+    gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY) #转化图像为灰度图
+    face_detector = cv.CascadeClassifier("./haarcascade_frontalface_default.xml")#读取人脸数据
+    faces = face_detector.detectMultiScale(gray,1.02,20)#进行人脸检测
+```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_3\media\image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_3/media/image11.png" style="width:500px" />
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_3\media\image12.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_3/media/image12.jpeg" style="width:500px" />
 
 5. In the image detection function, to speed up detection, first use the `cvtColor()` function from the cv2 library to convert the source image to grayscale. In this function, the first parameter image is the source image, and cv.COLOR_BGR2GRAY is the color conversion code. Next, use the `CascadeClassifier()` function to load the face detection data. Call the `detectMultiScale()` function to detect faces. In this function:
 
-   The first parameter gray is the image to be detected.
+The first parameter gray is the image to be detected.
 
-   The second parameter 1.02 is the scaling factor for the detection window, which enlarges by 2% in each successive scan.
+The second parameter 1.02 is the scaling factor for the detection window, which enlarges by 2% in each successive scan.
 
-   The third parameter 20 is the minimum number of adjacent rectangles required to form a detection.
+The third parameter 20 is the minimum number of adjacent rectangles required to form a detection.
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_3\media\image13.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_3/media/image13.png" style="width:500px" />
 
 6) Finally, use the `rectangle()` function to draw boxes around the detected faces, and use the `imshow()` function to display the annotated image in the feedback window.
 
 7) Then, wait for 10 units of time. If the "ESC" key is detected during this period, exit and close the window.
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_3\media\image14.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_3/media/image14.jpeg" style="width:500px" />
 
 **2. Exiting Face Detection**
 
 Call the `destroyAllWindows()` function to close all the image windows.
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_3/media/image15.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_3/media/image15.png" style="width:500px" />
 
 ### 6.1.4 Tag Recognition
 
@@ -410,24 +410,24 @@ Finally, convert the coordinates of the detected tags to their pre-scaled coordi
 
 * **Operation Steps**
 
-If you use the system image we provide, you can find the corresponding program in the folder “**[3. Basic Operation Course -> 2. Introduction to System Desktop]()** .”  
+If you use the system image we provide, you can find the corresponding program in the folder "**[3. Basic Operation Course -> 2. Introduction to System Desktop](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html#introduction-to-system-desktop)** ."  
 This method requires that the purchased kit includes the expansion board.
 
-Prior to operations, you need to transfer the routine “**apriltag_discern.py**” stored in “**[6. OpenCV Computer Vision Course\ Program Files]()**” to the Jetson Orin Nano.
+Prior to operations, you need to transfer the routine "**apriltag_discern.py**" stored in "**[6. OpenCV Computer Vision Course\ Program Files](https://drive.google.com/drive/folders/1DRVmEnNGL5I2QRLI-omYGNMxISlWY7sG?usp=sharing)**" to the Jetson Orin Nano.
 
-For the file transfer method, you can refer to the content in “**[3. Basic Operation Course]()**”.
+For the file transfer method, you can refer to the content in "**[3. Basic Operation Course](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html)**".
 
 > [!NOTE]
 >
-> **The input command should be case sensitive, and the “Tab” key is able to implement the key works.**
+> **The input command should be case sensitive, and the "Tab" key is able to implement the key works.**
 
-1. Open Nocmahine. Double click on <img class="common_img" src="D:/线上资料整理/14. Jetson Orin Nano (Offical Version)/6. OpenCV Computer Vision Course/Application Course/chapter_6_1/section_4/media/image2.png" style="width:50px" />, or use the shortcut key to open the terminal. Enter the command to install the “**apriltag**” package.
+1. Open Nocmahine. Double click on <img src="../_static/media/chapter_6_1/section_4/media/image2.png" style="width:50px" />, or use the shortcut key to open the terminal. Enter the command to install the "**apriltag**" package.
 
-   ```py
-   pip3 install apriltag -i <https://pypi.tuna.tsinghua.edu.cn/simple>
-   ```
+```py
+pip3 install apriltag -i <https://pypi.tuna.tsinghua.edu.cn/simple>
+```
 
-<img class="common_img" src="D:/线上资料整理/14. Jetson Orin Nano (Offical Version)/6. OpenCV Computer Vision Course/Application Course/chapter_6_1/section_4/media/image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_4/media/image3.png" style="width:500px" />
 
 2. Install **gtk-module**：
 
@@ -435,7 +435,7 @@ For the file transfer method, you can refer to the content in “**[3. Basic Ope
    sudo apt-get install libcanberra-gtk-module
    ```
 
-<img class="common_img" src="D:/线上资料整理/14. Jetson Orin Nano (Offical Version)/6. OpenCV Computer Vision Course/Application Course/chapter_6_1/section_4/media/image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_4/media/image4.png" style="width:500px" />
 
 3. Enter the command to start tag recognition.
 
@@ -443,13 +443,13 @@ For the file transfer method, you can refer to the content in “**[3. Basic Ope
    python3 apriltag_discern.py
    ```
 
-<img class="common_img" src="D:/线上资料整理/14. Jetson Orin Nano (Offical Version)/6. OpenCV Computer Vision Course/Application Course/chapter_6_1/section_4/media/image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_4/media/image5.png" style="width:500px" />
 
 At this point, the terminal's live camera feed will open, and the camera will recognize tags within its visual range. When a tag is detected, it will be highlighted on the feedback screen, and its ID information will be printed in the lower-left corner, as shown in the image below:
 
-<img class="common_img" src="D:/线上资料整理/14. Jetson Orin Nano (Offical Version)/6. OpenCV Computer Vision Course/Application Course/chapter_6_1/section_4/media/image6.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_4/media/image6.jpeg" style="width:500px" />
 
-4)  To close the program, press “**Esc**”.
+4)  To close the program, press "**Esc**".
 
 * **Program Analysis**
 
@@ -457,19 +457,19 @@ The program is stored in:
 
 **/home/ubuntu/Opencv/apriltag_discern.py**
 
-<img class="common_img" src="D:/线上资料整理/14. Jetson Orin Nano (Offical Version)/6. OpenCV Computer Vision Course/Application Course/chapter_6_1/section_4/media/image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_4/media/image7.png" style="width:500px" />
 
 **1. Import Library File**
 
 Import the cv2 and apriltag libraries from openCV, and import and instantiate the numpy library as np.
 
-<img class="common_img" src="D:/线上资料整理/14. Jetson Orin Nano (Offical Version)/6. OpenCV Computer Vision Course/Application Course/chapter_6_1/section_4/media/image8.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_4/media/image8.png" style="width:500px" />
 
 **2. Tag Recognition**
 
-<img class="common_img" src="D:/线上资料整理/14. Jetson Orin Nano (Offical Version)/6. OpenCV Computer Vision Course/Application Course/chapter_6_1/section_4/media/image9.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_4/media/image9.png" style="width:500px" />
 
-AprilTag recognition primarily uses the cv2 library functions drawContours() and putText(). Here’s a breakdown of how `drawContours()` is used:
+AprilTag recognition primarily uses the cv2 library functions drawContours() and putText(). Here's a breakdown of how `drawContours()` is used:
 
 The `drawContours()` function is used to draw the contours of the tag. The parameters are as follows:
 
@@ -483,7 +483,7 @@ The fourth parameter `(0, 255, 255)` is the color of the contours, specified in 
 
 The fifth parameter `2` is the thickness of the contour lines. `2` indicates a line width of 2 pixels. Using -1 instead would fill the contours with the specified color.
 
-<img class="common_img" src="D:/线上资料整理/14. Jetson Orin Nano (Offical Version)/6. OpenCV Computer Vision Course/Application Course/chapter_6_1/section_4/media/image10.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_4/media/image10.png" style="width:500px" />
 
 The `putText()` function is used to display text on an image. For example:
 
@@ -519,30 +519,30 @@ Then, the identified shape is outlined using the corresponding shape in the imag
 
 * **Operation Steps**
 
-If you use the system image we provide, you can find the corresponding program in the folder “**[3. Basic Operation Course -> 2. Introduction to System Desktop]()** .”  
+If you use the system image we provide, you can find the corresponding program in the folder "**[3. Basic Operation Course -> 2. Introduction to System Desktop](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html#introduction-to-system-desktop)** ."  
 This method requires that the purchased kit includes the expansion board.
 
-Prior to operations, you need to transfer the routine “**ShapeRecognize.py**” stored in “**[6. OpenCV Computer Vision Course\ Program Files]()**” to the Jetson Orin Nano.
+Prior to operations, you need to transfer the routine "**ShapeRecognize.py**" stored in "**[6. OpenCV Computer Vision Course\ Program Files](https://drive.google.com/drive/folders/1DRVmEnNGL5I2QRLI-omYGNMxISlWY7sG?usp=sharing)**" to the Jetson Orin Nano.
 
-For the file transfer method, you can refer to the content in “**[3. Basic Operation Course]()**”.
+For the file transfer method, you can refer to the content in "**[3. Basic Operation Course](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html)**".
 
 > [!NOTE]
 >
-> **The input command should be case sensitive, and the “Tab” key is able to implement the key works.**
+> **The input command should be case sensitive, and the "Tab" key is able to implement the key works.**
 
-1. Open Nocmahine. Double click on <img class="common_img" src="../_static/media/chapter_6_1\section_5\media\image2.png" style="width:50px" />, or use the shortcut key to open the terminal. Enter the command to start shape recognition.
+1. Open Nocmahine. Double click on <img src="../_static/media/chapter_6_1/section_5/media/image2.png" style="width:50px" />, or use the shortcut key to open the terminal. Enter the command to start shape recognition.
 
-   ```py
-   python3 ShapeRecognition.py
-   ```
+```bash
+python3 ShapeRecognition.py
+```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_5\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_5/media/image3.png" style="width:500px" />
 
 At this point, the terminal's live camera feed will display. When a green object is recognized, the corresponding object will be outlined with a red line, and the name of the object's shape will be displayed above, as shown in the image below:
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_5\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_5/media/image4.png" style="width:500px" />
 
-To close this program, press “**q**”.
+To close this program, press "**q**".
 
 * **Program Analysis**
 
@@ -564,7 +564,7 @@ def detection(gray,image):
     for contour in contours:
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_5\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_5/media/image5.png" style="width:500px" />
 
 **1. Import Library File**
 
@@ -575,7 +575,7 @@ import cv2
 import numpy as np
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_5\media\image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_5/media/image6.png" style="width:500px" />
 
 **2. Detect Object Color and Draw Frame**
 
@@ -607,7 +607,7 @@ def detection(gray,image):
             x = int(M['m10'] / M['m00'])
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_5\media\image7.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_5/media/image7.jpeg" style="width:500px" />
 
 Call the `findContours()` function from the cv2 library to detect the boundaries of the object and assign the value 0 to i, as shown in the image below:
 
@@ -619,7 +619,7 @@ def detection(gray,image):
     i = 0
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_5\media\image8.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_5/media/image8.jpeg" style="width:500px" />
 
 At the same time, set up a loop to iterate through the detection data.
 
@@ -630,7 +630,7 @@ approx = cv2.approxPolyDP(
             contour, 0.06 * cv2.arcLength(contour, True), True)
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_5\media\image9.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_5/media/image9.png" style="width:500px" />
 
 Then, use the `drawContours()` function to draw the edge lines.
 
@@ -638,7 +638,7 @@ Then, use the `drawContours()` function to draw the edge lines.
 cv2.drawContours(image, [contour], 0, (0, 0, 255), 5)
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_5\media\image10.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_5/media/image10.png" style="width:500px" />
 
 The parameters of the `drawContours()` function are as follows:
 
@@ -656,17 +656,17 @@ The fifth parameter, `5`, denotes the line width of the contour. If it is negati
 
 Determine the shape based on the number of identified sides. If the number of sides is 3, it is a triangle, and the feedback screen will display `Triangle.` If the number of sides is 4, it is a rectangle, and the feedback screen will display `Quadrilateral.` Otherwise, it is a circle, and the feedback screen will display `Circle`.
 
-<img class="common_img" src="../_static/media/chapter_6_1\section_5/media/image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_1/section_5/media/image11.png" style="width:500px" />
 
 ## 6.2 Basic Course
 
 ### 6.2.1 Computer Vision and OpenCV Introduction
 
-* **How robots “see” the world**
+* **How robots "see" the world**
 
 For artificial intelligence, the ability to see is essential. And how robots see the world involves machine vision, an important branch of artificial intelligence.
 
-Machine vision is the idea that the robot takes human’s place to measure and make judgments. The captured target will be converted into image signal by image sensor, CMOS or CCD, and then the image signal will be transferred to the specialized image processing system which will convert the image signal into digitized signal according to the pixel distribution, brightness, color, etc.
+Machine vision is the idea that the robot takes human's place to measure and make judgments. The captured target will be converted into image signal by image sensor, CMOS or CCD, and then the image signal will be transferred to the specialized image processing system which will convert the image signal into digitized signal according to the pixel distribution, brightness, color, etc.
 
 Image system perform various operations on these signals to extract the features of the target, so as to control the device in the field based on the judgments.
 
@@ -696,7 +696,7 @@ and robot vision.
 
 OpenCV (Open Source Capture Vision) is a computer vision library for free handling various tasks about image and video, for example display the image collected by the camera and make the robot recognize the real object.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_1\media\image2.jpeg" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_1/media/image2.jpeg" style="width:500px" />
 
 OpenCV is more eminent than PIL, the built-in image processing library in Python. OpenCV provides complete Python interfaces, and Python3.5 and opencv-python library file have been integrated in the provided image system.
 
@@ -718,9 +718,9 @@ Same as Python array, these array recording images can be accessed individually 
 
 Each picture involves several pixels, which results in that a large number of arrays need to be processed in the program. Numpy is a extension library for Python, which handles multi-dimensional arrays more efficiently than Python's native array structures. Besides, it can improve the readability of codes.
 
-Open command line terminal and then input command “**pip install numpy**” to install Numpy. For more information about Numpy, please move to the folder “**[4. Basic Programming Course->4.13 Python Numpy Basic Operation]()**”.
+Open command line terminal and then input command "**pip install numpy**" to install Numpy. For more information about Numpy, please move to the folder "**[4. Basic Programming Course->4.13 Python Numpy Basic Operation](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/4_Basic_Programming_Course.html#python-numpy-basic-operation)**".
 
-```py
+```bash
 pip install numpy
 ```
 
@@ -730,17 +730,17 @@ OpenCV package can be obtained from Ubuntu repository. Then refresh the packages
 
 1. sudo apt update: refresh the packages index
 
-   ```py
-   sudo apt update
-   ```
+```bash
+sudo apt update
+```
 
-2. sudo apt install python3-opencv: Install the package. During installation, input “y” to continue the execution and the complete installation may take 10s.
+2. sudo apt install python3-opencv: Install the package. During installation, input "y" to continue the execution and the complete installation may take 10s.
 
-   ```py
-   sudo apt install python3-opencv
-   ```
+```bash
+sudo apt install python3-opencv
+```
 
-   <img class="common_img" src="../_static/media/chapter_6_2/section_2/media/image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_2/media/image4.png" style="width:500px" />
 
 * **Verify the Installation of OpenCV**
 
@@ -752,9 +752,9 @@ We can import cv2 module to print the version of OpenCV so as to verify whether 
 
 3. `cv2.__version__`: check the version
 
-   If the version of OpenCV is printed, the installation is successful.
+If the version of OpenCV is printed, the installation is successful.
 
-   <img class="common_img" src="../_static/media/chapter_6_2\section_2/media/image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_2/media/image5.png" style="width:500px" />
 
 ### 6.2.3 OpenCV Modules and Components
 
@@ -770,7 +770,7 @@ OpenCV is composed of several layers of modules.
 
 4. The top layer is the interaction between OpenCV and operating system.
 
-   <img class="common_img" src="../_static/media/chapter_6_2/section_3/media/image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_3/media/image2.png" style="width:500px" />
 
 * **Specific Module of OpenCV**
 
@@ -800,13 +800,13 @@ OpenCV is composed of several layers of modules.
 
 13. `Nonfree`: It is moved to opencv_contrib/xfeatures2d in OpenCV 3.0. There are some algorithms that is protected by patent and limited in usage in OpenCV, such as SIFT. These algorithms are isolated into their own modules, therefore you need to take special measures to use them in commercial products.
 
-14. `Contrib`: It involves something new that haven’t been integrated into OpenCV.
+14. `Contrib`: It involves something new that haven't been integrated into OpenCV.
 
-15. `Legacy`: It has been removed from OpenCV 3.0. This module contains some old stuffs that haven’t been completely removed.
+15. `Legacy`: It has been removed from OpenCV 3.0. This module contains some old stuffs that haven't been completely removed.
 
 16. `Ocl`: Khronos OpenCL standard. It has been removed from OpenCV 3.0 and replaced by T-API. Similar to GPU module, it realizes Khronos OpenCL standard for open parallel programming.
 
-    Compared with GPU module, it has fewer functions, but it aims at providing the parallel devices that can run on any GPU or is powered by Khronos. However, GPU module can only run on Nvidia GPU devices for the reason that it utilizes Nvidia CUDA toolkit to develop.
+ Compared with GPU module, it has fewer functions, but it aims at providing the parallel devices that can run on any GPU or is powered by Khronos. However, GPU module can only run on Nvidia GPU devices for the reason that it utilizes Nvidia CUDA toolkit to develop.
 
 ### 6.2.4 Picture & Video Loading and Display
 
@@ -822,9 +822,9 @@ Read image: cv2.imread(Location，Model)
 
 4)  Name——Display the box name of the image
 
-Pic——Pictures to be displayed(The image read by `cv2.imread()` has already used before) For example, create a new py file and put the picture named “**camera.png**” into the same folder. Then input the following codes. After the codes run, the image will be displayed and you can press any key to hide the image.
+Pic——Pictures to be displayed(The image read by `cv2.imread()` has already used before) For example, create a new py file and put the picture named "**camera.png**" into the same folder. Then input the following codes. After the codes run, the image will be displayed and you can press any key to hide the image.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_4\media\image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_4/media/image2.png" style="width:500px" />
 
 > [!NOTE]
 >
@@ -840,15 +840,15 @@ Read the frame of camera:`cap.read()`
 
 2. cap——the camera that has been defined before
 
-   Release the resources of the camera: `cap.release()`
+Release the resources of the camera: `cap.release()`
 
 For example, the camera screen will be displayed on the desktop. When q key is pressed, the camera screen will be hidden.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_4\media\image3.png" style="width:500px" alt="2" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_4/media/image3.png" style="width:500px" alt="2" />
 
 > [!NOTE]
 >
-> cv2.waitKey(delay) will wait for the input from the keyboard and can be used to refresh the image in the video. “**delay**” in the bracket indicates the waiting time. When a frame of picture is displayed, the program will display the next frame in “delay” ms.
+> cv2.waitKey(delay) will wait for the input from the keyboard and can be used to refresh the image in the video. "**delay**" in the bracket indicates the waiting time. When a frame of picture is displayed, the program will display the next frame in "delay" ms.
 
 ### 6.2.5 Image Drawing
 
@@ -868,7 +868,7 @@ Function format: **cv2.line(image,pt1,pt2,color,thickness)**
 
 5. `Thickness`: The thickness of the line
 
-   <img class="common_img" src="../_static/media/chapter_6_2\section_5\media\image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_5/media/image2.png" style="width:500px" />
 
 * **Draw Rectangle**
 
@@ -884,7 +884,7 @@ Function format: **cv2.rectangle(image,pt1,pt2,color,thickness)**
 
 5. `thickness`: Line thickness. The greater the value, the thicker the line. If the value is negative or cv2.FILLED, a filled rectangle will be drawn.
 
-   <img class="common_img" src="../_static/media/chapter_6_2\section_5\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_5/media/image3.png" style="width:500px" />
 
 * **Draw Circle**
 
@@ -900,7 +900,7 @@ Function format: **cv2.circle(image,center,radius,color,thickness)**
 
 5. `thickness`: Line thickness. The greater the value, the thicker the line. If the value is negative or cv2.FILLED, a filled circle will be drawn.
 
-   <img class="common_img" src="../_static/media/chapter_6_2\section_5\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_5/media/image4.png" style="width:500px" />
 
 * **Draw Polygon**
 
@@ -916,7 +916,7 @@ Function format: **cv2.polylines(image,pts,isClosed,color,thickness)**
 
 5. `thickness`: Line thickness. The greater the value, the thicker the line.
 
-   <img class="common_img" src="../_static/media/chapter_6_2\section_5\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_5/media/image5.png" style="width:500px" />
 
 * **Add Text**
 
@@ -934,7 +934,7 @@ Function format: **cv2.putText(image,text,pt,font,fontScale,color)**
 
 6. `color`: The color of the text. BGR is represented by a tuple. For example, (255, 0, 0) stands for blue.
 
-   <img class="common_img" src="../_static/media/chapter_6_2\section_5/media/image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_5/media/image6.png" style="width:500px" />
 
 ### 6.2.6 Image Basic Operation
 
@@ -948,17 +948,17 @@ The value of the pixel can be acquired through the coordinate of row and column.
 
 3)  `img[x,y]=[B,G,R]`: Modify the color channel value of this pixel.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_6\media\image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_6/media/image2.png" style="width:500px" />
 
 * **Acquire the Image Property**
 
 1)  `shape`: If it is a color picture, acquire the shape of the image and return an array containing the number of row, column and channel. If it is binary image or grayscale image, only the number of row and column will be returned. Through judging whether the returned value contains the number of channel, we can know that it is a grayscale picture or color picture.
 
-2)  `size`: Return the pixel number of the image. The format is “**row x column x channel**”. The number of channel of the grayscale picture is 1.
+2)  `size`: Return the pixel number of the image. The format is "**row x column x channel**". The number of channel of the grayscale picture is 1.
 
 3)  `dtype`: Return the data type of the picture
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_6\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_6/media/image3.png" style="width:500px" />
 
 * **Splitting and Merging of Image Channel** 
 
@@ -966,13 +966,13 @@ The value of the pixel can be acquired through the coordinate of row and column.
 
 `split`: Input the image to be split and return the picture with three individual color channels.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_6\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_6/media/image4.png" style="width:500px" />
 
 **2. Merging of Image Channel**
 
 `merge`: Merge three individual channels, including B, G and R into BGR image with three channel.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_6\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_6/media/image5.png" style="width:500px" />
 
 * **Color Space Conversion** 
 
@@ -982,7 +982,7 @@ There more than 150 ways to convert colors in OpenCV. And BGR is commonly conver
 
 2. `flag`: The converted type. For example, **cv2.COLOR_BGR2HSV** indicates that convert BGR into HSV.
 
-   <img class="common_img" src="../_static/media/chapter_6_2\section_6/media/image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_6/media/image6.png" style="width:500px" />
 
 ### 6.2.7 Image Processing---Color Space Conversion
 
@@ -1096,7 +1096,7 @@ The difference of red value between indoor and outdoor is large for the reason t
 
 GRAY color space generally refers to grayscale image, monochromatic image, in which each pixel is processed into 256 gray level from black to white.
 
-These 256 gray levels are represented by the number within \[0,255\]. “0” indicates pure black, and “255” represents white. Number from 0 to 255 denote dark gray or light gray of different brightness (shade of hue).
+These 256 gray levels are represented by the number within \[0,255\]. "0" indicates pure black, and "255" represents white. Number from 0 to 255 denote dark gray or light gray of different brightness (shade of hue).
 
 * **Color Conversion**
 
@@ -1133,25 +1133,25 @@ Follow the following steps to transform the pictures into some common color spac
 
 **1. Operation Steps**
 
-Before operation, please move to “**[6. OpenCV Computer Vision Lesson->6.2 Basic Course->6.2.7 Image Processing---Color Space Conversion->Sample Code]()**”, and copy the sample routine “**color_conversion.py**” and picture “img1.jpg” into the shared folder
+Before operation, please move to "**[6. OpenCV Computer Vision Lesson->6.2 Basic Course->6.2.7 Image Processing---Color Space Conversion->Sample Code](https://drive.google.com/drive/folders/1ny0h3URgcUAeyHWQACAMsHeMGH4bQqMr?usp=sharing)**", and copy the sample routine "**color_conversion.py**" and picture "img1.jpg" into the shared folder
 
 > [!NOTE]
 >
-> **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2/section_7/media/image9.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2/section_7/media/image10.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_7/media/image9.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_7/media/image10.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/Share/Image**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/Share/Image**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/Share/Image
-   ```
+```bash
+cd /mnt/hgfs/Share/Image
+```
 
-3. Input command “**python3 color_conversion.py**” and press Enter to run the code.
+3. Input command "**python3 color_conversion.py**" and press Enter to run the code.
 
-   ```py
-   python3 color_conversion.py
-   ```
+```bash
+python3 color_conversion.py
+```
 
 **2. Program Outcome**
 
@@ -1217,7 +1217,7 @@ dst represents the output image whose type is the same as src. And its size is d
 
 5)  interpolation is for interpolation method.
 
-<table>
+<table class="docutils-nobg" border="1">
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1271,31 +1271,31 @@ dst represents the output image whose type is the same as src. And its size is d
 
 **The program will scale the image.**
 
-Before operation, please copy the routine “**Scale**” in “**[6.2OpenCV->6.2.9Image Processing --- Geometric Transformation->Routine Code]()**” to the shared folder.
+Before operation, please copy the routine "**Scale**" in "**[6.2OpenCV->6.2.9Image Processing --- Geometric Transformation->Routine Code](https://drive.google.com/drive/folders/1vSLiUJC5LPM-Nt4-4hFYZKEOtG4VxWhd?usp=sharing)**" to the shared folder.
 
 > [!NOTE]
 >
-> **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_8/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_8/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/Share/Scale**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/Share/Scale**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/Share/Scale
-   ```
+```bash
+cd /mnt/hgfs/Share/Scale
+```
 
-3. Input command “**python3 Scale.py**” and press Enter to run the code.
+3. Input command "**python3 Scale.py**" and press Enter to run the code.
 
-   ```py
-   python3 Scale.py
-   ```
+```bash
+python3 Scale.py
+```
 
 **2. Program Outcome**
 
 The final output picture is as follow.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image6.png" style="width:500px" />
 
 1.  `src`: Original picture. Its size is 492\*430 pixels (width\*height)
 
@@ -1305,7 +1305,7 @@ The final output picture is as follow.
 
 **3. Program Analysis**
 
-The routine “**Scale.py**” can be found in “**[6. OpenCV Computer Vision Lesson-\>6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code->Scale.py]()**”.
+The routine "**Scale.py**" can be found in "**[6. OpenCV Computer Vision Lesson-\>6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code->Scale.py](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**".
 
 ```py
 import numpy as np
@@ -1326,7 +1326,7 @@ cv.waitKey()
 cv.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image7.png" style="width:500px" />
 
 Firstly, import the required module through import statement.
 
@@ -1359,7 +1359,7 @@ Therefore, program to acquire the original dimension first, and then directly sc
 
 To zoom out the picture, this routine will shrink the res2 width to 0.6 times the original, and the height to 0.6 times the original. The final width is 295 pixels (492x0.6) and height is 258 pixels (430x0.6). And the image size, before and after processing, can printed.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image11.png" style="width:500px" />
 
 * **Affine Transformation**
 
@@ -1369,11 +1369,11 @@ Linearity means that the straight lines of the image can still be preserved afte
 
 Translation and rotation are special cases of affine transformation which is realized by the function `cv2.warpAffine()` in OpenCV. This function execute transformation by a transformation matrix M (transformation matrix of translation and rotation is different)
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image12.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image12.png" style="width:500px" />
 
 As the picture below shown, the original image O can be transformed into affine image R by a transformation matrix M.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image13.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image13.png" style="width:500px" />
 
 The format of `cv2.warpAffine()` function is as follow.
 
@@ -1399,7 +1399,7 @@ dst = cv2.warpAffine( src , M , dsize )
 
 By transformation matrix M, transform the original image src into the target image dst.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image14.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image14.png" style="width:500px" />
 
 Therefore, the type of affine transformation relies on the transformation matrix M.
 
@@ -1407,7 +1407,7 @@ Therefore, the type of affine transformation relies on the transformation matrix
 
 Translation is the movement of the object. If the coordinates of the object translation is obtained, the following transformation matrix can be created.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image15.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image15.png" style="width:500px" />
 
 Put the transformation matrix into the array whose type is np.float32, and assign M matrix to `cv2.warpAffine()` function so as to realize translation.
 
@@ -1415,33 +1415,33 @@ Put the transformation matrix into the array whose type is np.float32, and assig
 
 **This routine will translate the image to right.**
 
-Before operation, please copy the routine code in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation-\>Routine Code]()**” to the shared folder.
+Before operation, please copy the routine code in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation-\>Routine Code](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**" to the shared folder.
 
-> **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_8/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_8/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/Share/Translation/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/Share/Translation/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/Share/Translation/
-   ```
+```bash
+cd /mnt/hgfs/Share/Translation/
+```
 
-3. Input command “**python3 Translation.py**” and press Enter to run the routine.
+3. Input command "**python3 Translation.py**" and press Enter to run the routine.
 
-   ```py
-   python3 Translation.py
-   ```
+```bash
+python3 Translation.py
+```
 
 **(2) Program Outcome**
 
 The final output picture is as follow.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image18.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image18.png" style="width:500px" />
 
 **(3) Program Analysis**
 
-The routine “**Translation.py**” can be found in “**[6. OpenCV Computer Vision Lesson->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code->TranslaTion]()**”.
+The routine "**Translation.py**" can be found in "**[6. OpenCV Computer Vision Lesson->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code->TranslaTion](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**".
 
 ```py
 import numpy as np
@@ -1459,34 +1459,34 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image19.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image19.png" style="width:500px" />
 
 1. Firstly, import the required module through import statement.
 
-   ```py
-   import numpy as np
-   import cv2
-   ```
+```py
+import numpy as np
+import cv2
+```
 
 2. Then call **imread()** function in cv2 module to read the image that needs to be translated.
 
-   ```py
-   img = cv2.imread('1.jpg')
-   ```
+```py
+img = cv2.imread('1.jpg')
+```
 
 3. Return the number of row, column and channel of the image pixel to rows, cols and ch.
 
-   ```py
-   rows, cols, ch = img.shape
-   ```
+```py
+rows, cols, ch = img.shape
+```
 
 4. As mentioned before, if the coordinate of the object translation can be obtained, the transformation matrix can be created.
 
-   ```py
-   M = np.float32([[1, 0, 300], [0, 1, 50]])
-   ```
+```py
+M = np.float32([[1, 0, 300], [0, 1, 50]])
+```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image15.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image15.png" style="width:500px" />
 
 After setting, the picture before and after translation can be displayed through imshow function.
 
@@ -1497,10 +1497,10 @@ cv2.imshow('src', dst)
 
 5. Lastly, close the window through the function, and you can press any key to exit the program.
 
-   ```py
-   cv2.waitKey(0)
-   cv2.destroyAllWindows()
-   ```
+```py
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
 
 `cv2.waitKey()` is a keyboard binding function. Its time unit is milliseconds (ms). The function will wait n ms set in bracket to check if there is any keyboard input. If there is, the ASCII value of the key is returned. -1 will be returned if there is no keyboard input. Generally we set it to 0, the function will wait for keyboard input endlessly.
 
@@ -1524,13 +1524,13 @@ retval=cv2.getRotationMatrix2D(center, angle, scale)
 
 The rotation angle θ can be obtained from matrix M.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image26.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image26.png" style="width:500px" />
 
 OpenCV has improved this matrix to provide scaling rotation and adjustable rotation center, as the picture shown below.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image27.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image27.png" style="width:500px" />
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image28.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image28.png" style="width:500px" />
 
 The above matrix represents a rotation around center.x and center.y by θ degrees.
 
@@ -1544,35 +1544,35 @@ M=cv2.getRotationMatrix2D((height/2,width/2),45,0.6)
 
 **This routine will rotate the image 90 degree counterclockwise.**
 
-Before operation, please copy the routine “**Revolve**” in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation->Routine Code]()” to the shared folder**.
+Before operation, please copy the routine "**Revolve**" in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation->Routine Code](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)" to the shared folder**.
 
 > [!NOTE]
 >
-> **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_8/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_8/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/Share/Revolve/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/Share/Revolve/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/Share/Revolve/
-   ```
+```bash
+cd /mnt/hgfs/Share/Revolve/
+```
 
-3. Input the command “**python3 Revolve.py**” and press Enter to run the routine.
+3. Input the command "**python3 Revolve.py**" and press Enter to run the routine.
 
-   ```py
-   python3 Revolve.py
-   ```
+```bash
+python3 Revolve.py
+```
 
 **(2) Program Outcome**
 
 The output picture is as follow.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image31.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image31.png" style="width:500px" />
 
 **(3) Program Analysis**
 
-The routine “**Revolve.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code->Revolve]()**”.
+The routine "**Revolve.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code->Revolve]()**".
 
 ```py
 import cv2
@@ -1591,52 +1591,52 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image32.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image32.png" style="width:500px" />
 
 1. Firstly, import the required module through import statement.
 
-   ```py
-   import cv2
-   import numpy as np
-   ```
+```py
+import cv2
+import numpy as np
+```
 
 2. Then call `imread()` function in cv2 module to read the image that needs to be rotated.
 
-   ```py
-   img = cv2.imread('1.jpg')
-   ```
+```py
+img = cv2.imread('1.jpg')
+```
 
 3. Return the number of row, column and channel of the image pixel to rows, cols and ch.
 
-   ```py
-   rows, cols, ch = img.shape
-   ```
+```py
+rows, cols, ch = img.shape
+```
 
 4. The image will rotate around the image center 90 degree counterclockwise. And its size remains the same.
 
-   ```py
-   M = cv2.getRotationMatrix2D(((cols-1) / 2.0,(rows-1)/2.0), 90,1)
-   ```
+```py
+M = cv2.getRotationMatrix2D(((cols-1) / 2.0,(rows-1)/2.0), 90,1)
+```
 
 5. Output the original image center
 
-   ```py
-   dst = cv2.warpAffine(img, M, (cols, rows))
-   ```
+```py
+dst = cv2.warpAffine(img, M, (cols, rows))
+```
 
 6. After setting, we can call imshow function to display the pictures before and after rotation.
 
-   ```py
-   cv2.imshow('img', img)
-   cv2.imshow('dst', dst)
-   ```
+```py
+cv2.imshow('img', img)
+cv2.imshow('dst', dst)
+```
 
 7. Lastly, call function below to close the window, and you can press any key to exit the program.
 
-   ```py
-   cv2.waitKey(0)
-   cv2.destroyAllWindows()
-   ```
+```py
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
 
 `cv2.waitKey()` is a keyboard binding function. Its time unit is milliseconds (ms). The function will wait **n** ms set in bracket to check if there is any keyboard input. If there is, the ASCII value of the key is returned. -1 will be returned if there is no keyboard input. Generally we set it to 0, the function will wait for keyboard input endlessly.
 
@@ -1666,35 +1666,35 @@ dst = cv2.warpPerspective( src, M, dsize[, flags[, borderMode[, borderValue]]] )
 
 This routine will perform perspective transformation.
 
-Before operation, please copy the routine “**Perspective**” in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation->Routine Code]()**” to the shared folder.
+Before operation, please copy the routine "**Perspective**" in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation->Routine Code](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**" to the shared folder.
 
 > [!NOTE]
 >
-> **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_8/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_8/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/Share/Perspective/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/Share/Perspective/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/Share/Perspective/
-   ```
+```bash
+cd /mnt/hgfs/Share/Perspective/
+```
 
-3. Input command “**python3 Perspective.py**” and press Enter to run the routine.
+3. Input command "**python3 Perspective.py**" and press Enter to run the routine.
 
-   ```py
-   python3 Perspective.py
-   ```
+```bash
+python3 Perspective.py
+```
 
 **2. Program Outcome**
 
 The final output picture is as follow.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image39.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image39.png" style="width:500px" />
 
 **3. Program Analysis**
 
-The routine “**Perspective.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code->Perspective]()**”.
+The routine "**Perspective.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code->Perspective](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**".
 
 ```py
 import cv2
@@ -1715,49 +1715,49 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image40.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image40.png" style="width:500px" />
 
 1. Firstly, import the required module through import statement.
 
-   ```py
-   import cv2
-   import numpy as np
-   ```
+```py
+import cv2
+import numpy as np
+```
 
 2. Then call **imread()** function in cv2 module to read the image for perspective transformation.
 
-   ```py
-   img=cv2.imread('1.jpg')
-   ```
+```py
+img=cv2.imread('1.jpg')
+```
 
 3. Return the number of row, column and channel of the image pixel to rows, cols and ch.
 
-   ```py
-   rows, cols = img.shape[:2]
-   ```
+```py
+rows, cols = img.shape[:2]
+```
 
 4. In this example, specify four vertices pts1 of the parallelogram in the original image, and specify four vertices pts2 of the rectangle in the target image. Next, generate the transformation matrix M with **dst=cv2.warpPerspective(img,M,(cols,rows))**. Next, employ **dst=cv2.warpPerspective(img,M,(cols,rows))** statement to convert parallelogram to rectangle.
 
-   ```py
-   pts1 = np.float32([[150,50],[400,50],[60,450],[310,450]])
-   pts2 = np.float32([[50,50],[rows-50,50],[50,cols-50],[rows-50,cols-50]])
-   M = cv2.getPerspectiveTransform(pts1,pts2)
-   dst = cv2.warpPerspective(img,M,(cols,rows))
-   ```
+```py
+pts1 = np.float32([[150,50],[400,50],[60,450],[310,450]])
+pts2 = np.float32([[50,50],[rows-50,50],[50,cols-50],[rows-50,cols-50]])
+M = cv2.getPerspectiveTransform(pts1,pts2)
+dst = cv2.warpPerspective(img,M,(cols,rows))
+```
 
 5. After setting, the picture before and after translation can be displayed through imshow function.
 
-   ```py
-   cv2.imshow("img",img)
-   cv2.imshow("dst",dst)
-   ```
+```py
+cv2.imshow("img",img)
+cv2.imshow("dst",dst)
+```
 
 6. Lastly, close the window through the function, and you can press any key to exit the program.
 
-   ```py
-   cv2.waitKey()
-   cv2.destroyAllWindows()
-   ```
+```py
+cv2.waitKey()
+cv2.destroyAllWindows()
+```
 
 `cv2.waitKey()` is a keyboard binding function. Its time unit is milliseconds (ms). The function will wait n ms set in bracket to check if there is any keyboard input. If there is, the ASCII value of the key is returned. -1 will be returned if there is no keyboard input. Generally we set it to 0, the function will wait for keyboard input endlessly.
 
@@ -1813,35 +1813,35 @@ When map1 represents x value of (x,y), its value is the y value of (x,y) in CV_1
 
 All pixels in the target image are mapped to the pixels on the 100th row and 200th column in the original image.
 
-Before operation, please copy the routine “**Remap**” in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation->Routine Code]()**” to the shared folder.
+Before operation, please copy the routine "**Remap**" in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation->Routine Code](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**" to the shared folder.
 
 > [!NOTE]
 >
-> **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_8/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_8/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/Share/Remap/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/Share/Remap/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/Share/Remap/
-   ```
+```py
+cd /mnt/hgfs/Share/Remap/
+```
 
-3. Input command “**python3 copy.py**” and press Enter to run the routine.
+3. Input command "**python3 copy.py**" and press Enter to run the routine.
 
-   ```py
-   python3 copy.py
-   ```
+```py
+python3 copy.py
+```
 
 **(2) Program Outcome**
 
 A pure-colored picture will be output.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image47.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image47.png" style="width:500px" />
 
 **(3) Program Analysis**
 
-The routine “**copy.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code->Remap]()**”.
+The routine "**copy.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code->Remap](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**".
 
 ```py
 import cv2
@@ -1859,42 +1859,42 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image48.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image48.png" style="width:500px" />
 
 1. Firstly, import the required module through import statement.
 
-   ```py
-   import cv2
-   import numpy as np
-   ```
+```py
+import cv2
+import numpy as np
+```
 
 2. Then call `imread()` function in cv2 module to read the image that needs to be scaled.
 
-   ```py
-   img = cv2.imread("1.jpg")
-   ```
+```py
+img = cv2.imread("1.jpg")
+```
 
 3. Return the number of row, column and channel of the image pixel to rows, cols and ch.
 
-   ```py
-   rows, cols, ch = img.shape
-   ```
+```py
+rows, cols, ch = img.shape
+```
 
 4. mapx and mapy separately set the x axis and y axis coordinate. Map all the pixels on the target image to the pixels on 100<sup>th</sup> row, 200<sup>th</sup> column of the original image.
 
-   ```py
-   mapx = np.ones(img.shape[:2], np.float32) * 200
-   mapy = np.ones(img.shape[:2], np.float32) * 100
-   ```
+```py
+mapx = np.ones(img.shape[:2], np.float32) * 200
+mapy = np.ones(img.shape[:2], np.float32) * 100
+```
 
 5. After setting, the picture before and after the pixels are copied can be displayed through imshow function. Lastly, close the window through the function, and you can press any key to exit the program.
 
-   ```py
-   cv2.imshow("img", img)
-   cv2.imshow("result_img", result_img)
-   cv2.waitKey()
-   cv2.destroyAllWindows()
-   ```
+```py
+cv2.imshow("img", img)
+cv2.imshow("result_img", result_img)
+cv2.waitKey()
+cv2.destroyAllWindows()
+```
 
 `cv2.waitKey()` is a keyboard binding function. Its time unit is milliseconds (ms). The function will wait n ms set in bracket to check if there is any keyboard input. If there is, the ASCII value of the key is returned. -1 will be returned if there is no keyboard input. Generally we set it to 0, the function will wait for keyboard input endlessly.
 
@@ -1906,39 +1906,39 @@ cv2.destroyAllWindows()
 
 Besides the pixels can be copied, the whole image can also be copied. For example, copy the whole original picture to the right.
 
-Before operation, please copy the routine “**Remap**” in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation->Routine Code]()**” to the shared folder.
+Before operation, please copy the routine "**Remap**" in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation->Routine Code](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**" to the shared folder.
 
 > [!NOTE]
 >
-> **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_8/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_8/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/Share/Remap/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/Share/Remap/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/Share/Remap/
-   ```
+```bash
+cd /mnt/hgfs/Share/Remap/
+```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image45.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image45.png" style="width:500px" />
 
-3. Input command “**python3 copy_all.py**” and press Enter to run the routine.
+3. Input command "**python3 copy_all.py**" and press Enter to run the routine.
 
-   ```py
-   python3 copy_all.py
-   ```
+```bash
+python3 copy_all.py
+```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image51.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image51.png" style="width:500px" />
 
 **(2) Program Outcome**
 
 Correspond all the pixels of the original image to those of original image. The final output image is as follow.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image52.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image52.png" style="width:500px" />
 
 **(3) Program Analysis**
 
-The routine “**copy_all.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code]()**”.
+The routine "**copy_all.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**".
 
 ```py
 import cv2
@@ -1959,46 +1959,46 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image53.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image53.png" style="width:500px" />
 
 1. Firstly, import the required module through import statement.
 
-   ```py
-   import cv2
-   import numpy as np
-   ```
+```py
+import cv2
+import numpy as np
+```
 
 2. Then call `imread()` function in cv2 module to read the image.
 
-   ```py
-   img = cv2.imread("1.jpg")
-   ```
+```py
+img = cv2.imread("1.jpg")
+```
 
 3. Return the number of row, column and channel of the image pixel to rows, cols and ch.
 
-   ```py
-   rows, cols, ch = img.shape
-   ```
+```py
+rows, cols, ch = img.shape
+```
 
 4. mapx and mapy separately set the x axis and y axis coordinate.
 
-   ```py
-   mapx = np.ones(img.shape[:2], np.float32)
-   mapy = np.ones(img.shape[:2], np.float32)
-   for i in range(rows):
-       for j in range(cols):
-           mapx.itemset((i,j),j)#set Y-axis coordinate of each point mapped on the original picture 
-           mapy.itemset((i,j),i)#set X-axis coordinate of each point mapped on the original picture
-   ```
+```py
+mapx = np.ones(img.shape[:2], np.float32)
+mapy = np.ones(img.shape[:2], np.float32)
+for i in range(rows):
+    for j in range(cols):
+        mapx.itemset((i,j),j)#set Y-axis coordinate of each point mapped on the original picture 
+        mapy.itemset((i,j),i)#set X-axis coordinate of each point mapped on the original picture
+```
 
 5. After setting, the picture before and after the pixels are copied can be displayed through imshow function. Lastly, close the window through the function, and you can press any key to exit the program.
 
-   ```py
-   cv2.imshow("img", img)
-   cv2.imshow("result_img", result_img)
-   cv2.waitKey()
-   cv2.destroyAllWindows()
-   ```
+```py
+cv2.imshow("img", img)
+cv2.imshow("result_img", result_img)
+cv2.waitKey()
+cv2.destroyAllWindows()
+```
 
 `cv2.waitKey()` is a keyboard binding function. Its time unit is milliseconds (ms). The function will wait n ms set in bracket to check if there is any keyboard input. If there is, the ASCII value of the key is returned. -1 will be returned if there is no keyboard input. Generally we set it to 0, the function will wait for keyboard input endlessly.
 
@@ -2022,39 +2022,39 @@ Or：
 
 With `cv2.remap()` function, the pixels can be remapped, and also be flipped and then remapped. Ensure the x axis coordinate remains unchanged and y-axis coordinate after rotation is symmetric with respect to x axis.
 
-Before operation, please copy the routine “**Remap**” in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation->Routine Code]()**” to the shared folder.
+Before operation, please copy the routine "**Remap**" in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation->Routine Code](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**" to the shared folder.
 
 > [!NOTE]
 >
-> **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_8/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_8/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input the command “**cd /mnt/hgfs/Share/Remap/**” and press Enter to enter the shared folder.
+2. Input the command "**cd /mnt/hgfs/Share/Remap/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/Share/Remap/
-   ```
+```bash
+cd /mnt/hgfs/Share/Remap/
+```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image45.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image45.png" style="width:500px" />
 
-3. Input command “**python3 x_rotation.py**” and press Enter to run the routine.
+3. Input command "**python3 x_rotation.py**" and press Enter to run the routine.
 
-   ```py
-   python3 x_rotation.py
-   ```
+```bash
+python3 x_rotation.py
+```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image56.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image56.png" style="width:500px" />
 
 **(2) Program Outcome**
 
 The final output image is as follow.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image57.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image57.png" style="width:500px" />
 
 **(3) Program Analysis**
 
-The routine “**x_rotation.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code]()**”.
+The routine "**x_rotation.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**".
 
 ```py
 import cv2
@@ -2076,39 +2076,39 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image58.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image58.png" style="width:500px" />
 
 1. Firstly, import the required module through import statement.
 
-   ```py
-   import cv2
-   import numpy as np
-   ```
+```py
+import cv2
+import numpy as np
+```
 
 2. Then call `imread()` function in cv2 module to read the image that needs to be scaled.
 
-   ```py
-   img = cv2.imread("1.jpg")
-   ```
+```py
+img = cv2.imread("1.jpg")
+```
 
 3. Return the number of row, column and channel of the image pixel to rows, cols and ch.
 
-   ```py
-   rows, cols, ch = img.shape
-   ```
+```py
+rows, cols, ch = img.shape
+```
 
-4)  mapx and mapy separately set the x axis and y axis coordinate. map1 remains unchanged, and map2 = “**total number of row** - **1** - **current row number**”
+4)  mapx and mapy separately set the x axis and y axis coordinate. map1 remains unchanged, and map2 = "**total number of row** - **1** - **current row number**"
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image59.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image59.png" style="width:500px" />
 
 5. After setting, the picture before and after can be displayed through imshow function. Lastly, close the window through the function, and you can press any key to exit the program.
 
-   ```py
-   cv2.imshow("img", img)
-   cv2.imshow("result_img", result_img)
-   cv2.waitKey()
-   cv2.destroyAllWindows()
-   ```
+```py
+cv2.imshow("img", img)
+cv2.imshow("result_img", result_img)
+cv2.waitKey()
+cv2.destroyAllWindows()
+```
 
 `cv2.waitKey()` is a keyboard binding function. Its time unit is milliseconds (ms). The function will wait n ms set in bracket to check if there is any keyboard input. If there is, the ASCII value of the key is returned. -1 will be returned if there is no keyboard input. Generally we set it to 0, the function will wait for keyboard input endlessly.
 
@@ -2126,41 +2126,41 @@ Or：
 
 1)  Map2 remains unchanged
 
-2)  map2 = “**total number of column** - **1** - **current column number**”
+2)  map2 = "**total number of column** - **1** - **current column number**"
 
 **(1) Operation Steps**
 
-Before operation, please copy the routine “**Remap**” in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation->Routine Code]()**” to the shared folder.
+Before operation, please copy the routine "**Remap**" in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation->Routine Code](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**" to the shared folder.
 
 > [!NOTE]
 >
-> **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_8/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_8/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/Share/Remap/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/Share/Remap/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/Share/Remap/
-   ```
+```bash
+cd /mnt/hgfs/Share/Remap/
+```
 
-3. Input command “**python3 copy_all.py**” and press Enter to run the routine.
+3. Input command "**python3 copy_all.py**" and press Enter to run the routine.
 
-   ```py
-   python3 copy_all.py
-   ```
+```bash
+python3 copy_all.py
+```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image60.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image60.png" style="width:500px" />
 
 **(2) Program Outcome**
 
 The final output image is as follow.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image61.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image61.png" style="width:500px" />
 
 **(3) Program Analysis**
 
-The routine “**y_rotation.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code]()**”.
+The routine "**y_rotation.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**".
 
 ```py
 import cv2
@@ -2181,46 +2181,46 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image62.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image62.png" style="width:500px" />
 
 1. Firstly, import the required module through import statement.
 
-   ```py
-   import cv2
-   import numpy as np
-   ```
+```py
+import cv2
+import numpy as np
+```
 
 2. Then call `imread()` function in cv2 module to read the image that needs to be scaled.
 
-   ```py
-   img = cv2.imread("1.jpg")
-   ```
+```py
+img = cv2.imread("1.jpg")
+```
 
 3. Return the number of row, column and channel of the image pixel to rows, cols and ch.
 
-   ```py
-   rows, cols, ch = img.shape
-   ```
+```py
+rows, cols, ch = img.shape
+```
 
-4. mapx and mapy separately set the x axis and y axis coordinate. mapy remains unchanged, and mapx = “**total number of column** - **1** - **current column number**”
+4. mapx and mapy separately set the x axis and y axis coordinate. mapy remains unchanged, and mapx = "**total number of column** - **1** - **current column number**"
 
-   ```py
-   mapx = np.ones(img.shape[:2], np.float32)
-   mapy = np.ones(img.shape[:2], np.float32)
-   for i in range(rows):
-       for j in range(cols):
-           mapx.itemset((i,j),cols-1-j)#just modify this line of code. 
-           mapy.itemset((i,j),i)#
-   ```
+```py
+mapx = np.ones(img.shape[:2], np.float32)
+mapy = np.ones(img.shape[:2], np.float32)
+for i in range(rows):
+    for j in range(cols):
+        mapx.itemset((i,j),cols-1-j)#just modify this line of code. 
+        mapy.itemset((i,j),i)#
+```
 
 5. After setting, the picture before and after can be displayed through imshow function. Lastly, close the window through the function, and you can press any key to exit the program.
 
-   ```py
-   cv2.imshow("img", img)
-   cv2.imshow("result_img", result_img)
-   cv2.waitKey()
-   cv2.destroyAllWindows()
-   ```
+```py
+cv2.imshow("img", img)
+cv2.imshow("result_img", result_img)
+cv2.waitKey()
+cv2.destroyAllWindows()
+```
 
 `cv2.waitKey()` is a keyboard binding function. Its time unit is milliseconds (ms). The function will wait n ms set in bracket to check if there is any keyboard input. If there is, the ASCII value of the key is returned. -1 will be returned if there is no keyboard input. Generally we set it to 0, the function will wait for keyboard input endlessly.
 
@@ -2236,41 +2236,41 @@ If make the image rotate around x axis and y axis,
 
 Or：
 
-1)  map1 = “**total number of row** - **1** - **current row number**”
+1)  map1 = "**total number of row** - **1** - **current row number**"
 
-2)  map2= “**total number of row** - **1** - **current row number**”
+2)  map2= "**total number of row** - **1** - **current row number**"
 
 **(1) Operation Steps**
 
-Before operation, please copy the routine “**Remap**” in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation->Routine Code]()**” to the shared folder.
+Before operation, please copy the routine "**Remap**" in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation->Routine Code](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**" to the shared folder.
 
 > [!NOTE]
 >
-> **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_8/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_8/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/Share/Remap/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/Share/Remap/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/Share/Remap/
-   ```
+```py
+cd /mnt/hgfs/Share/Remap/
+```
 
-3. Input command “**python3 xy_rotation.py**” and press Enter to run the routine.
+3. Input command "**python3 xy_rotation.py**" and press Enter to run the routine.
 
-   ```py
-   python3 xy_rotation.py
-   ```
+```py
+python3 xy_rotation.py
+```
 
 **(2) Program Outcome**
 
 The final output picture is as follow.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image66.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image66.png" style="width:500px" />
 
 **(3) Program Analysis**
 
-The routine “**xy_rotation.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code]()**”.
+The routine "**xy_rotation.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**".
 
 ```py
 import cv2
@@ -2291,46 +2291,46 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image67.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image67.png" style="width:500px" />
 
 1. Firstly, import the required module through import statement.
 
-   ```py
-   import cv2
-   import numpy as np
-   ```
+```py
+import cv2
+import numpy as np
+```
 
 2. Then call `imread()` function in cv2 module to read the image that needs to be scaled.
 
-   ```py
-   img = cv2.imread("1.jpg")
-   ```
+```py
+img = cv2.imread("1.jpg")
+```
 
 3. Return the number of row, column and channel of the image pixel to rows, cols and ch.
 
-   ```py
-   rows, cols, ch = img.shape
-   ```
+```py
+rows, cols, ch = img.shape
+```
 
-4. mapx and mapy separately set the x axis and y axis coordinate. The value of mapy is changed as “total number of row - 1 - current row number”, and mapx = “total number of column - 1 - current column number”
+4. mapx and mapy separately set the x axis and y axis coordinate. The value of mapy is changed as "total number of row - 1 - current row number", and mapx = "total number of column - 1 - current column number"
 
-   ```py
-   mapx = np.ones(img.shape[:2], np.float32)
-   mapy = np.ones(img.shape[:2], np.float32)
-   for i in range(rows):
-       for j in range(cols):
-           mapx.itemset((i,j),cols-1-j)
-           mapy.itemset((i,j),rows-1-i)
-   ```
+```py
+mapx = np.ones(img.shape[:2], np.float32)
+mapy = np.ones(img.shape[:2], np.float32)
+for i in range(rows):
+    for j in range(cols):
+        mapx.itemset((i,j),cols-1-j)
+        mapy.itemset((i,j),rows-1-i)
+```
 
 5. After setting, the picture before and after can be displayed through imshow function. Lastly, close the window through the function, and you can press any key to exit the program.
 
-   ```py
-   cv2.imshow("img", img)
-   cv2.imshow("result_img", result_img)
-   cv2.waitKey()
-   cv2.destroyAllWindows()
-   ```
+```py
+cv2.imshow("img", img)
+cv2.imshow("result_img", result_img)
+cv2.waitKey()
+cv2.destroyAllWindows()
+```
 
 `cv2.waitKey()` is a keyboard binding function. Its time unit is milliseconds (ms). The function will wait n ms set in bracket to check if there is any keyboard input. If there is, the ASCII value of the key is returned. -1 will be returned if there is no keyboard input. Generally we set it to 0, the function will wait for keyboard input endlessly.
 
@@ -2342,33 +2342,33 @@ Compressing image is to compress the original image by half.
 
 **(1) Operation Steps**
 
-Before operation, please copy the routine “**Scale**” in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation->Routine Code]()**” to the shared folder.
+Before operation, please copy the routine "**Scale**" in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing --- Geometric Transformation->Routine Code](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**" to the shared folder.
 
 > [!NOTE]
 >
-> **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_8/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_8/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/Share/Remap/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/Share/Remap/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/Share/Remap/
-   ```
+```bash
+cd /mnt/hgfs/Share/Remap/
+```
 
-3. Input command “**python3 half_size.py**” and press Enter to run the code.
+3. Input command "**python3 half_size.py**" and press Enter to run the code.
 
-   ```py
-   python3 half_size.py
-   ```
+```bash
+python3 half_size.py
+```
 
 **(2) Program Outcome**
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image70.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image70.png" style="width:500px" />
 
 **(3) Program Analysis**
 
-The routine “**half_size.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code]()**”.
+The routine "**half_size.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.8 Image Processing---Geometric Transformation->Routine Code](https://drive.google.com/drive/folders/1dtPaO4G8AMm7SJmq5HL8QZNmfZje9Ppg?usp=sharing)**".
 
 ```py
 import cv2
@@ -2389,46 +2389,46 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_8\media\image71.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_8/media/image71.png" style="width:500px" />
 
 1. Firstly, import the required module through import statement.
 
-   ```py
-   import cv2
-   import numpy as np
-   ```
+```py
+import cv2
+import numpy as np
+```
 
 2. Then call `imread()` function in cv2 module to read the image.
 
-   ```py
-   img = cv2.imread("1.jpg")
-   ```
+```py
+img = cv2.imread("1.jpg")
+```
 
 3. Return the number of row, column and channel of the image pixel to rows, cols and ch.
 
-   ```py
-   rows, cols, ch = img.shape
-   ```
+```py
+rows, cols, ch = img.shape
+```
 
 4. mapx and mapy separately set the x axis and y axis coordinate and double the X axis
 
-   ```py
-   mapx = np.ones(img.shape[:2], np.float32)
-   mapy = np.ones(img.shape[:2], np.float32)
-   for i in range(rows):
-       for j in range(cols):
-           mapx.itemset((i,j),j)
-           mapy.itemset((i,j),2*i)#just modify this line of code
-   ```
+```py
+mapx = np.ones(img.shape[:2], np.float32)
+mapy = np.ones(img.shape[:2], np.float32)
+for i in range(rows):
+    for j in range(cols):
+        mapx.itemset((i,j),j)
+        mapy.itemset((i,j),2*i)#just modify this line of code
+```
 
 5. After setting, the picture before and after can be displayed through imshow function. Lastly, close the window through the function, and you can press any key to exit the program
 
-   ```py
-   cv2.imshow("img", img)
-   cv2.imshow("result_img", result_img)
-   cv2.waitKey()
-   cv2.destroyAllWindows()
-   ```
+```py
+cv2.imshow("img", img)
+cv2.imshow("result_img", result_img)
+cv2.waitKey()
+cv2.destroyAllWindows()
+```
 
 `cv2.waitKey()` is a keyboard binding function. Its time unit is milliseconds (ms). The function will wait n ms set in bracket to check if there is any keyboard input. If there is, the ASCII value of the key is returned. -1 will be returned if there is no keyboard input. Generally we set it to 0, the function will wait for keyboard input endlessly.
 
@@ -2466,12 +2466,12 @@ Based on filter, filtering can be divided into mean filtering, Gaussian filterin
 
 The idea of mean filtering is simply to take the mean of all the pixels of the image that is assign the mean of all the pixels in the unit of a square to the center pixel.
 
-Take the picture below as example. In picture (a), the center pixel value is “**226**” and the mean of all the pixels is “**122**” obtained from the equation below, and “**122**” is the new center pixel value.
+Take the picture below as example. In picture (a), the center pixel value is "**226**" and the mean of all the pixels is "**122**" obtained from the equation below, and "**122**" is the new center pixel value.
 
 $$
 40+107+5+198+226+223+37+68+193\div9=122
 $$
-Replace the original center pixel value by “122” as the picture (b) shown.
+Replace the original center pixel value by "122" as the picture (b) shown.
 
 <img class="common_img" src="../_static/media/chapter_6_2/section_9/media/image4.png" style="width:500px" />
 
@@ -2483,11 +2483,11 @@ The weighted mean is calculated by multiplying each value by the corresponding w
 
 Gauss filtering is to obtain the weighted mean of all the pixels of the image that is assign the weighted mean in the unit of a square to the center pixel.
 
-Take the picture below as example. In picture (a), the center pixel value is “**226**” and the weighted mean of all the pixels is “**164**” obtained from the equation below, and “**164**” is the new center pixel value.
+Take the picture below as example. In picture (a), the center pixel value is "**226**" and the weighted mean of all the pixels is "**164**" obtained from the equation below, and "**164**" is the new center pixel value.
 $$
 40\times 0.05 + 107 \times 0.1 + 5 \times 0.05 + 198 \times 0.1 + 226 \times 0.4 + 223 \times 0.1 + 37 \times 0.05 + 68 \times 0.1 + 193 \times 0.05= 164
 $$
-Replace the original center pixel value by “122” as the picture (c) shown.
+Replace the original center pixel value by "122" as the picture (c) shown.
 
 <img class="common_img" src="../_static/media/chapter_6_2/section_9/media/image5.png" style="width:500px" />
 
@@ -2497,9 +2497,9 @@ The median is the middle value when a data set is ordered from least to greatest
 
 Median filtering is to take the median of all the pixels of the image that is assign the median in the unit of square to the center pixel.
 
-Take the picture below as example. In picture (a), the center pixel value is “226” and the medium of the pixels is “**107**”, and “**107**” is the new center pixel value.
+Take the picture below as example. In picture (a), the center pixel value is "226" and the medium of the pixels is "**107**", and "**107**" is the new center pixel value.
 
-Replace the original center pixel value by “107” as the picture (b) shown.
+Replace the original center pixel value by "107" as the picture (b) shown.
 
 <img class="common_img" src="../_static/media/chapter_6_2/section_9/media/image6.png" style="width:500px" />
 
@@ -2507,25 +2507,25 @@ Replace the original center pixel value by “107” as the picture (b) shown.
 
 This routine will execute mean filtering, Gauss filtering and median filtering separately.
 
-Before operation, please copy the routine “**filtering.py**” in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.9 Image Processing --- Smoothing-\>Routine Code]()**” to the shared folder.
+Before operation, please copy the routine "**filtering.py**" in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.9 Image Processing --- Smoothing-\>Routine Code](https://drive.google.com/drive/folders/1vSLiUJC5LPM-Nt4-4hFYZKEOtG4VxWhd?usp=sharing)**" to the shared folder.
 
 > [!NOTE]
 >
-> **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2/section_9/media/image7.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2/section_9/media/image8.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_9/media/image7.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_9/media/image8.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/Share/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/Share/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/Share/
-   ```
+```bash
+cd /mnt/hgfs/Share/
+```
 
-3. Input command “**python3 filtering.py**” and press Enter to run the routine.
+3. Input command "**python3 filtering.py**" and press Enter to run the routine.
 
-   ```py
-   python3 filtering.py
-   ```
+```py
+python3 filtering.py
+```
 
 * **Program Outcome**
 
@@ -2535,7 +2535,7 @@ The final output image is as follow.
 
 * **Program Analysis**
 
-The routine “**filtering.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.9 Image Processing --- Smoothing->Routine Code]()**”.
+The routine "**filtering.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.9 Image Processing --- Smoothing->Routine Code](https://drive.google.com/drive/folders/1vSLiUJC5LPM-Nt4-4hFYZKEOtG4VxWhd?usp=sharing)**".
 
 ```py
 import cv2
@@ -2702,31 +2702,31 @@ plt.subplot(141), plt.imshow(img), plt.title("Original")
 
 1. subplot() function is used to set the position of the subplot, and the function format is as follow.
 
-   ```py
-   matplotlib.pyplot.subplot(nrows, ncols, index, **kwargs)
-   ```
+```py
+matplotlib.pyplot.subplot(nrows, ncols, index, **kwargs)
+```
 
 The first parameter `nrows` and the second parameter `ncols` respectively are the number of row and column of subplot.
 
 The third parameter `index` is the index position. Index starts at 1 in the upper left corner and increases to the right.
 
-When both the row and column are less than “**10**”, these two values can be abbreviated to an integer. For example, the meaning of `subplot(1, 4, 1)` and `subplot(141)` are the same, both representing the image is divided into one row and four columns, and the subplot is in the first place i.e. 1<sup>st</sup> row, 1<sup>st</sup> column.
+When both the row and column are less than "**10**", these two values can be abbreviated to an integer. For example, the meaning of `subplot(1, 4, 1)` and `subplot(141)` are the same, both representing the image is divided into one row and four columns, and the subplot is in the first place i.e. 1<sup>st</sup> row, 1<sup>st</sup> column.
 
 2. imshow() function is used to set the color of subplot, and its format is as follow.
 
-   ```py
-   matplotlib.pyplot.imshow(X, cmap=None)
-   ```
+```py
+matplotlib.pyplot.imshow(X, cmap=None)
+```
 
-The first parameter “**X**” is the image data.
+The first parameter "**X**" is the image data.
 
 The second parameter `cmap` is the colormap, RGB(A) color space by default.
 
 3. `title()` function is used to set the title of the subplot. The parameter in the bracket is the name of the subplot and the function format is as follow.
 
-   ```py
-   matplotlib.pyplot.title(label, fontdict=None, loc=None, pad=None, *, y=None, **kwargs)
-   ```
+```py
+matplotlib.pyplot.title(label, fontdict=None, loc=None, pad=None, *, y=None, **kwargs)
+```
 
 The first parameter `label` is the title composed of string.
 
@@ -2734,9 +2734,9 @@ The second parameter `fontdict` is the property of the font, and the current par
 
 The third parameter `loc` is the position of the title. It can be `left`, `center` or `right`, and `center` by default.
 
-The fourth parameter `pad` is the padding distance (inside margin) between the tile and the subplot, “**6.0**” by default.
+The fourth parameter `pad` is the padding distance (inside margin) between the tile and the subplot, "**6.0**" by default.
 
-The fifth parameter “**y**” is the vertical distance between the title and the subplot, and the unit is the percentage of the height of the subplot. The default value is "None", that is, the position of the title is automatically determined to avoid overlapping with other elements. "**1.0**" means the title is at the top of the subplot.
+The fifth parameter "**y**" is the vertical distance between the title and the subplot, and the unit is the percentage of the height of the subplot. The default value is "None", that is, the position of the title is automatically determined to avoid overlapping with other elements. "**1.0**" means the title is at the top of the subplot.
 
 The sixth parameter `**kwargs` is the text object keyword property, which is used to determine the appearance of the text, such as font, text color, etc.
 
@@ -2758,7 +2758,7 @@ When the parameter is none, the function will return the current tick and tag of
 
 The first parameter `ticks` is a list of the positions of the X-axis ticks. If the list is empty, the X-axis ticks will be cleared.
 
-The second parameter `labels` is the label of X-axis tick. Only when parameter “ticks” is not none, can this parameter be passed.
+The second parameter `labels` is the label of X-axis tick. Only when parameter "ticks" is not none, can this parameter be passed.
 
 The third parameter `**kwargs` is used to control the appearance of the tick and label.
 
@@ -2788,13 +2788,13 @@ plt.xticks([]), plt.yticks([])
 plt.show()
 ```
 
-### **6.2.10 Image Processing---Edge Detection**
+### 6.2.10 Image Processing---Edge Detection
 
 * **Edge Detection Introduction**
 
 Edge detection is fundamental technique in image processing and computer vision, which aims at identifying edges in a digital image at which the image brightness changes sharply. Sharp changes in image usually reflect important events and changes in properties. The edge is as the picture shown.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_10\media\image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_10/media/image2.png" style="width:500px" />
 
 Edge detection greatly reduces the amount of data, removes irrelevant information, and preserves the important structural properties of the image. Edge detection is divided into two types.
 
@@ -2808,7 +2808,7 @@ Canny Edge Detection is a popular edge detection algorithm. It was developed by 
 
 **1. Noise Reduction**
 
-Since edge detection is susceptible to noise in the image, first step is to remove the noise in the image. For detailed operation, please refer to the file in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.9 Image Processing---Smoothing]()**”.
+Since edge detection is susceptible to noise in the image, first step is to remove the noise in the image. For detailed operation, please refer to the file in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.9 Image Processing---Smoothing](https://drive.google.com/drive/folders/1vSLiUJC5LPM-Nt4-4hFYZKEOtG4VxWhd?usp=sharing)**".
 
 **2. Finding Gradient Magnitude and Direction of the Image**
 
@@ -2826,6 +2826,7 @@ The formula for calculating the gradient direction is as follows
 $$
 \theta = arctan\frac{G_{Y}}{G_{X}}
 $$
+
 **3. Non-Maximum Suppression**
 
 Non-Maximum Suppression (NMS) is that reserve local maximum and suppress all the values apart from local maximum. In simple terms, all the pixels of the image will be detected. If the gradient intensity of a point is greater than the pixels in the positive and negative directions of its gradient direction, the point is retained; otherwise, the point is suppressed.
@@ -2834,41 +2835,41 @@ Canny edge detection algorithm perform non-maximum suppression along the gradien
 
 **4. Hysteresis Thresholding**
 
-This stage decides which are really edges. For this, we need two threshold values, “**minVal**” and “**maxVal**”. Any edges with intensity gradient more than maxVal are sure to be edges and those below minVal are sure to be non-edges. Those who lie between these two thresholds are classified edges or non-edges based on their connectivity. If they are connected to "sure-edge" pixels, they are considered to be part of edges. Otherwise, they are also discarded.
+This stage decides which are really edges. For this, we need two threshold values, "**minVal**" and "**maxVal**". Any edges with intensity gradient more than maxVal are sure to be edges and those below minVal are sure to be non-edges. Those who lie between these two thresholds are classified edges or non-edges based on their connectivity. If they are connected to "sure-edge" pixels, they are considered to be part of edges. Otherwise, they are also discarded.
 
 * **Operation Steps**
 
 This routine will perform the edge detection.
 
-Before operation, please copy the routine “**edge_detection.py**”and sample picture “**luna.jpg**” in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.10 Image Processing---Edge Detection->Routine Code]()**” to the shared folder.
+Before operation, please copy the routine "**edge_detection.py**"and sample picture "**luna.jpg**" in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.10 Image Processing---Edge Detection->Routine Code](https://drive.google.com/drive/folders/1u3rOQsGevOkO2v0rXOUZ1zxKA49SZM-f?usp=sharing)**" to the shared folder.
 
 > [!NOTE]
 >
-> **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_10\media\image3.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_10\media\image4.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_10/media/image3.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_10/media/image4.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/Share/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/Share/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/Share/
-   ```
+```bash
+cd /mnt/hgfs/Share/
+```
 
-3. Input command “**python3 edge_detection.py**” and press Enter to run the routine.
+3. Input command "**python3 edge_detection.py**" and press Enter to run the routine.
 
-   ```py
-   python3 edge_detection.py
-   ```
+```bash
+python3 edge_detection.py
+```
 
 * **Program Outcome**
 
 The final output image is as follow.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_10\media\image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_10/media/image7.png" style="width:500px" />
 
 * **Program Analysis**
 
-The routine “**edge_detection.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.10 Image Processing---Edge Detection->Routine Code]()**”.
+The routine "**edge_detection.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.10 Image Processing---Edge Detection->Routine Code](https://drive.google.com/drive/folders/1u3rOQsGevOkO2v0rXOUZ1zxKA49SZM-f?usp=sharing)**".
 
 ```py
 import cv2
@@ -2893,7 +2894,7 @@ plt.xticks([]), plt.yticks([])
 plt.show()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_10\media\image8.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_10/media/image8.png" style="width:500px" />
 
 **1. Image Processing** 
 
@@ -2972,7 +2973,7 @@ The fourth parameter `facecolor` is the background color.
 
 The fifth parameter `edgecolor` is the frame color
 
-The sixth parameter `frameon` determines whether to draw the picture, and it is “**True**” by default.
+The sixth parameter `frameon` determines whether to draw the picture, and it is "**True**" by default.
 
 The seventh parameter `FigureClass` is used to select the custom figure when generating the image
 
@@ -3000,31 +3001,31 @@ plt.subplot(121), plt.imshow(img, cmap=plt.cm.gray), plt.title("Original")
 
 1. subplot() function is used to set the position of the subplot, and the function format is as follow.
 
-   ```py
-   subplot(nrows, ncols, index, **kwargs)
-   ```
+```py
+subplot(nrows, ncols, index, **kwargs)
+```
 
 The first parameter `nrows` and the second parameter `ncols` respectively are the number of row and column of subplot.
 
 The third parameter `index` is the index position. Index starts at 1 in the upper left corner and increases to the right.
 
-When both the row and column are less than “**10**”, these two values can be abbreviated to an integer. For example, the meaning of `subplot(1, 2, 1)` and `subplot(121)` are the same, both representing the image is divided into one row and 2 columns, and the subplot is in the first place i.e. 1<sup>st</sup> row, 1<sup>st</sup> column.
+When both the row and column are less than "**10**", these two values can be abbreviated to an integer. For example, the meaning of `subplot(1, 2, 1)` and `subplot(121)` are the same, both representing the image is divided into one row and 2 columns, and the subplot is in the first place i.e. 1<sup>st</sup> row, 1<sup>st</sup> column.
 
 2. `imshow()` function is used to set the color of subplot, and its format is as follow.
 
-   ```py
-   imshow(X, cmap=None)
-   ```
+```py
+imshow(X, cmap=None)
+```
 
-The first parameter “**X**” is the image data.
+The first parameter "**X**" is the image data.
 
 The second parameter `cmap` is the colormap, RGB(A) color space by default.
 
 3. `title()` function is used to set the title of the subplot. The parameter in the bracket is the name of the subplot and the function format is as follow.
 
-   ```py
-   title(label, fontdict=None, loc=None, pad=None, *, y=None, **kwargs)
-   ```
+```py
+title(label, fontdict=None, loc=None, pad=None, *, y=None, **kwargs)
+```
 
 The first parameter `label` is the title composed of string.
 
@@ -3032,9 +3033,9 @@ The second parameter `fontdict` is the property of the font, and the current par
 
 The third parameter `loc` is the position of the title. It can be `left`, `center` or `right`, and `center` by default.
 
-The fourth parameter `pad` is the padding distance (inside margin) between the tile and the subplot, “6.0” by default.
+The fourth parameter `pad` is the padding distance (inside margin) between the tile and the subplot, "6.0" by default.
 
-The fifth parameter “y” is the vertical distance between the title and the subplot, and the unit is the percentage of the height of the subplot. The default value is "None", that is, the position of the title is automatically determined to avoid overlapping with other elements. "1.0" means the title is at the top of the subplot.
+The fifth parameter "y" is the vertical distance between the title and the subplot, and the unit is the percentage of the height of the subplot. The default value is "None", that is, the position of the title is automatically determined to avoid overlapping with other elements. "1.0" means the title is at the top of the subplot.
 
 The sixth parameter `**kwargs` is the text object keyword property, which is used to determine the appearance of the text, such as font, text color, etc.
 
@@ -3056,7 +3057,7 @@ When the parameter is none, the function will return the current tick and tag of
 
 The first parameter `ticks` is a list of the positions of the X-axis ticks. If the list is empty, the X-axis ticks will be cleared.
 
-The second parameter `labels` is the label of X-axis tick. Only when parameter “ticks” is not none, can this parameter be passed.
+The second parameter `labels` is the label of X-axis tick. Only when parameter "ticks" is not none, can this parameter be passed.
 
 The third parameter `**kwargs` is used to control the appearance of the tick and label.
 
@@ -3072,7 +3073,7 @@ plt.show()
 
 The complete codes of image display part are as follow.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_10/media/image18.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_10/media/image18.png" style="width:500px" />
 
 ### 6.2.11 Image Processing --- Morphological Processing
 
@@ -3090,7 +3091,7 @@ Both erosion and dilation are the basic and important morphological operation, a
 
 **(1) Structuring Element**
 
-Structuring element is required in erosion and dilation. A two-dimensional structuring element can be seen as a two-dimensional matrix element which is “**0**” or “**1**”.
+Structuring element is required in erosion and dilation. A two-dimensional structuring element can be seen as a two-dimensional matrix element which is "**0**" or "**1**".
 
 **(2) Erosion**
 
@@ -3098,15 +3099,15 @@ Erosion works to remove small and meaningless object, and the whole process is d
 
 * Build an image matrix upon the structuring element and determine its origin. Take the element at the upper left corner as the origin, and mark it with dark color.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_11\media\image2.png" style="width:500px" alt="图片1" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_11/media/image2.png" style="width:500px" alt="图片1" />
 
-* Overlay the structuring element on the pending image. If the value of the pixel in the image corresponding to the elements whose value is “**1**” in the structuring elements are all “1”, the pixel at the corresponding position of the origin is assigned as "**1**", otherwise it is "**0**".
+* Overlay the structuring element on the pending image. If the value of the pixel in the image corresponding to the elements whose value is "**1**" in the structuring elements are all "1", the pixel at the corresponding position of the origin is assigned as "**1**", otherwise it is "**0**".
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_11\media\image3.png" style="width:500px" alt="图片2" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_11/media/image3.png" style="width:500px" alt="图片2" />
 
 * Make the structuring elements move on the pending image in order until all the images are processed completely.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_11\media\image4.png" style="width:500px" alt="图片3" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_11/media/image4.png" style="width:500px" alt="图片3" />
 
 **(3) Dilation**
 
@@ -3114,15 +3115,15 @@ Dilation can enlarge the edge of the image and pad the edge of the target object
 
 * Build an image matrix upon the structuring element and determine its origin. Take the element at the upper left corner as the origin, and mark it with dark color.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_11\media\image2.png" style="width:500px" alt="图片1" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_11/media/image2.png" style="width:500px" alt="图片1" />
 
-* Overlay the structuring element on the pending image. If at least one of the value of the pixel in the image corresponding to the elements whose value is “**1**” in the structuring elements is “1”, the pixel at the corresponding position of the origin is assigned as "**1**", otherwise it is "**0**".
+* Overlay the structuring element on the pending image. If at least one of the value of the pixel in the image corresponding to the elements whose value is "**1**" in the structuring elements is "1", the pixel at the corresponding position of the origin is assigned as "**1**", otherwise it is "**0**".
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_11\media\image5.png" style="width:500px" alt="图片4" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_11/media/image5.png" style="width:500px" alt="图片4" />
 
 * Make the structuring elements move on the pending image in order until all the images are processed completely.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_11\media\image6.png" style="width:500px" alt="图片5" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_11/media/image6.png" style="width:500px" alt="图片5" />
 
 **2. Opening and Closing**
 
@@ -3150,35 +3151,35 @@ It is the difference between input image and the image after closing (Top hat op
 
 This routine will perform erosion, dilation, opening, closing, top hat operation and bottom hat operation on the designated image.
 
-Before operation, please copy the routine “**example_org.jpg**” in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.11 Image Processing --- Morphological Processing->Routine Code]()**” to the shared folder.
+Before operation, please copy the routine "**example_org.jpg**" in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.11 Image Processing --- Morphological Processing->Routine Code](https://drive.google.com/drive/folders/1Vivl_Pprqdbv1ggvuNyaswqzaQZVxAex?usp=sharing)**" to the shared folder.
 
 > [!NOTE]
 >
-> **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_11\media\image7.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_11\media\image8.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_11/media/image7.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_11/media/image8.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/Share/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/Share/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/Share/
-   ```
+```bash
+cd /mnt/hgfs/Share/
+```
 
-3. Input command “**python3 morphology operations.py**” and press Enter to run the routine.
+3. Input command "**python3 morphology operations.py**" and press Enter to run the routine.
 
-   ```py
-   python3 morphology operations.py
-   ```
+```bash
+python3 morphology operations.py
+```
 
 * **Program Outcome** 
 
 The final output image is as follow.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_11\media\image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_11/media/image11.png" style="width:500px" />
 
 * **Program Analysis**
 
-The routine “**morphology_operations.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.11 Image Processing---Morphological Processing->Routine Code]()**”.
+The routine "**morphology_operations.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.11 Image Processing---Morphological Processing->Routine Code](https://drive.google.com/drive/folders/1Vivl_Pprqdbv1ggvuNyaswqzaQZVxAex?usp=sharing)**".
 
 ```py
 import cv2
@@ -3229,7 +3230,7 @@ plt.xticks([]), plt.yticks([])
 plt.show()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_11\media\image12.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_11/media/image12.png" style="width:500px" />
 
 **1. Image Processing**
 
@@ -3391,12 +3392,12 @@ The first parameter `nrows` and the second parameter `ncols` respectively are th
 
 The third parameter `index` is the index position. Index starts at 1 in the upper left corner and increases to the right.
 
-When both the row and column are less than “**10**”, these two values can be abbreviated to an integer. For example, the meaning of `subplot(3, 3, 1)` and `subplot(331)` are the same, both representing the image is divided into three rows and three columns, and the subplot is in the first place i.e. 1<sup>st</sup> row, 1<sup>st</sup> column.
+When both the row and column are less than "**10**", these two values can be abbreviated to an integer. For example, the meaning of `subplot(3, 3, 1)` and `subplot(331)` are the same, both representing the image is divided into three rows and three columns, and the subplot is in the first place i.e. 1<sup>st</sup> row, 1<sup>st</sup> column.
 
 * imshow() function is used to set the color of subplot, and its format is as follow.
 
 ```py
-matplotlib.pyplot.imshow(X, cmap=None)
+matplotlib.pyplot.imshow(X, cmap=None)
 ```
 
 The first parameter `X` is the image data.
@@ -3415,9 +3416,9 @@ The second parameter `fontdict` is the property of the font, and the current par
 
 The third parameter `loc` is the position of the title. It can be `left`, `center` or `right`, and `center` by default.
 
-The fourth parameter `pad` is the padding distance (inside margin) between the tile and the subplot, “6.0” by default.
+The fourth parameter `pad` is the padding distance (inside margin) between the tile and the subplot, "6.0" by default.
 
-The fifth parameter “y” is the vertical distance between the title and the subplot, and the unit is the percentage of the height of the subplot. The default value is `None`, that is, the position of the title is automatically determined to avoid overlapping with other elements. "1.0" means the title is at the top of the subplot.
+The fifth parameter "y" is the vertical distance between the title and the subplot, and the unit is the percentage of the height of the subplot. The default value is `None`, that is, the position of the title is automatically determined to avoid overlapping with other elements. "1.0" means the title is at the top of the subplot.
 
 The sixth parameter `**kwargs` is the text object keyword property, which is used to determine the appearance of the text, such as font, text color, etc.
 
@@ -3437,7 +3438,7 @@ matplotlib.pyplot.xticks(ticks=None, labels=None, **kwargs)
 
 The first parameter`ticks` is a list of the positions of the X-axis ticks. If the list is empty, the X-axis ticks will be cleared.
 
-The second parameter `labels` is the label of X-axis tick. Only when parameter “ticks” is not none, can this parameter be passed.
+The second parameter `labels` is the label of X-axis tick. Only when parameter "ticks" is not none, can this parameter be passed.
 
 The third parameter `**kwargs` is used to control the appearance of the tick and label.
 
@@ -3498,20 +3499,20 @@ Global thresholding will process the whole image according to the set threshold.
 
 > [!NOTE]
 >
-> * **Before operation, please copy the routine “threshold_demo.py” and sample picture “test.jpg” in “[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.12 Image Processing --- Thresholding->Routine Code]()” to the shared folder.**
->* **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> * **Before operation, please copy the routine "threshold_demo.py" and sample picture "test.jpg" in "[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.12 Image Processing --- Thresholding->Routine Code](https://drive.google.com/drive/folders/19LleW5YScNfP1TVYmcPgwznS-oXHjrJS?usp=sharing)" to the shared folder.**
+>* **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-(1) Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2/section_12/media/image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2/section_12/media/image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+(1) Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_12/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_12/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-(2) Input command “**cd /mnt/hgfs/share/**” and press Enter to enter the shared folder.
+(2) Input command "**cd /mnt/hgfs/share/**" and press Enter to enter the shared folder.
 
-```py
+```bash
 cd /mnt/hgfs/share/
 ```
 
-(3) Input command “**python3 threshold_demo.py**” and press Enter to run the routine.
+(3) Input command "**python3 threshold_demo.py**" and press Enter to run the routine.
 
-```py
+```bash
 python3 threshold_demo.py
 ```
 
@@ -3519,15 +3520,13 @@ python3 threshold_demo.py
 
 <img class="common_img" src="../_static/media/chapter_6_2/section_12/media/image6.png" style="width:500px" />
 
- 
-
 <img class="common_img" src="../_static/media/chapter_6_2/section_12/media/image7.png" style="width:500px" />
 
 The final output picture is as shown above.
 
 **3. Code Analysis**
 
-The routine “**threshold_demo.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.12 Image Processing --- Thresholding->Routine Code]()**”.
+The routine "**threshold_demo.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.12 Image Processing --- Thresholding->Routine Code](https://drive.google.com/drive/folders/19LleW5YScNfP1TVYmcPgwznS-oXHjrJS?usp=sharing)**".
 
 ```py
 import cv2
@@ -3595,28 +3594,26 @@ Adaptive thresholding is the method where the threshold value is calculated for 
 
 > [!NOTE]
 >
-> * **Before operation, please copy the routine “adaptiveThreshold_demo.py” and sample picture “test.jpg” in “[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.12 Image Processing --- Thresholding->Routine Code]()” to the shared folder.**
->* **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> * **Before operation, please copy the routine "adaptiveThreshold_demo.py" and sample picture "test.jpg" in "[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.12 Image Processing --- Thresholding->Routine Code](https://drive.google.com/drive/folders/19LleW5YScNfP1TVYmcPgwznS-oXHjrJS?usp=sharing)" to the shared folder.**
+>* **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-(1) Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2/section_12/media/image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2/section_12/media/image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+(1) Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_12/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_12/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-(2) Input command “**cd /mnt/hgfs/share/**” and press Enter to enter the shared folder.
+(2) Input command "**cd /mnt/hgfs/share/**" and press Enter to enter the shared folder.
 
-```py
+```bash
 cd /mnt/hgfs/share/
 ```
 
-(3) Input command “**python3 adaptiveThreshold_demo.py**” and press Enter to run the routine.
+(3) Input command "**python3 adaptiveThreshold_demo.py**" and press Enter to run the routine.
 
-```py
+```bash
 python3 adaptiveThreshold_demo.py
 ```
 
 **2. Program Outcome**
 
 <img class="common_img" src="../_static/media/chapter_6_2/section_12/media/image6.png" style="width:500px" />
-
- 
 
 <img class="common_img" src="../_static/media/chapter_6_2/section_12/media/image12.png" style="width:500px" />
 
@@ -3628,7 +3625,7 @@ For a picture with balanced color, its threshold is usually set as 127.
 
 However, when the color of the image is out of balance, setting the threshold as 127 will make the output image bad. Therefore we need to turn to other thresholding methods.
 
-The routine “**adaptiveThreshold_demo.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.12 Image Processing---Thresholding->Routine Code]()**”.
+The routine "**adaptiveThreshold_demo.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.12 Image Processing---Thresholding->Routine Code](https://drive.google.com/drive/folders/19LleW5YScNfP1TVYmcPgwznS-oXHjrJS?usp=sharing)**".
 
 ```py
 import cv2
@@ -3660,7 +3657,7 @@ adaptiveThreshold(src, maxValue, adaptiveMethod, thresholdType, blockSize, C)
 
 1)  The first parameter `src` refers to the pending image.
 
-2)  The second parameter `maxValue` will be set only when the type is “cv2.THRESH_BINARY” or “cv2.THRESH_BINARY_INV”. It refers to the new value assigned when the gray values of the picture pixels are greater (smaller) than the threshold
+2)  The second parameter `maxValue` will be set only when the type is "cv2.THRESH_BINARY" or "cv2.THRESH_BINARY_INV". It refers to the new value assigned when the gray values of the picture pixels are greater (smaller) than the threshold
 
 3)  The third parameter `adaptiveMethod` decides how the adaptive threshold value is calculated. And the specific methods are as follow.
 
@@ -3670,13 +3667,13 @@ adaptiveThreshold(src, maxValue, adaptiveMethod, thresholdType, blockSize, C)
 
 4. The fourth parameter `thresholdType` indicates the type of the thresholding, which is combined with **maxValue** to use. This parameter only can be set as **cv2.THRESH_BINARY** or **cv2.THRESH_BINARY_INV**.
 
-5. The fifth parameter “**blockSize**” represents the size of the neighbour area. It is generally set as 3, 5, 7, ect.
+5. The fifth parameter "**blockSize**" represents the size of the neighbour area. It is generally set as 3, 5, 7, ect.
 
-6. The sixth parameter “**C**” is a constant. The threshold is mean or weight value minus this constant.
+6. The sixth parameter "**C**" is a constant. The threshold is mean or weight value minus this constant.
 
-   <img class="common_img" src="../_static/media/chapter_6_2/section_12/media/image10.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_12/media/image10.png" style="width:500px" />
 
-   **Display image:** Call imshow function to display image and the parameter in bracket refers to the title of the window and displayed image.
+**Display image:** Call imshow function to display image and the parameter in bracket refers to the title of the window and displayed image.
 
 **Close window:** waitKey function will wait until the keyboard is pressed, and then execute destroyAllWindows function to close the window.
 
@@ -3688,28 +3685,26 @@ Appropriate threshold will be automatically calculated.
 
 > [!NOTE]
 >
-> * **Before operation, please copy the routine “Otsu_demo.py” and sample picture “test.jpg” in “[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.12 Image Processing --- Thresholding-\>Routine Code]()” to the shared folder.**
->* **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> * **Before operation, please copy the routine "Otsu_demo.py" and sample picture "test.jpg" in "[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.12 Image Processing --- Thresholding-\>Routine Code](https://drive.google.com/drive/folders/19LleW5YScNfP1TVYmcPgwznS-oXHjrJS?usp=sharing)" to the shared folder.**
+>* **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2/section_12/media/image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2/section_12/media/image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_12/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_12/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/share/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/share/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/share/
-   ```
+```bash
+cd /mnt/hgfs/share/
+```
 
-3. Input command “**python3 Otsu_demo.py**” and press Enter to run the routine.
+3. Input command "**python3 Otsu_demo.py**" and press Enter to run the routine.
 
-   ```py
-   python3 Otsu_demo.py
-   ```
+```bash
+python3 Otsu_demo.py
+```
 
 **2. Program Outcome**
 
 <img class="common_img" src="../_static/media/chapter_6_2/section_12/media/image6.png" style="width:500px" />
-
- 
 
 <img class="common_img" src="../_static/media/chapter_6_2/section_12/media/image16.png" style="width:500px" />
 
@@ -3719,7 +3714,7 @@ The final output picture is as above.
 
 The Otsu thresholding, also known as the maximum inter-class variance method, is a method where the inter-class variance is calculated by assigning pixels into two or more classes. When the variance reaches the maximum value, the class dividing line i.e. the gray value is used as the image segmentation threshold.
 
-The routine “**Otsu_demo.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2 Basic Course->6.2.12 Image Processing---Thresholding-\>Routine Code]()**”.
+The routine "**Otsu_demo.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2 Basic Course->6.2.12 Image Processing---Thresholding-\>Routine Code](https://drive.google.com/drive/folders/19LleW5YScNfP1TVYmcPgwznS-oXHjrJS?usp=sharing)**".
 
 ```py
 import cv2
@@ -3735,9 +3730,9 @@ cv2.destroyAllWindows()
 
 <img class="common_img" src="../_static/media/chapter_6_2/section_12/media/image17.png" style="width:500px" />
 
-Otsu thresholding is to pass a parameter “**cv2.THRESH_OTSU**” in the parameter type of **threshold** function, so as to realize Otsu threshold segmentation.
+Otsu thresholding is to pass a parameter "**cv2.THRESH_OTSU**" in the parameter type of **threshold** function, so as to realize Otsu threshold segmentation.
 
-**In** **cv2.threshold(img, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)**，parameter thresh needs to set as 0, and parameter type should be set as “**cv2.THRESH_BINARY+cv2.THRESH_OTSU**”
+**In** **cv2.threshold(img, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)**，parameter thresh needs to set as 0, and parameter type should be set as "**cv2.THRESH_BINARY+cv2.THRESH_OTSU**"
 
 ### 6.2.13 Image Processing---Contour Introduction and Feature
 
@@ -3755,32 +3750,32 @@ After the object is found, search for the contour points and draw the contour.
 
 > [!NOTE]
 >
-> * **Before operation, please copy the routine “contours_demo.py” and sample picture “test.jpg” in “[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing --- Contour Introduction and Feature->Routine Code]()” to the shared folder.**
->* **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> * **Before operation, please copy the routine "contours_demo.py" and sample picture "test.jpg" in "[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing --- Contour Introduction and Feature->Routine Code](https://drive.google.com/drive/folders/1maM2qxfOxm8J5n4PhXUCAMZgmnayBkao?usp=sharing)" to the shared folder.**
+>* **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_13/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_13/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/share/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/share/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/share/
-   ```
+```bash
+cd /mnt/hgfs/share/
+```
 
-3. Input command “**python3 contours_demo.py**” and press Enter to run the routine.
+3. Input command "**python3 contours_demo.py**" and press Enter to run the routine.
 
-   ```py
-   python3 contours_demo.py
-   ```
+```bash
+python3 contours_demo.py
+```
 
 **2. Program Outcome**
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_13/media/image6.png" style="width:500px" />
 
 The final output picture is as above.
 
 **3. Code Analysis**
 
-The routine “**contours_demo.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing --- Contour Introduction and Feature->Routine Code]()**”.
+The routine "**contours_demo.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing --- Contour Introduction and Feature->Routine Code](https://drive.google.com/drive/folders/1maM2qxfOxm8J5n4PhXUCAMZgmnayBkao?usp=sharing)**".
 
 ```py
 import cv2
@@ -3794,7 +3789,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_13/media/image7.png" style="width:500px" />
 
 **Import Module**：Import cv2 module
 
@@ -3816,13 +3811,13 @@ threshold(src, thresh, maxval, type)
 
 2. The second parameter `thresh` is the set threshold.
 
-3. The third parameter `maxval` will be set only when the type is `THRESH_BINARY` or “**THRESH_BINARY_INV**”. It refers to the new value assigned when the gray values of the picture pixels are greater (smaller) than the threshold
+3. The third parameter `maxval` will be set only when the type is `THRESH_BINARY` or "**THRESH_BINARY_INV**". It refers to the new value assigned when the gray values of the picture pixels are greater (smaller) than the threshold
 
 4. The fourth parameter `type`represents the type of thresholding. cv2.THRESH_BINARY indicates the part greater than threshold is set as maxval, otherwise 0
 
-   ```py
-   binary,contours, hierarchy = cv2.findContours(img2, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-   ```
+```py
+binary,contours, hierarchy = cv2.findContours(img2, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+```
 
 **Search for contour:** **findContours** function is employed to search the contour, and the specific format and parameters are as follow.
 
@@ -3850,7 +3845,7 @@ findContours(img,mode,method)
 
 > [!NOTE]
 >
-> **In OpenCV4.2 or above, this function will only return two values, including “contours” and “hierarchy”. And “binary” will not be returned.**
+> **In OpenCV4.2 or above, this function will only return two values, including "contours" and "hierarchy". And "binary" will not be returned.**
 
 ```py
 img3 = cv2.drawContours(img, contours, -1, (0,255,255), 3)
@@ -3890,32 +3885,32 @@ It includes two-order Hu moment: nu20, nu11 and nu02, and three-order Hu moment:
 
 > [!NOTE]
 >
-> * **Before operation, please copy the routine “moments_demo.py” and sample picture “test.jpg” in “[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing --- Contour Introduction and Feature->Routine Code]()” to the shared folder.**
->* **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> * **Before operation, please copy the routine "moments_demo.py" and sample picture "test.jpg" in "[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing --- Contour Introduction and Feature->Routine Code](https://drive.google.com/drive/folders/1maM2qxfOxm8J5n4PhXUCAMZgmnayBkao?usp=sharing)" to the shared folder.**
+>* **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_13/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_13/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/share/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/share/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/share/
-   ```
+```bash
+cd /mnt/hgfs/share/
+```
 
-3. Input command “**python3 moments_demo.py**” and press Enter to run the routine.
+3. Input command "**python3 moments_demo.py**" and press Enter to run the routine.
 
-   ```py
-   python3 moments_demo.py
-   ```
+```bash
+python3 moments_demo.py
+```
 
 **2. Program Outcome**
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image12.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_13/media/image12.png" style="width:500px" />
 
 The unit of the area and perimeter is pixel. The outermost contour of the image will be calculated
 
 **3. Code Analysis** 
 
-The routine “**moments_demo.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing --- Contour Introduction and Feature->Routine Code]()**”.
+The routine "**moments_demo.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing --- Contour Introduction and Feature->Routine Code](https://drive.google.com/drive/folders/1maM2qxfOxm8J5n4PhXUCAMZgmnayBkao?usp=sharing)**".
 
 ```py
 import cv2
@@ -3932,7 +3927,7 @@ print("面积：",area)
 print("周长：",perimeter)
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image13.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_13/media/image13.png" style="width:500px" />
 
 **Take out the outermost contour:** take the first contour with index 0 in the contour list
 
@@ -3950,13 +3945,13 @@ moments(array,binaryImage)
 
 2. The second parameter `binaryImage` is set as False by default. If it is True, all non-zero pixels will be treated as 1, which is equivalent to image binaryzation.
 
-   ```py
-   m=cv2.moments(cnt)
-   ```
+```py
+m=cv2.moments(cnt)
+```
 
 Area calculation: adopt `countourArea` function to calculate the area, and its format and parameters are as follow.
 
-**countourArea(contour):** “**contour**” is a contour in the contour list.
+**countourArea(contour):** "**contour**" is a contour in the contour list.
 
 ```py
 area=cv2.contourArea(cnt)
@@ -3972,13 +3967,13 @@ arcLength(curve,closed)
 
 2. The second parameter `closed` decide whether the contour is closed or not. If it is closed, set is as `True`, otherwise False.
 
-   ```py
-   perimeter=cv2.arcLength(cnt,True)
-   ```
+```py
+perimeter=cv2.arcLength(cnt,True)
+```
 
 * **Polygon Approximation**
 
-The searched “contours” maybe too complex and not smooth, approxPolyDP function can be adopted to appropriately approximate the polygon curve, which is polygon approximation.
+The searched "contours" maybe too complex and not smooth, approxPolyDP function can be adopted to appropriately approximate the polygon curve, which is polygon approximation.
 
 This function uses polygons to approximate the contour, utilizing the Douglas-Peucker algorithm (DP). The principle of the DP algorithm is simple. Its core is to continuously find the farthest point of the polygon to form a new polygon until the shortest distance is less than the specified accuracy.
 
@@ -3988,32 +3983,32 @@ Next, analyze the object contour with polygon approximation.
 
 > [!NOTE]
 >
-> * **Before operation, please copy the routine “approx_demo.py” and sample picture “test.jpg” in “[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing --- Contour Introduction and Feature->Routine Code]()” to the shared folder.**
->* **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> * **Before operation, please copy the routine "approx_demo.py" and sample picture "test.jpg" in "[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing --- Contour Introduction and Feature->Routine Code](https://drive.google.com/drive/folders/1maM2qxfOxm8J5n4PhXUCAMZgmnayBkao?usp=sharing)" to the shared folder.**
+>* **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_13/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_13/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/share/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/share/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/share/
-   ```
+```bash
+cd /mnt/hgfs/share/
+```
 
-3. Input command “**python3 approx_demo.py**” and press Enter to run the routine.
+3. Input command "**python3 approx_demo.py**" and press Enter to run the routine.
 
-   ```py
-   python3 approx_demo.py
-   ```
+```bash
+python3 approx_demo.py
+```
 
 **2. Program Outcome** 
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image19.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_13/media/image19.png" style="width:500px" />
 
 The contour after polygon approximation will try to fit the figure as much as possible.
 
 **3. Code Analysis**
 
-The routine “**approx_demo.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing---Contour Introduction and Feature->Routine Code]()**”.
+The routine "**approx_demo.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing---Contour Introduction and Feature->Routine Code](https://drive.google.com/drive/folders/1maM2qxfOxm8J5n4PhXUCAMZgmnayBkao?usp=sharing)**".
 
 ```py
 import cv2
@@ -4029,7 +4024,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image20.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_13/media/image20.png" style="width:500px" />
 
 **Take the contour:** take the second contour with index 1 in the contour list
 
@@ -4049,9 +4044,9 @@ apporxPolyDP(curve, epsilon, closed)
 
 3. The third parameter `closed` decide whether the contour is closed or not. If it is closed, set is as `True`, otherwise False.
 
-   ```py
-   approxl=cv2.approxPolyDP(cnt,20,True)
-   ```
+```py
+approxl=cv2.approxPolyDP(cnt,20,True)
+```
 
 * **Contour Convex Hull**
 
@@ -4063,32 +4058,32 @@ Next, analyze the object contour through contour convex hull.
 
 > [!NOTE]
 >
-> * **Before operation, please copy the routine “hull_demo.py” and sample picture “test.jpg” in “[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing --- Contour Introduction and Feature-\>Routine Code]()” to the shared folder.**
->* **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> * **Before operation, please copy the routine "hull_demo.py" and sample picture "test.jpg" in "[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing --- Contour Introduction and Feature-\>Routine Code](https://drive.google.com/drive/folders/1maM2qxfOxm8J5n4PhXUCAMZgmnayBkao?usp=sharing)" to the shared folder.**
+>* **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_13/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_13/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/share/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/share/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/share/
-   ```
+```bash
+cd /mnt/hgfs/share/
+```
 
-3. Input command “**python3 hull_demo.py**” and press Enter to run the routine.
+3. Input command "**python3 hull_demo.py**" and press Enter to run the routine.
 
-   ```py
-   python3 hull_demo.py
-   ```
+```bash
+python3 hull_demo.py
+```
 
 **2. Program Outcome**
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image24.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_13/media/image24.png" style="width:500px" />
 
 The convex hull will connect the vertices of the contour.
 
 **3. Code Analysis**
 
-The routine “**hull_demo.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing---Contour Introduction and Feature->Routine Code]()**”
+The routine "**hull_demo.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing---Contour Introduction and Feature->Routine Code](https://drive.google.com/drive/folders/1maM2qxfOxm8J5n4PhXUCAMZgmnayBkao?usp=sharing)**"
 
 ```py
 import cv2
@@ -4104,7 +4099,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image25.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_13/media/image25.png" style="width:500px" />
 
 **Convex hull:** use **convexHull** function to draw the convex hull. The function format and parameters are as follow.
 
@@ -4116,9 +4111,9 @@ convexHull(points, clockwise,)
 
 2. The second parameter `clockwise` refers to the drawing direction. When it is True, the convex hull will be draw clockwise. When it is False, the convex hull will be drawn counterclockwise.
 
-   ```py
-   hull=cv2.convexHull(cnt,True)
-   ```
+```py
+hull=cv2.convexHull(cnt,True)
+```
 
 * **Circumscribed Rectangle**
 
@@ -4134,32 +4129,32 @@ Next, draw the regular bounding rectangle and minimum bounding rectangle.
 
 > [!NOTE]
 >
-> * **Before operation, please copy the routine “rect_demo.py” and sample picture “test.jpg” in “[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing --- Contour Introduction and Feature->Routine Code]()” to the shared folder.**
->* **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> * **Before operation, please copy the routine "rect_demo.py" and sample picture "test.jpg" in "[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing --- Contour Introduction and Feature->Routine Code](https://drive.google.com/drive/folders/1maM2qxfOxm8J5n4PhXUCAMZgmnayBkao?usp=sharing)" to the shared folder.**
+>* **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_13/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_13/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/share/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/share/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/share/
-   ```
+```bash
+cd /mnt/hgfs/share/
+```
 
-3. Input command “**python3 rect_demo.py**” and press Enter to run the routine.
+3. Input command "**python3 rect_demo.py**" and press Enter to run the routine.
 
-   ```py
-   python3 rect_demo.py
-   ```
+```bash
+python3 rect_demo.py
+```
 
 **2. Program Outcome**
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image28.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_13/media/image28.png" style="width:500px" />
 
 The green one is the regular bounding rectangle, and the blue one is the minimum bounding rectangle.
 
 **3. Code Analysis**
 
-The routine “**rect_demo.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing---Contour Introduction and Feature->Routine Code]()**”
+The routine "**rect_demo.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.13 Image Processing---Contour Introduction and Feature->Routine Code](https://drive.google.com/drive/folders/1maM2qxfOxm8J5n4PhXUCAMZgmnayBkao?usp=sharing)**"
 
 ```py
 import cv2
@@ -4180,19 +4175,19 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_13\media\image29.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_13/media/image29.png" style="width:500px" />
 
 **Acquire minimum bounding rectangle:** adopt **minAreaRect** function to get the minimum bounding rectangle. And the function format and parameters are as follow.
 
-**minAreaRect( points ): “points”** refers to contour, and the returned value contains the starting coordinate, width, height and angle.
+**minAreaRect( points ): "points"** refers to contour, and the returned value contains the starting coordinate, width, height and angle.
 
 ```py
 RotatedRect=cv2.minAreaRect(cnt)
 ```
 
-**Obtain the regular bounding rectangle:** use “**boundingRect”** function to realize. The function format and parameters are as follow.
+**Obtain the regular bounding rectangle:** use "**boundingRect"** function to realize. The function format and parameters are as follow.
 
-**boundingRect（array):** “**array**” refers to contour and the returned value “**Rect**” contains the starting coordinate, width and height.
+**boundingRect（array):** "**array**" refers to contour and the returned value "**Rect**" contains the starting coordinate, width and height.
 
 ```py
 x,y,w,h=cv2.boundingRect(cnt)
@@ -4208,7 +4203,7 @@ box=cv2.boxPoints(RotatedRect)
 
 **Number rounding:** use **int0** function to execute. The function format and parameters are as follow.
 
-**int0(date):** “date” is the data to be rounded.
+**int0(date):** "date" is the data to be rounded.
 
 ```py
 box=np.int0(box)
@@ -4228,13 +4223,13 @@ rectangle(src,pt1,pt2,color,thickness)
 
 4)  The fourth parameter `color` represents the color of the rectangle.
 
-5)  The fifth parameter `thickness` represents the width of the drawn rectangle. “-1” indicates padding rectangle.
+5)  The fifth parameter `thickness` represents the width of the drawn rectangle. "-1" indicates padding rectangle.
 
 ```py
 img4=cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),3)
 ```
 
-### 6.2.14 Image Processing---**Feature Matching**
+### 6.2.14 Image Processing---Feature Matching
 
 * **Brute-Force Matching**
 
@@ -4248,32 +4243,32 @@ Next, use brute force matching to match the features of the two images.
 
 > [!NOTE]
 >
-> * **Before operation, please copy the routine “bf_demo.py” and sample picture “test.jpg” in “[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.14 Image Processing --- Feature Matching->Routine Code]()” to the shared folder.**
->* **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> * **Before operation, please copy the routine "bf_demo.py" and sample picture "test.jpg" in "[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.14 Image Processing --- Feature Matching->Routine Code](https://drive.google.com/drive/folders/1MO7ZXI0ma7kLCiwfxNNN2ZbI7xQGlseO?usp=sharing)" to the shared folder.**
+>* **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_14\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_14\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_14/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_14/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/share/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/share/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/share/
-   ```
+```bash
+cd /mnt/hgfs/share/
+```
 
-3. Input command “**python3 bf_demo.py**” and press Enter to run the routine.
+3. Input command "**python3 bf_demo.py**" and press Enter to run the routine.
 
-   ```py
-   python3 bf_demo.py
-   ```
+```bash
+python3 bf_demo.py
+```
 
 **2. Program Outcome**
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_14\media\image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_14/media/image6.png" style="width:500px" />
 
 Take out one part of the original image, and then match features between these two images.
 
 **3. Code Analysis**
 
-The routine “**bf_demo.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.14 Image Processing --- Feature Matching->Routine Code]()**”.
+The routine "**bf_demo.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.14 Image Processing --- Feature Matching->Routine Code](https://drive.google.com/drive/folders/1MO7ZXI0ma7kLCiwfxNNN2ZbI7xQGlseO?usp=sharing)**".
 
 ```py
 import cv2
@@ -4302,7 +4297,7 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_14\media\image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_14/media/image7.png" style="width:500px" />
 
 **Import Module**：Import cv2 module
 
@@ -4325,40 +4320,40 @@ detectAndCompute(src,mask)
 
 2. The second parameter `mask` is the image in which the object is black and the rest is white. If the mask is not required, set the parameter as None.
 
-   ```py
-   kp1, des1 = orb.detectAndCompute(img1,None)
-   kp2, des2 = orb.detectAndCompute(img2,None)
-   ```
+```py
+kp1, des1 = orb.detectAndCompute(img1,None)
+kp2, des2 = orb.detectAndCompute(img2,None)
+```
 
 **Create BFMatcher object:** BFMatcher belongs to features2d module and inherits from DescriptorMatcher. The function format is as follow.
 
 **static Ptr\<BFMatcher\> create( int normType , bool crossCheck )**
 
-1. The first parameter “**normType**” can be set as NORM_L1, NORM_L2, NORM_HAMMING or NORM_HAMMING2. The HOG descriptors of SIFT and SURF correspond to the Euclidean distances L1 and L2; the BRIEF descriptors of ORB and BRISK correspond to the Hamming distance HAMMING; HAMMING2 corresponds to the ORB algorithm when WTA_K = 3 or 4.
+1. The first parameter "**normType**" can be set as NORM_L1, NORM_L2, NORM_HAMMING or NORM_HAMMING2. The HOG descriptors of SIFT and SURF correspond to the Euclidean distances L1 and L2; the BRIEF descriptors of ORB and BRISK correspond to the Hamming distance HAMMING; HAMMING2 corresponds to the ORB algorithm when WTA_K = 3 or 4.
 
 2. **Euclidean distance:** it is defined as the distance between two points in n-dimensional space.
 
-   <img class="common_img" src="../_static/media/chapter_6_2\section_14\media\image10.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_14/media/image10.png" style="width:500px" />
 
 Hamming distance: It is computer's XOR operation suitable for binary string descriptors, such as BRIEF descriptors. Its definition is as follow.
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_14\media\image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_14/media/image11.png" style="width:500px" />
 
 3. The second parameter `crossCheck` is set as `FALSE` by default. If set as TRUE, the matching is valid only when the features in the two groups match with each other. In other words, only when the x point descriptor in group A and the y point in group B are the best matching points for each other, the matching is effective.
 
-   ```py
-   bf = cv2.BFMatcher_create(cv2.NORM_HAMMING, crossCheck=True)
-   ```
+```py
+bf = cv2.BFMatcher_create(cv2.NORM_HAMMING, crossCheck=True)
+```
 
 **Match descriptor:** **detectAndCompute** function will be adopted, and its specific format and parameters are as follow. **match(queryDescriptors,trainDescriptors)**
 
-1. The first parameter “**queryDescriptors**” is the image feature vector to be matched.
+1. The first parameter "**queryDescriptors**" is the image feature vector to be matched.
 
-2. The second parameter “**trainDescriptors**” is the image feature vector that needs to be matched.
+2. The second parameter "**trainDescriptors**" is the image feature vector that needs to be matched.
 
-   ```py
-   matches = bf.match(des1,des2)
-   ```
+```py
+matches = bf.match(des1,des2)
+```
 
 **Draw matches:** **drawMatches** function will used. The specific format and parameters are as follow.
 
@@ -4380,19 +4375,19 @@ drawMatches(src1,kp1,src2,kp2,match,matchesMask,flags)
 
 7. The seventh parameter `flags` represents the drawing flag. 0 indicates that all the features will be drawn, and 2 indicates that only the matched feature will be drawn. 4 stands for the drawing styles.
 
-   ```py
-   img3 = cv2.drawMatches(img1, kp1, img2, kp2, matches[:10], None, flags=2)
-   ```
+```py
+img3 = cv2.drawMatches(img1, kp1, img2, kp2, matches[:10], None, flags=2)
+```
 
-   **Display image**：Call imshow function to display image and the parameter in bracket refers to the title of the window and displayed image.
+**Display image**：Call imshow function to display image and the parameter in bracket refers to the title of the window and displayed image.
 
-   **Close window**: waitKey function will wait until the keyboard is pressed, and then execute destroyAllWindows function to close the window.
+**Close window**: waitKey function will wait until the keyboard is pressed, and then execute destroyAllWindows function to close the window.
 
-   ```py
-   cv2.imshow("show",img3)
-   cv2.waitKey()
-   cv2.destroyAllWindows()
-   ```
+```py
+cv2.imshow("show",img3)
+cv2.waitKey()
+cv2.destroyAllWindows()
+```
 
 * **Nearest Neighbor Matching**
 
@@ -4406,30 +4401,30 @@ Next, adopt nearest neighbor matching to match the features of the two images.
 
 > [!NOTE]
 >
-> * **Before operation, please copy the routine “flann_demo.py” and sample pictures “test.jpg” and “test1.jpg” in “[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.14 Image Processing --- Feature Matching->Routine Code]()” to the shared folder.**
->* **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
+> * **Before operation, please copy the routine "flann_demo.py" and sample pictures "test.jpg" and "test1.jpg" in "[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.14 Image Processing --- Feature Matching->Routine Code](https://drive.google.com/drive/folders/1MO7ZXI0ma7kLCiwfxNNN2ZbI7xQGlseO?usp=sharing)" to the shared folder.**
+>* **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_14\media\image2.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_14\media\image3.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_14/media/image2.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_14/media/image3.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-2. Input command “**cd /mnt/hgfs/share/**” and press Enter to enter the shared folder.
+2. Input command "**cd /mnt/hgfs/share/**" and press Enter to enter the shared folder.
 
-   ```py
-   cd /mnt/hgfs/share/
-   ```
+```bash
+cd /mnt/hgfs/share/
+```
 
-3. Input command “**python3 flann_demo.py**” and press Enter to run the routine.
+3. Input command "**python3 flann_demo.py**" and press Enter to run the routine.
 
-   ```py
-   python3 flann_demo.py
-   ```
+```bash
+python3 flann_demo.py
+```
 
 **2. Program Outcome**
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_14\media\image17.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_14/media/image17.png" style="width:500px" />
 
 **3. Code Analysis**
 
-The routine “**flann_demo.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course-\>6.2.14 Image Processing---Feature Matching->Routine Code]()**”.
+The routine "**flann_demo.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course-\>6.2.14 Image Processing---Feature Matching->Routine Code](https://drive.google.com/drive/folders/1MO7ZXI0ma7kLCiwfxNNN2ZbI7xQGlseO?usp=sharing)**".
 
 ```py
 import numpy as np
@@ -4462,26 +4457,26 @@ cv.waitKey()
 cv.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_14\media\image18.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_14/media/image18.png" style="width:500px" />
 
 **Set** **FLANN parameter**: FlannBasedMatcher function will be adopted. And its format and parameters are as follow.
 
 FlannBasedMatcher（IndexParams,SearchParams）(The two parameters in the bracket refers to the type of the dictionary)
 
-1. The first parameter “**IndexParams**” the algorithm designated to use.
+1. The first parameter "**IndexParams**" the algorithm designated to use.
 
 2. The second parameter "**SearchParams**" is the number of times the tree in the specified index should be traversed recursively. Higher values provide better accuracy, but also take more time.
 
-   ```py
-   index_params= dict(algorithm = FLANN_INDEX_LSH,
-                      table_number = 6, # 12
-                      key_size = 12,     # 20
-                      multi_probe_level = 1) #2
-   search_params = dict(checks=50)   # transfer a empty dictionary
-   flann = cv.FlannBasedMatcher(index_params,search_params)
-   ```
+```py
+index_params= dict(algorithm = FLANN_INDEX_LSH,
+                   table_number = 6, # 12
+                   key_size = 12,     # 20
+                   multi_probe_level = 1) #2
+search_params = dict(checks=50)   # transfer a empty dictionary
+flann = cv.FlannBasedMatcher(index_params,search_params)
+```
 
-   Nearest neighbor matching: knnMathch function will be used, And the function format and parameters are as follow.
+Nearest neighbor matching: knnMathch function will be used, And the function format and parameters are as follow.
 
 knnMathch(**queryDescriptors,trainDescriptors,k**)
 
@@ -4503,31 +4498,31 @@ The corner is defined as the intersection of two edges, or a feature with two ma
 
 Define a tiny local window in the image, then move this window in all directions, which will leads to three results, including flat areas, edges and corners.
 
-1. If the image intensity of window doesn’t change as the window is moving in all directions, inside the window are all flat areas, and corner isn’t involved.
+1. If the image intensity of window doesn't change as the window is moving in all directions, inside the window are all flat areas, and corner isn't involved.
 
-   <img class="common_img" src="../_static/media/chapter_6_2\section_15\media\image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_15/media/image2.png" style="width:500px" />
 
-2. If the image intensity of window change greatly as the window is moving in one (some) direction(s), but keeps still in other directions, there maybe “edges” inside the window.
+2. If the image intensity of window change greatly as the window is moving in one (some) direction(s), but keeps still in other directions, there maybe "edges" inside the window.
 
-   <img class="common_img" src="../_static/media/chapter_6_2\section_15\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_15/media/image3.png" style="width:500px" />
 
-3. f the image intensity of window change greatly in all direction, there maybe “corners” inside the window.
+3. f the image intensity of window change greatly in all direction, there maybe "corners" inside the window.
 
-   <img class="common_img" src="../_static/media/chapter_6_2\section_15\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_15/media/image4.png" style="width:500px" />
 
 **3. Harris Corner Detection Formula**
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_15\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_15/media/image5.png" style="width:500px" />
 
 And：
 
-1. **det(M)= λ1λ2**。
+1. **det(M)=λ1λ2**。
 
-2. **trace(M)= λ1+ λ2**。
+2. **trace(M)=λ1+λ2**。
 
 3. **λ1 and λ2 are the feature values of the moment M.**
 
-   The region type can be judged based on these features:
+The region type can be judged based on these features:
 
 When \|R\| is small, which happens when λ1 and λ2 are small, the region is flat.
 
@@ -4541,31 +4536,32 @@ Next, detect the corners of the image through Harris corner detection.
 
 > [!NOTE]
 >
-> * **Before operation, please copy the routine “corners_demo.py” and sample pictures “test.jpg” in “[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.15 Image Processing --- Corner Detection-\>Routine Code]()” to the shared folder.**
-> * **The input command should be case sensitive and the keywords can be complemented by “Tab” key.**
-1. Open virtual machine and start the system. Click “<img class="common_img" src="../_static/media/chapter_6_2\section_15\media\image6.png" style="width:50px" />”, and then “<img class="common_img" src="../_static/media/chapter_6_2\section_15\media\image7.png" style="width:50px" />” or press “**Ctrl+Alt+T**” to open command line terminal.
+> * **Before operation, please copy the routine "corners_demo.py" and sample pictures "test.jpg" in "[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.15 Image Processing --- Corner Detection-\>Routine Code](https://drive.google.com/drive/folders/1OOeUAELKOgvvTszAe_XnTYwwhQBk_FxD?usp=sharing)" to the shared folder.**
+> * **The input command should be case sensitive and the keywords can be complemented by "Tab" key.**
 
-2. Input command “**cd /mnt/hgfs/share/**” and press Enter to enter the shared folder.
+1. Open virtual machine and start the system. Click "<img src="../_static/media/chapter_6_2/section_15/media/image6.png" style="width:50px" />", and then "<img src="../_static/media/chapter_6_2/section_15/media/image7.png" style="width:50px" />" or press "**Ctrl+Alt+T**" to open command line terminal.
 
-   ```py
-   cd /mnt/hgfs/share/
-   ```
+2. Input command "**cd /mnt/hgfs/share/**" and press Enter to enter the shared folder.
 
-3. Input command “**python3 bf_demo.py**” and press Enter to run the routine.
+```bash
+cd /mnt/hgfs/share/
+```
 
-   ```py
-   python3 bf_demo.py
-   ```
+3. Input command "**python3 bf_demo.py**" and press Enter to run the routine.
 
-   <img class="common_img" src="../_static/media/chapter_6_2\section_15\media\image9.png" style="width:500px" />
+```bash
+python3 bf_demo.py
+```
+
+<img class="common_img" src="../_static/media/chapter_6_2/section_15/media/image9.png" style="width:500px" />
 
 * **Program Outcome**
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_15\media\image10.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_15/media/image10.png" style="width:500px" />
 
 * **Code Analysis**
 
-The routine “**corners_demo.py**” can be found in “**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.15 Image Processing --- Corner Detection->Routine Code]()**”
+The routine "**corners_demo.py**" can be found in "**[6. OpenCV Computer Vision Course->6.2 Basic Course->6.2.15 Image Processing --- Corner Detection->Routine Code](https://drive.google.com/drive/folders/1OOeUAELKOgvvTszAe_XnTYwwhQBk_FxD?usp=sharing)**"
 
 ```py
 import numpy as np
@@ -4600,111 +4596,111 @@ cv.waitKey(0)
 cv.destroyAllWindows()
 ```
 
-<img class="common_img" src="../_static/media/chapter_6_2\section_15\media\image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_6_2/section_15/media/image11.png" style="width:500px" />
 
 1. **Import Module:** Import cv2 and nmupy module.
 
-   ```py
-   gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
-   ```
+```py
+gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
+```
 
 2. **Create corner detection function：harris(image)：the parameter in the bracket is the image that needs to process**
 
 3. **color space conversion**：**cvtColor(src,mode)**
 
-   The first parameter `src` refers to the image to convert.
+The first parameter `src` refers to the image to convert.
 
-   The second parameter `mode` is the conversion mode of the color space.
+The second parameter `mode` is the conversion mode of the color space.
 
-   ```py
+```py
    dst = cv.cornerHarris(gray, blockSize, apertureSize, k)
-   ```
+```
 
 4. Corner Detection：**cornerHarris(src,blockSize,apertureSize,k)**
 
-   The first parameter `src` is the image for detection.
+The first parameter `src` is the image for detection.
 
-   The second parameter `blockSize` is the size of the domain pixel.
+The second parameter `blockSize` is the size of the domain pixel.
 
-   The third parameter `apertureSize` is the size of the used window.
+The third parameter `apertureSize` is the size of the used window.
 
-   The fourth parameter `k` is a free parameter ranging \[0.04，0.06\].
+The fourth parameter `k` is a free parameter ranging \[0.04，0.06\].
 
-   ```py
-   dst_norm = np.empty(dst.shape, dtype=np.float32)
-   ```
+```py
+dst_norm = np.empty(dst.shape, dtype=np.float32)
+```
 
 5. **Acquire the array of the same type：empty(shape,dtype)**
 
-   The first parameter `shape` represents the shape of the returned array defined by the integer or a tuple of integers.
+The first parameter `shape` represents the shape of the returned array defined by the integer or a tuple of integers.
 
-   The second parameter `dtype` refers to the data type defining the type of the returned array.
+The second parameter `dtype` refers to the data type defining the type of the returned array.
 
-   ```py
-   cv.normalize(dst, dst_norm, alpha=0, beta=255, norm_type=cv.NORM_MINMAX)
-   ```
+```py
+cv.normalize(dst, dst_norm, alpha=0, beta=255, norm_type=cv.NORM_MINMAX)
+```
 
 6. **Normalization:** Normalization is to process the data and then limit within the required range. The size of the output image of Harris corner detection after normalization is the same as the original image. Pixel value of each point corresponds to the probability that the point is corner. The greater the value, the more likely it is a corner.
 
-   ```py
-   Function format: normalize(src,dst,alpha,beta,normType)
-   ```
+```py
+Function format: normalize(src,dst,alpha,beta,normType)
+```
 
-   The first parameter `src` is the input array.
+The first parameter `src` is the input array.
 
-   The second parameter `dst` is the output array after processing.
+The second parameter `dst` is the output array after processing.
 
-   The third parameter `alpha` is the minimum value of normalization
+The third parameter `alpha` is the minimum value of normalization
 
-   The fourth parameter `beta` is the maximum value of normalization
+The fourth parameter `beta` is the maximum value of normalization
 
-   The fifth parameter `normType` indicates the types of normalization as below.
+The fifth parameter `normType` indicates the types of normalization as below.
 
-   (1\) NORM_MINMAX: The value of the array is translated or scaled to a specified range. Linearly normalized is commonly used.
+(1\) NORM_MINMAX: The value of the array is translated or scaled to a specified range. Linearly normalized is commonly used.
 
-   (2\) NORM_INF: it is the C-norm of the normalized array (the maximum value of the absolute value)
+(2\) NORM_INF: it is the C-norm of the normalized array (the maximum value of the absolute value)
 
-   (3\) NORM_L1: L1-norm of the normalized array (sum of absolute values)
+(3\) NORM_L1: L1-norm of the normalized array (sum of absolute values)
 
-   (4\) NORM_L2: (Euclidean) L2-norm of the normalized array
+(4\) NORM_L2: (Euclidean) L2-norm of the normalized array
 
-   ```py
-   for i in range(dst_norm.shape[0]):
-           for j in range(dst_norm.shape[1]):
-               if int(dst_norm[i, j]) > 120:
-                   cv.circle(image, (j, i), 2, (0, 255, 0), 2)
-   ```
+```py
+for i in range(dst_norm.shape[0]):
+        for j in range(dst_norm.shape[1]):
+            if int(dst_norm[i, j]) > 120:
+                cv.circle(image, (j, i), 2, (0, 255, 0), 2)
+```
 
 7. **Circle the corner：**use a loop to traverse the normalized image array and draw a circle in the corner area.
 
-   ```py
-   Function format**：**circle(src,point,radius,color,thickness)
-   ```
+```py
+Function format**：**circle(src,point,radius,color,thickness)
+```
 
-   The first parameter `src` is the image to be drawn.
+The first parameter `src` is the image to be drawn.
 
-   The second parameter `point` is the center of the drawn circle
+The second parameter `point` is the center of the drawn circle
 
-   The third parameter `radius` refers to the radius of the circle
+The third parameter `radius` refers to the radius of the circle
 
-   The fourth parameter `color` is the set color
+The fourth parameter `color` is the set color
 
-   The fifth parameter `thickness` refers to the line thickness of the circle. When it is negative number, it is solid circle.
+The fifth parameter `thickness` refers to the line thickness of the circle. When it is negative number, it is solid circle.
 
-   ```py
-   src = cv.imread("test.jpg")
-   result = harris(src)
-   cv.imshow('result', result)
-   cv.waitKey(0)
-   cv.destroyAllWindows()
-   ```
+```py
+src = cv.imread("test.jpg")
+result = harris(src)
+cv.imshow('result', result)
+cv.waitKey(0)
+cv.destroyAllWindows()
+```
 
 8. **Read image, process image, display image and close the window:**
 
-   **Read image:** Use imread(image) function to read the image, and the parameter in the bracket is the name of the picture
+**Read image:** Use imread(image) function to read the image, and the parameter in the bracket is the name of the picture
 
-   **Process image：**call harris(image) function to process the image and the image parameters will be passed in.
+**Process image:** call harris(image) function to process the image and the image parameters will be passed in.
 
-   **Display image:** employ **imshow(title,src)** function to display the output image. The parameters in the bracket are the title of window and the displayed image.
+**Display image:** employ **imshow(title,src)** function to display the output image. The parameters in the bracket are the title of window and the displayed image.
 
-   **Close window**：Adopt waitKey function to wait for the key to be pressed, and then call **destroyAllWindows** function to close the display window.
+**Close window**：Adopt waitKey function to wait for the key to be pressed, and then call **destroyAllWindows** function to close the display window.

@@ -51,7 +51,7 @@ Thanks to its syntax, dynamic typing and nature of interpreted language, Python 
 >
 >**Please strictly distinguish lower case and upper case, and keywords can be complemented by "Tab" key.**
 
-2) Start virtual machine, and click <img class="common_img" src="../_static/media/chapter_4/section_1/media/image2.png" style="width:50px" />, and then click <img class="common_img" src="../_static/media/chapter_4/section_1/media/image3.png" style="width:50px" /> or press "**Ctrl+Alt+T**" to open command line terminal.
+2) Start virtual machine, and click <img src="../_static/media/chapter_4/section_1/media/image2.png" style="width:50px" />, and then click <img src="../_static/media/chapter_4/section_1/media/image3.png" style="width:50px" /> or press "**Ctrl+Alt+T**" to open command line terminal.
 
 3) Take installing python3.8 for example. Input command "**sudo apt-get install python3.8**" command, and then input the password and press Enter to install.
 
@@ -101,7 +101,7 @@ sudo snap install pycharm-community --classic
 
 <img class="common_img" src="../_static/media/chapter_4/section_1/media/image12.png" style="width:500px" />
 
-3) Select "**Previously configured interpreter**" and click <img class="common_img" src="../_static/media/chapter_4/section_1/media/image13.png" style="width:50px" />.
+3) Select "**Previously configured interpreter**" and click <img src="../_static/media/chapter_4/section_1/media/image13.png" style="width:50px" />.
 
 <img class="common_img" src="../_static/media/chapter_4/section_1/media/image14.png" style="width:500px" />
 
@@ -159,7 +159,7 @@ For example, we can print "**Hello World**" string on the screen.
 >
 >**Please strictly distinguish lower case and upper case, and the keywords can be complemented by Tab key.**
 
-1. Start virtual machine, and click <img class="common_img" src="../_static/media/chapter_4/section_2/media/image2.png" style="width:50px" />, and then click <img class="common_img" src="../_static/media/chapter_4/section_2/media/image3.png" style="width:50px" /> or press "**Ctrl+Alt+T**" to open command line terminal.
+1. Start virtual machine, and click <img src="../_static/media/chapter_4/section_2/media/image2.png" style="width:50px" />, and then click <img src="../_static/media/chapter_4/section_2/media/image3.png" style="width:50px" /> or press "**Ctrl+Alt+T**" to open command line terminal.
 
 2. Input "**sudo apt install vim**" command to install vim editor. During installation, if the prompt about whether to continue execution occurs, just input "**y**" and press Enter.
 
@@ -211,7 +211,7 @@ python3 hello.py
 
 Besides the string, print() function can be also used to output the result of mathematical expression. Take adding print() function of mathematical expression to the program file for example.
 
-1. Start virtual machine, and click <img class="common_img" src="../_static/media/chapter_4/section_2/media/image2.png" style="width:50px" />, and then click <img class="common_img" src="../_static/media/chapter_4/section_2/media/image3.png" style="width:50px" /> or press "**Ctrl+Alt+T**" to open command line terminal.
+1. Start virtual machine, and click <img src="../_static/media/chapter_4/section_2/media/image2.png" style="width:50px" />, and then click <img src="../_static/media/chapter_4/section_2/media/image3.png" style="width:50px" /> or press "**Ctrl+Alt+T**" to open command line terminal.
 
 2. Input command "**cd test/**" and press **Enter** to enter "**cd test/**" folder.
 
@@ -246,14 +246,14 @@ vim hello.py
 print() function is used to print output in the format below.
 
 ```py
-print(*objects, sep=’ ’, end=’\n’, file=sys.stdout, flush=False)
+print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
 ```
 
 The first parameter `objects` is the output object. When output several objects, they should be separately with "**,**" in between.
 
-The second parameter `sep` is used to put string between the output objects, ’ ’ by default.
+The second parameter `sep` is used to put string between the output objects, ' ' by default.
 
-The third parameter `end` is used to add string at the end of output, ’\n’ by default.
+The third parameter `end` is used to add string at the end of output, '\n' by default.
 
 The fourth parameter `file` is the object with a write function, the default value is `sys.stdout`, that is screen.
 
@@ -304,23 +304,23 @@ Python adopts PEP8 as coding standard. "**PEP**" represents Python Enhancement P
 
 Please strictly follow the coding standard when coding to make the code neater, which will enhance the readability.
 
-1.  One "**import**" is for one module. Please don’t import multiple modules for one time.
+1.  One "**import**" is for one module. Please don't import multiple modules for one time.
 
-|   **Recommend**   | <img class="common_img" src="../_static/media/chapter_4/section_3/media/image6.png" style="width:200px" /> |
+|   **Recommend**   | <img src="../_static/media/chapter_4/section_3/media/image6.png" style="width:200px" /> |
 | :---------------: | :----------------------------------------------------------- |
-| **Not Recommend** | <img class="common_img" src="../_static/media/chapter_4/section_3/media/image7.png" style="width:200px" /> |
+| **Not Recommend** | <img src="../_static/media/chapter_4/section_3/media/image7.png" style="width:200px" /> |
 
-2.  Please don’t put semicolon ";" at the end of the line, and don’t put two commands at the same line
+2.  Please don't put semicolon ";" at the end of the line, and don't put two commands at the same line
 
-|   **Recommend**   | <img class="common_img" src="../_static/media/chapter_4/section_3/media/image8.png" style="width:200px" /> |
+|   **Recommend**   | <img src="../_static/media/chapter_4/section_3/media/image8.png" style="width:200px" /> |
 | :---------------: | :----------------------------------------------------------- |
-| **Not Recommend** | <img class="common_img" src="../_static/media/chapter_4/section_3/media/image9.png" style="width:250px" /> |
+| **Not Recommend** | <img src="../_static/media/chapter_4/section_3/media/image9.png" style="width:250px" /> |
 
 3.  The length of line should not be greater than 80 characters, and you can separate a command into several lines, and put the command inside "**()**", as the example shown below. It is not recommended to use backslash "**\\**" to connect the lines of contents.
 
-|   **Recommend**   | <img class="common_img" src="../_static/media/chapter_4/section_3/media/image10.png" style="width:500px" /> |
+|   **Recommend**   | <img src="../_static/media/chapter_4/section_3/media/image10.png" style="width:500px" /> |
 | :---------------: | :----------------------------------------------------------- |
-| **Not Recommend** | <img class="common_img" src="../_static/media/chapter_4/section_3/media/image11.png" style="width:500px" /> |
+| **Not Recommend** | <img src="../_static/media/chapter_4/section_3/media/image11.png" style="width:500px" /> |
 
 4.  When necessary, we can input space to improve the readability of the code.
 
@@ -332,15 +332,15 @@ Identifier is the name of variable, function, class, module and other objects. I
 
 1.  Identifier names in Python can contain letters (A~Z, a-z), underscore (\_) and number, and the name should always start with a non-numeric character.
 
-2.  Identifier must be different from keywords/ reserved words in Python. For the definition of keywords/ reserved, please move to "**[4.3.5 keyword/ reserved word]()**".
+2.  Identifier must be different from keywords/ reserved words in Python. For the definition of keywords/ reserved, please move to "**[4.3.5 keyword/ reserved word](#anchor_4_3_5)**".
 
 3.  Identifier cannot contain **space**, **@, % , \$** and other special characters.
 
 Examples of valid and invalid identifier are listed below.
 
-|  **Valid Identifier**  | <img class="common_img" src="../_static/media/chapter_4/section_3/media/image12.png" style="width:300px" /> |
+|  **Valid Identifier**  | <img src="../_static/media/chapter_4/section_3/media/image12.png" style="width:300px" /> |
 | :--------------------: | :----------------------------------------------------------- |
-| **Invalid Identifier** | <img class="common_img" src="../_static/media/chapter_4/section_3/media/image13.png" style="width:500px" /> |
+| **Invalid Identifier** | <img src="../_static/media/chapter_4/section_3/media/image13.png" style="width:500px" /> |
 
 4.  Identifier is case sensitive. For example, "**num**", "**Num**" and "**NUM**" are three independent variables.
 
@@ -368,13 +368,15 @@ Besides the rules mentioned above, there are corresponding rules in identifier n
 
 6.  When used as constant name, identifier should consist of upper case letters and different words can be separated by underscore `_`.
 
+<p id="anchor_4_3_5"></p>
+
 ###  4.3.5 Keyword/ Reserved Word
 
 Reserved word, also called keyword, is a word with special meaning in Python. And they cannot be used as variable names, function names, class names, module names or any other object names
 
 In Python interactive programming environment, we can check the reserved words according to the steps below.
 
-1.  Start virtual machine, and click <img class="common_img" src="../_static/media/chapter_4/section_3/media/image14.png" style="width:50px" />, and then click <img class="common_img" src="../_static/media/chapter_4/section_3/media/image15.png" style="width:50px" /> or press "**Ctrl+Alt+T**" to open command line terminal.
+1.  Start virtual machine, and click <img src="../_static/media/chapter_4/section_3/media/image14.png" style="width:50px" />, and then click <img src="../_static/media/chapter_4/section_3/media/image15.png" style="width:50px" /> or press "**Ctrl+Alt+T**" to open command line terminal.
 
 2.  Input "**python3**" command and press Enter to enter Python interactive programming environment.
 
@@ -478,11 +480,11 @@ Conditional statement controls the execution of different blocks of code through
 
 Conditional expression consists of operator and operand. Take "**a\<4**" for example. "**a**" and "**4**" are operand，and "**\<**" is operator.
 
-Judgment conditions can be any element with Boolean properties, including data, variables, and expressions composed of variables and operators. If its Boolean property is "True", the condition holds; if it is "False", the condition doesn’t hold.
+Judgment conditions can be any element with Boolean properties, including data, variables, and expressions composed of variables and operators. If its Boolean property is "True", the condition holds; if it is "False", the condition doesn't hold.
 
 The table lists the commonly used operators by conditional expression.
 
-<table>
+<table class="docutils-nobg" border="1">
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 20%" />
@@ -699,7 +701,7 @@ The syntax and execution process of single-branch selection structure are as fol
 
 |                          **Syntax**                          |                    **Execution Process**                     |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img class="common_img" src="../_static/media/chapter_4/section_4/media/image2.png" style="width:200px" /> | <img class="common_img" src="../_static/media/chapter_4/section_4/media/image3.jpeg" style="width:300px" /> |
+| <img src="../_static/media/chapter_4/section_4/media/image2.png" style="width:200px" /> | <img src="../_static/media/chapter_4/section_4/media/image3.jpeg" style="width:300px" /> |
 
 If the condition of "**if statement**" is true, block of code 1 and 2 will be executed in sequence. Otherwise, skip block of code 1 and directly execute block of code 2.
 
@@ -709,7 +711,7 @@ The syntax and execution process of double-branch selection structure are as fol
 
 |                          **Syntax**                          |                    **Execution Process**                     |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img class="common_img" src="../_static/media/chapter_4/section_4/media/image4.png" style="width:200px" /> | <img class="common_img" src="../_static/media/chapter_4/section_4/media/image5.png" style="width:400px" /> |
+| <img src="../_static/media/chapter_4/section_4/media/image4.png" style="width:200px" /> | <img src="../_static/media/chapter_4/section_4/media/image5.png" style="width:400px" /> |
 
 If the condition of "**if statement**" is true, block of code 1 will be executed. Otherwise, block of code 2 will be executed.
 
@@ -719,7 +721,7 @@ The syntax and execution process of multi-branch selection structure are as foll
 
 |                          **Syntax**                          |                    **Execution Process**                     |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img class="common_img" src="../_static/media/chapter_4/section_4/media/image6.png" style="width:150px" /> | <img class="common_img" src="../_static/media/chapter_4/section_4/media/image7.png" style="width:400px" /> |
+| <img src="../_static/media/chapter_4/section_4/media/image6.png" style="width:150px" /> | <img src="../_static/media/chapter_4/section_4/media/image7.png" style="width:400px" /> |
 
 If the condition of `if statement` is true, block of code 1 will be executed.
 
@@ -731,7 +733,7 @@ If neither conditions of `if statement` nor elif statement are false, block of c
 
 In this routine, the program will calculate BMI value based on the input height and weight, and then perform health assessment.
 
-Before operation, please copy the routine "**conditional_statement.py**" stored in "**[4. Basic Programming Course->4.4 Python Conditional Statement-\> Routine Code]()"** to the shared folder.
+Before operation, please copy the routine "**conditional_statement.py**" stored in "**[4. Basic Programming Course->4.4 Python Conditional Statement -\> Routine Code](https://drive.google.com/drive/folders/1KUvzOjrjYpCO9kcRWPgpv-mUT1tNW16S?usp=sharing)"** to the shared folder.
 
 > [!NOTE]
 >
@@ -759,7 +761,7 @@ nput height and weight in sequence, and press Enter. Then the terminal will prin
 
 ###  4.4.4 Program Analysis
 
-The routine can be found in "**[4. Basic Programming Course->4.4 Python Conditional Statement->conditional_statement.py]()**".
+The routine can be found in "**[4. Basic Programming Course->4.4 Python Conditional Statement->conditional_statement.py](https://drive.google.com/drive/folders/1KUvzOjrjYpCO9kcRWPgpv-mUT1tNW16S?usp=sharing)**".
 
 ```py
 height = float(input("height(m)："))
@@ -799,7 +801,7 @@ print("BMI："+str(bmi))
 The format of print() function is as follow.
 
 ```py
-print(*objects, sep=’ ’, end=’\n’, file=sys.stdout, flush=False)
+print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
 ```
 
 The first parameter `objects` is the output object. When several objects are output at one time, objects should be separated by comma "**,**".
@@ -899,7 +901,7 @@ pass statement is null statement and nothing will be executed. It is used to kee
 
 This routine will calculate the factorial of the integer and print the elements of the string.
 
-Before operation, we need to copy the routine "**loop_statement.py**" stored in "**[4. Basic Programming Course->4.5 Python Loop Statement-> Routine Code]()**" to the shared folder.
+Before operation, we need to copy the routine "**loop_statement.py**" stored in "**[4. Basic Programming Course->4.5 Python Loop Statement-> Routine Code](https://drive.google.com/drive/folders/1M0cONdbTnc6jVi64w39gIVCPwGZRk_yW?usp=sharing)**" to the shared folder.
 
 > [!NOTE]
 >
@@ -931,7 +933,7 @@ Input a string and press Enter, and then the terminal will print the elements of
 
 ###  4.5.5 Program Analysis
 
-The used routine "**loop_statement.py**" is stored in "**[4. Basic Programming Course->4.5 Python Loop Statement-> Routine Code]()**".
+The used routine "**loop_statement.py**" is stored in "**[4. Basic Programming Course->4.5 Python Loop Statement-> Routine Code](https://drive.google.com/drive/folders/1M0cONdbTnc6jVi64w39gIVCPwGZRk_yW?usp=sharing)**".
 
 ```py
 n = int(input("请输入一个整数："))
@@ -980,7 +982,7 @@ print("n!={}".format(fact))
 The syntax of print() function is as follow.
 
 ```py
-print(*objects, sep=’ ’, end=’\n’, file=sys.stdout, flush=False)
+print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
 ```
 
 The first parameter `objects` is the output object. When output several objects for one time, objects should be separated by "**,**".
@@ -1146,7 +1148,7 @@ Calling immutable parameters is similar to C++ pass-by-value. If immutable param
 
 Take code below for example. The variable `b` points to the int object `2`. When passed to the `unchange_int()` function, the variable `b` is copied by value, that is, the variable `a` and the variable `b` both point to the same int object `2` .
 
-However, when execute `a = 10`, variable `a` points to newly generated int object `10`. Therefore, the external variable doesn’t change, and the printed value is `2`.
+However, when execute `a = 10`, variable `a` points to newly generated int object `10`. Therefore, the external variable doesn't change, and the printed value is `2`.
 
 ```py
 def unchange_int(a):
@@ -1318,11 +1320,11 @@ There are two common types of containers, including sequence (List, Tuple, etc.)
 
 * **Dictionary** 
 
-1)  Syntax: {"name" ："zhangsan"， "age"：50}
+1)  Syntax: `{"name" ："zhangsan"， "age"：50}`
 
 2)  Format: it is surrounded by curly bracket and the elements are separated by comma. The elements should be in unified format (When the elements are separated by semicolon, the front part should be string and the latter part can be any types.) and Key must be string. If there is no semicolon within some element, dictionary will be considered as Set.
 
-3)  Feature:dictionary is the most flexible container. It doesn’t support sorting, but support nesting. Access the elements through \[ \] and get and the elements cannot use subscript. Delete the elements by pop key. (without remove)
+3)  Feature:dictionary is the most flexible container. It doesn't support sorting, but support nesting. Access the elements through \[ \] and get and the elements cannot use subscript. Delete the elements by pop key. (without remove)
 
 <img class="common_img" src="../_static/media/chapter_4/section_7/media/image5.png" style="width:4.78125in;height:0.27083in" />
 
@@ -1330,7 +1332,7 @@ There are two common types of containers, including sequence (List, Tuple, etc.)
 
 * **Basic Operation of List**
 
-<table>
+<table class="docutils-nobg" border="1">
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 35%" />
@@ -1482,7 +1484,7 @@ There are two common types of containers, including sequence (List, Tuple, etc.)
 
 The operations on tuple are similar to those on list, but they are still different.
 
-1)  Tuple doesn’t have `append()`, `extend()`, `insert()`, etc., therefore we cannot add element to the tuple.
+1)  Tuple doesn't have `append()`, `extend()`, `insert()`, etc., therefore we cannot add element to the tuple.
 
 2)  `remove()` and `pop()` are also not contained, hence we cannot delete elements from the tuple.
 
@@ -1528,7 +1530,7 @@ Two core definitions: classes and objects
 
 Class is used to describes the object sets with the same properties and methods. And it defines the properties and methods shared by all the objects of this set. Object is the instance of class.
 
-For example, create a "cat" class, and define the name, color, age, etc., as well as the way to eat, drink, sound, etc. And instantiated object "ginger cat" will have these defined properties and methods.
+For example, create a "**cat**" class, and define the name, color, age, etc., as well as the way to eat, drink, sound, etc. And instantiated object "**ginger cat**" will have these defined properties and methods.
 
 * **Object**
 
@@ -1560,7 +1562,7 @@ An Object is an instance of a Class, which holds the properties and methods of c
 
 1)  Instance property are defined within **\_\_init\_\_** of a class, and class property are defined outside \_\_init\_\_ of a class. An instance of a class created outside the class can define its own properties.
 
-2)  Personal variable: if don’t want the external to access some properties, we can start the property name with double subscripts (\_\_). Therefore, these properties will not be accessed by original variable name, that is, they can not be called from an instance.
+2)  Personal variable: if don't want the external to access some properties, we can start the property name with double subscripts (\_\_). Therefore, these properties will not be accessed by original variable name, that is, they can not be called from an instance.
 
 ### 4.8.6 Class Inheritance and Polymorphism
 
@@ -1604,7 +1606,7 @@ After execution, the first line of data just written will be read.
 
 ### 4.9.1 Exception and Error
 
-Program error refers to syntax error (wrong command) and logic error (wrong result of program execution), while program exception is an accidence taking place during program execution and affecting the normal execution of the program. For example, the file to be opened doesn’t exist, dividend is 0, wrong data type of the operation, storage error, internet request error.
+Program error refers to syntax error (wrong command) and logic error (wrong result of program execution), while program exception is an accidence taking place during program execution and affecting the normal execution of the program. For example, the file to be opened doesn't exist, dividend is 0, wrong data type of the operation, storage error, internet request error.
 
 In normal case, exception occurs when the program cannot be processed normally in Python. Exception is the Python object representing a error. When there is exception in Python script, we need to catch and handle it, otherwise the program will stop execution.
 
