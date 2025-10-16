@@ -411,7 +411,7 @@ You need to install an SD card initialization tool (SD Card Formatter) and an im
 > [!Note]
 >
 > * **After inserting the SD card into the card reader and connecting it to the computer’s USB port, the computer may detect multiple partitions and display a 'format reminder.' This happens because the SD card already contains an image, which is a Linux system version that includes multiple partitions by default. These partitions are recognized as multiple separate disks, which is normal and nothing to worry about.**
-> * **Before flashing the image, you can use the SD card initialization tool (the installation package can be found in the** **"[Appendix/SD Card Initialization Tool](https://drive.google.com/drive/folders/1nRVGTVdliUONP6THDKa_WLbvdO_5meaq?usp=sharing)") to format the SD card, and then proceed with the flashing process.**
+> * **Before flashing the image, you can use the SD card initialization tool (the installation package can be found in the** **"[Appendix/SD Card Initialization Tool](https://drive.google.com/drive/folders/1XiGkOoG7GBK3wgXMUic4kFUlTuOdLKYH?usp=sharing)") to format the SD card, and then proceed with the flashing process.**
 > * **Similarly, after the flashing is complete, multiple independent disk prompts may appear. Do not click format; simply cancel the prompt.**
 
 <img class="common_img" src="../_static/media/chapter_2/section_4/media/image2.png" style="width:3.57917in;height:1.53819in" />

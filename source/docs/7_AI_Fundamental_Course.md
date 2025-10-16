@@ -18,7 +18,7 @@
 
 * **Assembly**
 
-1. Gently pull up on the edges of the CSI port’s plastic clip.
+1. Gently pull up on the edges of the CSI port's plastic clip.
 
 <img class="common_img" src="../_static/media/chapter_7/section_1/media/image2.png" style="width:500px" />
 
@@ -30,7 +30,7 @@
 
 <img class="common_img" src="../_static/media/chapter_7/section_1/media/image4.png" style="width:500px" />
 
-4. Connect the other end of the ribbon cable into the interface of the CSI camera module with the conductors facing in the same direction as the camera’s lens. Then, press the collar down again.
+4. Connect the other end of the ribbon cable into the interface of the CSI camera module with the conductors facing in the same direction as the camera's lens. Then, press the collar down again.
 
 <img class="common_img" src="../_static/media/chapter_7/section_1/media/image5.png" style="width:500px" />
 
@@ -46,7 +46,7 @@
 
 ###  7.2.1 Operation Steps
 
-<img src="../_static/media/chapter_7/section_2/media/image2.png" style="width:50px" />The input command should be case sensitive, and "Tab" key can be used to complement the key words.
+<img src="../_static/media/chapter_7/section_2/media/image2.png" style="width:50px" /> The input command should be case sensitive, and "**Tab**" key can be used to complement the key words.
 
 If you use the system image we provide, you can find the corresponding program in the folder "**[3. Basic Operation Course -> 3.2 Introduction to System Desktop](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html#introduction-to-system-desktop)** ."
 
@@ -64,7 +64,7 @@ If you use the system image we provide, you can find the corresponding program i
 python3 Camera.py
 ```
 
-5)  To close this program, press "Ctrl+C".
+5)  To close this program, press "**Ctrl+C**".
 
 ###  7.2.2 Program Outcome
 
@@ -80,7 +80,7 @@ After the game starts, the screen will display the transmitted image.
 
 <img class="common_img" src="../_static/media/chapter_7/section_2/media/image8.png" style="width:600px" />
 
-The pose is primarily adjusted through the parameters within the "VideoCapture" function. Using the code "**cv2.VideoCapture(gstreamer_pipeline(flip_method=0), cv2.CAP_GSTREAMER)**" as an example, the parameters inside the function brackets are explained as follows:
+The pose is primarily adjusted through the parameters within the "**VideoCapture**" function. Using the code "**cv2.VideoCapture(gstreamer_pipeline(flip_method=0), cv2.CAP_GSTREAMER)**" as an example, the parameters inside the function brackets are explained as follows:
 
 1)  The first parameter `gstreamer_pipeline(flip_method=0)` is a framework passed into the `gstreamer_pipeline` function, where the video data reading preoperties are set.
 
@@ -136,7 +136,7 @@ The figure below shows how to use MediaPipe. The solid line represents the part 
 
 3. Enter the command below to install and update the APT download list.
 
-```py
+```bash
 sudo apt update
 ```
 
@@ -144,7 +144,7 @@ sudo apt update
 
 4. Enter the command to install pip.
 
-```py
+```bash
 sudo apt install python3-pip
 ```
 
@@ -152,7 +152,7 @@ sudo apt install python3-pip
 
 5. Enter the command to update pip.
 
-```py
+```bash
 python3 -m pip3 install --upgrade pip3
 ```
 
@@ -160,7 +160,7 @@ python3 -m pip3 install --upgrade pip3
 
 6. Then enter the command to install.
 
-```py
+```bash
 pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple mediapipe
 ```
 
@@ -168,7 +168,7 @@ pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple mediapipe
 
 7. Enter the command to uninstall Numpy.
 
-```py
+```bash
 pip3 uninstall numpy
 ```
 
@@ -180,7 +180,7 @@ If Numpy is higher than 2.0 version, it can not be used with Mediapipe, and the 
 
 8. Run the command to install NumPy.
 
-```py
+```bash
 pip3 install numpy==1.21.5
 ```
 
@@ -192,7 +192,7 @@ In this lesson, we will use MediaPipe's Selfie Segmentation model to separate tr
 
 ### 7.4.1 Introduction
 
-Firstly, import MediaPipe’s selfie segmentation model, and obtain the live camera feed by subscribing to the topic messages. Next, perform the image flipping processing, and drawn the segmentation map on the background image. To improve the segmentation around the edges, apply bilateral filtering. Finally, replace the virtual background with a virtual one.
+Firstly, import MediaPipe's selfie segmentation model, and obtain the live camera feed by subscribing to the topic messages. Next, perform the image flipping processing, and drawn the segmentation map on the background image. To improve the segmentation around the edges, apply bilateral filtering. Finally, replace the virtual background with a virtual one.
 
 ### 7.4.2 Operation Steps
 
@@ -214,7 +214,7 @@ If you use the system image we provide, you can find the corresponding program i
 
 5. Enter the following command and press Enter to run the background segmentation detection program.
 
-```py
+```bash
 python3 self_segmentation.py
 ```
 
@@ -290,17 +290,17 @@ Use the imshow() function from the cv2 library to display the camera feed in a s
 
 <img class="common_img" src="../_static/media/chapter_7/section_4/media/image16.png" style="width:500px" />
 
-The first parameter inside the function’s parentheses, `'MediaPipe Selfie Segmentation'`, is the window name, and the second parameter`, output_image`, is the image to be displayed.
+The first parameter inside the function's parentheses, `'MediaPipe Selfie Segmentation'`, is the window name, and the second parameter`, output_image`, is the image to be displayed.
 
 ## 7.5 3D Object Detection
 
-This section uses MediaPipe’s 3D object detection model to display 3D bounding boxes of objects in the image.
+This section uses MediaPipe's 3D object detection model to display 3D bounding boxes of objects in the image.
 
 Object detection is a widely studied problem in computer vision. By extending predictions to 3D, you can capture the size, position, and orientation of objects in the world, enabling various applications in robotics, autonomous vehicles, image retrieval, and augmented reality.
 
 ### 7.5.1 Program Logic
 
-First, import MediaPipe’s 3D Objection and obtain the live camera feed by subscribing to topic messages.
+First, import MediaPipe's 3D Objection and obtain the live camera feed by subscribing to topic messages.
 
 Next, process the image, such as flipping it, and perform 3D object detection on it.
 
@@ -398,7 +398,7 @@ Use the `imshow()` function from the cv2 library to display the camera feed in a
 
 <img class="common_img" src="../_static/media/chapter_7/section_5/media/image12.png" style="width:500px" />
 
-The first parameter inside the function’s parentheses, 'MediaPipe Selfie Segmentation', is the window name, and the second parameter, output_image, is the image to be displayed.
+The first parameter inside the function's parentheses, 'MediaPipe Selfie Segmentation', is the window name, and the second parameter, output_image, is the image to be displayed.
 
 ## 7.6 Facial Detection
 
@@ -490,7 +490,7 @@ Use the `imshow()` function from the cv2 library to display the camera feed in a
 
 <img class="common_img" src="../_static/media/chapter_7/section_6/media/image12.png" style="width:500px" />
 
-The first parameter inside the function’s parentheses, `'MediaPipe Face Detection'`, is the window name, and the second parameter, `image`, is the image to be displayed.
+The first parameter inside the function's parentheses, `'MediaPipe Face Detection'`, is the window name, and the second parameter, `image`, is the image to be displayed.
 
 ## 7.7 3D Facial Detection
 
@@ -502,7 +502,7 @@ For 3D facial landmarks, we use transfer learning to train a network with multip
 
 The 3D landmark network receives cropped video frames as input without requiring additional depth input. The model outputs the positions of 3D points and the probability that the face appears and is reasonably aligned in the input.
 
-Next, process the image through flipping, color space conversion, and other adjustments. Then, compare the face detection model’s minimum confidence to determine if the face detection was successful.
+Next, process the image through flipping, color space conversion, and other adjustments. Then, compare the face detection model's minimum confidence to determine if the face detection was successful.
 
 Finally, render the detected faces in the image as 3D meshes.
 
@@ -586,7 +586,7 @@ Use the `imshow()` function from the cv2 library to display the camera feed in a
 
 <img class="common_img" src="../_static/media/chapter_7/section_7/media/image12.png" style="width:500px" />
 
-The first parameter inside the function’s parentheses, `'MediaPipe Face Mesh',` is the window name, and the second parameter, `image`, is the image to be displayed.
+The first parameter inside the function's parentheses, `'MediaPipe Face Mesh',` is the window name, and the second parameter, `image`, is the image to be displayed.
 
 ## 7.8 Hand Key point Detection
 
@@ -632,7 +632,7 @@ python3 hand.py
 
 ### 7.8.3 Program Outcom
 
-After starting the program, if the camera detects a hand, it will display the hand’s key points and the connections between the key points in the transmitted camera.
+After starting the program, if the camera detects a hand, it will display the hand's key points and the connections between the key points in the transmitted camera.
 
 <img class="common_img" src="../_static/media/chapter_7/section_8/media/image6.png" style="width:500px" />
 
@@ -682,7 +682,7 @@ Use the `imshow()` function from the cv2 library to display the camera feed in a
 
 <img class="common_img" src="../_static/media/chapter_7/section_8/media/image12.png" style="width:500px" />
 
-The first parameter inside the function’s parentheses, `'MediaPipe Hands'`, is the window name, and the second parameter, `image`, is the image to be displayed.
+The first parameter inside the function's parentheses, `'MediaPipe Hands'`, is the window name, and the second parameter, `image`, is the image to be displayed.
 
 ## 5.9 Human Body Key point Detection
 
@@ -694,7 +694,7 @@ Next, process the image by flipping it and converting the color space. Compare t
 
 Then, compare the minimum tracking confidence to define the success of tracking the pose. If the pose does not meet the criteria, body detection will be automatically invoked on the next input image.
 
-After importing MediaPipe’s body detection model, obtain the real-time camera feed by subscribing to topic messages.
+After importing MediaPipe's body detection model, obtain the real-time camera feed by subscribing to topic messages.
 
 Finally, detect and draw the body key points in the image.
 
@@ -778,4 +778,4 @@ Use the `imshow()` function from the cv2 library to display the camera feed in a
 
 <img class="common_img" src="../_static/media/chapter_7/section_9/media/image12.png" style="width:500px" />
 
-The first parameter inside the function’s parentheses, `'MediaPipe Pose'`, is the window name, and the second parameter, `image`, is the image to be displayed.
+The first parameter inside the function's parentheses, `'MediaPipe Pose'`, is the window name, and the second parameter, `image`, is the image to be displayed.

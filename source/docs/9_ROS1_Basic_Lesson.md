@@ -4,13 +4,13 @@
 
 ### 9.1.1 An introduction to Robot Operating System (ROS)
 
-Before learning ROS, the definition of the operating system needs to be understanded first. What is the operating system? It provides some of software and hardware interfaces for direct use. Therefore, for different platforms and functions, different operating systems are needed to complete the underlying operating.
+Before learning ROS, the definition of the operating system needs to be understood first. What is the operating system? It provides some of software and hardware interfaces for direct use. Therefore, for different platforms and functions, different operating systems are needed to complete the underlying operating.
 
-Ros is an open source operating system for robots. It provides OS-like services including hardware abstraction, low-level device control, implementation of commonly used functionality, message-passing between processes, and package management. Some tools and libraries are also provided for acquiring, compiling, writing, and executing programs for multi-machine fusion.
+Ros is an open source operating system for robots. It provides OS-like services including hardware abstraction, low-level device control, implementation of commonly used functionality, message-passing between processes, and package management. Some tools and libraries are also provided for acquiring, compiling, writing, and executing programs for multi-machine fusion.
 
 In addition, ROS has process-to-process communication, which is the biggest difference between it and other operating systems. In the traditional operating systems, communication between processes needs to be called by the system, which consumes a lot of system resources so that it is not suitable for robot operating system.
 
-A robot may contain multiple sensors to collabrate through communication between modules to accomplish a given task through modules. Therefore, an effective and rapid communication beween processes is essential for a robot, and ROS provides such function.
+A robot may contain multiple sensors to collaborate through communication between modules to accomplish a given task through modules. Therefore, an effective and rapid communication between processes is essential for a robot, and ROS provides such function.
 
 <img class="common_img" src="../_static/media/chapter_9/section_1/media/image2.png" style="width:600px" />
 
@@ -24,7 +24,7 @@ A robot may contain multiple sensors to collabrate through communication between
 
 2)  Simple stureture and high integration.
 
-3)  Pentiful tool packages and supporting multiple programming languages. Each of packages adopts different programming language.
+3)  Plentiful tool packages and supporting multiple programming languages. Each of packages adopts different programming language.
 
 4)  Free and open source
 
@@ -36,33 +36,33 @@ Official website: https://wiki.ros.org
 
 This lesson is applicable for building a ROS environment from scratch on Jetson Nano official image. Here, we provide two methods for ROS installation. Method one is a one-click installation, where you only need to execute a single command to automatically install the entire ROS system. Method two requires to set up download sources and configure environment variables.
 
-If you are new to ROS, it is recommended to choose “one-click installation” for a quick and easy installation.
+If you are new to ROS, it is recommended to choose "one-click installation" for a quick and easy installation.
 
 ### 9.2.1 Method 1: One-click Installation (Recommended)
 
-Click on <img class="common_img" src="../_static/media/chapter_9\section_2\media\image2.png" style="width:50px" />to open the command line terminal. Enter command “**wget http://fishros.com/install -O fishros && . fishros**” and press Enter, then enter the password.
+Click on <img src="../_static/media/chapter_9/section_2/media/image2.png" style="width:50px" />to open the command line terminal. Enter command "**wget http://fishros.com/install -O fishros && . fishros**" and press Enter, then enter the password.
 
-<img class="common_img" src="../_static/media/chapter_9\section_2\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image3.png" style="width:500px" />
 
-Enter “1” to select the one-click ROS installation method.
+Enter "1" to select the one-click ROS installation method.
 
-<img class="common_img" src="../_static/media/chapter_9\section_2\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image4.png" style="width:500px" />
 
-During the initial installation, you need to change the source and clean up third-party sources. Enter “1” to choose to replace the system source before installing.
+During the initial installation, you need to change the source and clean up third-party sources. Enter "1" to choose to replace the system source before installing.
 
-<img class="common_img" src="../_static/media/chapter_9\section_2\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image5.png" style="width:500px" />
 
-Enter “2” to choose to replace the system source and clear up the third-party sources.
+Enter "2" to choose to replace the system source and clear up the third-party sources.
 
-<img class="common_img" src="../_static/media/chapter_9\section_2\media\image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image6.png" style="width:500px" />
 
-Enter “1” to choose to install melodic (ROS1) version.
+Enter "1" to choose to install melodic (ROS1) version.
 
-<img class="common_img" src="../_static/media/chapter_9\section_2\media\image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image7.png" style="width:500px" />
 
-Enter “1” to choose to install melodic (ROS1) desktop version and wait for the installation to complete.
+Enter "1" to choose to install melodic (ROS1) desktop version and wait for the installation to complete.
 
-<img class="common_img" src="../_static/media/chapter_9\section_2\media\image8.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image8.png" style="width:500px" />
 
 ### 9.2.2 Method 2: Step-by-step Installation (Routine Method)
 
@@ -70,139 +70,141 @@ Enter “1” to choose to install melodic (ROS1) desktop version and wait for t
 
 Different versions of Ubuntu have different corresponding versions of ROS . The corresponding ROS version of Ubuntu 18.04 is Melodic.
 
-<img class="common_img" src="../_static/media/chapter_9\section_2\media\image9.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image9.png" style="width:500px" />
 
 * **Check Ubuntu Software and Update Source**
 
-1. Find “Software and update” in system.
+1. Find "Software and update" in system.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_2\media\image10.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image10.png" style="width:500px" />
 
 2. Ensure the following options are checked and change the download source which can be used in your country.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_2\media\image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image11.png" style="width:500px" />
 
 ### 9.2.3 Set the Download Source for ROS
 
 **1. Set the Download Source**
 
-Open a new command line terminal. Enter command “**sudo sh -c '. /etc/lsb-release && echo "deb http://mirrors.ustc.edu.cn/ros/ubuntu/ `lsb_release -cs\` main" > /etc/apt/sources.list.d/ros-latest.list'**” and press **Enter**. Then enter the password of the virtual machine “**ubuntu**”. (The password can be changed, and it uses “ubuntu” here as example.)
+Open a new command line terminal. Enter command "**sudo sh -c '. /etc/lsb-release && echo "deb http://mirrors.ustc.edu.cn/ros/ubuntu/ `lsb_release -cs\` main" > /etc/apt/sources.list.d/ros-latest.list'**" and press **Enter**. Then enter the password of the virtual machine "**ubuntu**". (The password can be changed, and it uses "ubuntu" here as example.)
 
-<img class="common_img" src="../_static/media/chapter_9\section_2\media\image12.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image12.png" style="width:500px" />
 
 **2. Set Public Key**
 
-Enter command “**sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654**” and press **Enter**.
+Enter command "**sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654**" and press **Enter**.
 
-<img class="common_img" src="../_static/media/chapter_9\section_2\media\image13.png" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image13.png" style="width:500px"  />
 
 **3. Update Software Package** 
 
-Enter command “**sudo apt update**”.
+Enter command "**sudo apt update**".
 
-<img class="common_img" src="../_static/media/chapter_9\section_2\media\image14.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image14.png" style="width:500px" />
 
 ### 9.2.4 Install ROS
 
-Open a command line terminal. Enter command “**sudo apt install ros-melodic-desktop-full**” to install ROS. The installation process generally needs to take around 10 min, depending on the network status.
+Open a command line terminal. Enter command "**sudo apt install ros-melodic-desktop-full**" to install ROS. The installation process generally needs to take around 10 min, depending on the network status.
 
-<img class="common_img" src="../_static/media/chapter_9\section_2\media\image15.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image15.png" style="width:500px" />
 
 ### 9.2.5 Set the Environment Variables
 
-Open a command line terminal. Enter command “**echo "source /opt/ros/melodic/setup.bash" \>\> ~/.bashrc**” and “**echo "source /opt/ros/melodic/setup.bash" \>\> ~/.bashrc**” in sequence to complete the configuration for environment variables.
+Open a command line terminal. Enter command "**echo "source /opt/ros/melodic/setup.bash" \>\> ~/.bashrc**" and "**echo "source /opt/ros/melodic/setup.bash" \>\> ~/.bashrc**" in sequence to complete the configuration for environment variables.
 
-<img class="common_img" src="../_static/media/chapter_9\section_2\media\image16.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image16.png" style="width:500px" />
 
 ### 9.2.6 Install rosdep
 
-Enter command “**sudo apt-get install python3-rosdep**” and press Enter to install rosdep. When the installation confirmation prompt occurs, enter “**Y**”.
+Enter command "**sudo apt-get install python3-rosdep**" and press Enter to install rosdep. When the installation confirmation prompt occurs, enter "**Y**".
 
-<img class="common_img" src="../_static/media/chapter_9\section_2\media\image17.png" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image17.png" style="width:500px"  />
+
+<p id="anchor_9_2_7"></p>
 
 ### 9.2.7 Initialization
 
-Enter command “**cd /etc/ros/rosdep/sources.list.d**” and press Enter to enter the “**cd /etc/ros/rosdep/sources.list.d**” folder.
+Enter command "**cd /etc/ros/rosdep/sources.list.d**" and press Enter to enter the "**cd /etc/ros/rosdep/sources.list.d**" folder.
 
-<img class="common_img" src="../_static/media/chapter_9\section_2\media\image18.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image18.png" style="width:500px" />
 
-1. Enter command “**sudo gedit 20-default.list**” and press Enter to edit this file.
+1. Enter command "**sudo gedit 20-default.list**" and press Enter to edit this file.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_2\media\image19.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image19.png" style="width:500px" />
 
 2. Replace the content in the original file with the below content. (Do not manually enter the content. Please directly copy and paste, and do not need)
 
-   \# os-specific li# os-specific listings first yaml https://gitee.com/wybros/rosdistro/raw/master/rosdep/osx-homebrew.yaml osx \# generic yaml https://gitee.com/wybros/rosdistro/raw/master/rosdep/base.yaml yaml https://gitee.com/wybros/rosdistro/raw/master/rosdep/python.yaml yaml https://gitee.com/wybros/rosdistro/raw/master/rosdep/ruby.yaml gbpdistro https://gitee.com/wybros/rosdistro/raw/master/releases/fuerte.yaml fuerte \# newer distributions (Groovy, Hydro, ...) must not be listed anymore, they are being fetched from the rosdistro index.yaml instead
+\# os-specific li# os-specific listings first yaml https://gitee.com/wybros/rosdistro/raw/master/rosdep/osx-homebrew.yaml osx \# generic yaml https://gitee.com/wybros/rosdistro/raw/master/rosdep/base.yaml yaml https://gitee.com/wybros/rosdistro/raw/master/rosdep/python.yaml yaml https://gitee.com/wybros/rosdistro/raw/master/rosdep/ruby.yaml gbpdistro https://gitee.com/wybros/rosdistro/raw/master/releases/fuerte.yaml fuerte \# newer distributions (Groovy, Hydro, ...) must not be listed anymore, they are being fetched from the rosdistro index.yaml instead
 
-   During the modification, a warning will appear in terminal. It is a normal phenomena that can be ignored.
+During the modification, a warning will appear in terminal. It is a normal phenomena that can be ignored.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_2\media\image20.png" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image20.png" style="width:500px"  />
 
-3. After the replacement is done, click “Save” to save the file, then close.
+3. After the replacement is done, click "Save" to save the file, then close.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_2\media\image21.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image21.png" style="width:500px" />
 
-4. Enter command “**cd /usr/lib/python2.7/dist-packages/rosdep2/**” and press Enter to get access to the “**rosdep2**” directory.
+4. Enter command "**cd /usr/lib/python2.7/dist-packages/rosdep2/**" and press Enter to get access to the "**rosdep2**" directory.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_2\media\image22.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image22.png" style="width:500px" />
 
-5. Enter command “**sudo gedit gbpdistro_support.py**” and press Enter. You might be prompted to enter the password of the virtual machine. Then press Enter to open the “**gbpdistro_support.py**” file and locate the “**FUERTE_GBPDISTRO_URL**” code.
+5. Enter command "**sudo gedit gbpdistro_support.py**" and press Enter. You might be prompted to enter the password of the virtual machine. Then press Enter to open the "**gbpdistro_support.py**" file and locate the "**FUERTE_GBPDISTRO_URL**" code.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_2\media\image23.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image23.png" style="width:500px" />
 
-   <img class="common_img" src="../_static/media/chapter_9\section_2\media\image24.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image24.png" style="width:500px" />
 
-6. Change “https://raw.githubusercontent.com/ros/rosdistro/” to “https://gitee.com/wybros/rosdistro/raw/”. (Only the content shown in following red box requires to modify) Then click “Save” and close the file.
+6. Change "https://raw.githubusercontent.com/ros/rosdistro/" to "https://gitee.com/wybros/rosdistro/raw/". (Only the content shown in following red box requires to modify) Then click "Save" and close the file.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_2\media\image25.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image25.png" style="width:500px" />
 
-7. Enter command “**sudo gedit rep3.py**” and press Enter to open the “**rep3.py**” file and locate the “REP3_TARGETS_URL” code.
+7. Enter command "**sudo gedit rep3.py**" and press Enter to open the "**rep3.py**" file and locate the "REP3_TARGETS_URL" code.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_2\media\image26.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image26.png" style="width:500px" />
 
-   <img class="common_img" src="../_static/media/chapter_9\section_2\media\image27.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image27.png" style="width:500px" />
 
-8. Change “**https://raw.githubusercontent.com/ros/rosdistro/”** to “**https://gitee.com/wybros/rosdistro/raw/**” (Only the content shown in following red box requires to modify) Then click “Save” and close the file.
+8. Change "**https://raw.githubusercontent.com/ros/rosdistro/"** to "**https://gitee.com/wybros/rosdistro/raw/**" (Only the content shown in following red box requires to modify) Then click "Save" and close the file.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_2\media\image28.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image28.png" style="width:500px" />
 
-9. Enter command “**sudo gedit sources_list.py**” and press Enter to open the “**sources_list.py**” file and locate the “**DEFAULT_SOURCES_LIST_URL**” code.
+9. Enter command "**sudo gedit sources_list.py**" and press Enter to open the "**sources_list.py**" file and locate the "**DEFAULT_SOURCES_LIST_URL**" code.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_2\media\image29.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image29.png" style="width:500px" />
 
-   <img class="common_img" src="../_static/media/chapter_9\section_2\media\image30.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image30.png" style="width:500px" />
 
-10. Change “**https://raw.githubusercontent.com/ros/rosdistro/**” to “**https://gitee.com/wybros/rosdistro/raw/**”. (Only the content shown in following red box requires to modify) Then click “Save” and close the file.
+10. Change "**https://raw.githubusercontent.com/ros/rosdistro/**" to "**https://gitee.com/wybros/rosdistro/raw/**". (Only the content shown in following red box requires to modify) Then click "Save" and close the file.
 
-    <img class="common_img" src="../_static/media/chapter_9\section_2\media\image31.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image31.png" style="width:500px" />
 
-11. Enter command “**cd /usr/lib/python2.7/dist-packages/rosdistro/**” and press Enter to get access to the “**rosdistro**” directory.
+11. Enter command "**cd /usr/lib/python2.7/dist-packages/rosdistro/**" and press Enter to get access to the "**rosdistro**" directory.
 
-    <img class="common_img" src="../_static/media/chapter_9\section_2\media\image32.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image32.png" style="width:500px" />
 
-12. Enter command “**sudo gedit \_\_init\_\_.py**” and press Enter to get access to “**\_\_init\_\_.py**” file, and locate the “DEFAULT_INDEX_URL” code.
+12. Enter command "**sudo gedit \_\_init\_\_.py**" and press Enter to get access to "**\_\_init\_\_.py**" file, and locate the "DEFAULT_INDEX_URL" code.
 
-    <img class="common_img" src="../_static/media/chapter_9\section_2\media\image33.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image33.png" style="width:500px" />
 
-    <img class="common_img" src="../_static/media/chapter_9\section_2\media\image34.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image34.png" style="width:500px" />
 
-13. Change “**https://raw.githubusercontent.com/ros/rosdistro/**” to “**https://gitee.com/wybros/rosdistro/raw/**”. (Only the content shown in following red box requires to modify) Then click “Save” and close the file.
+13. Change "**https://raw.githubusercontent.com/ros/rosdistro/**" to "**https://gitee.com/wybros/rosdistro/raw/**". (Only the content shown in following red box requires to modify) Then click "Save" and close the file.
 
-    <img class="common_img" src="../_static/media/chapter_9\section_2\media\image35.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image35.png" style="width:500px" />
 
 ### 9.2.8 Update 
 
-Open a new command line terminal and enter command “**rosdep update**”.
+Open a new command line terminal and enter command "**rosdep update**".
 
-<img class="common_img" src="../_static/media/chapter_9\section_2\media\image36.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image36.png" style="width:500px" />
 
 The below information represents the update is successfully complete.
 
-<img class="common_img" src="../_static/media/chapter_9\section_2\media\image37.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image37.png" style="width:500px" />
 
-If you encounter a timeout error as shown in the figure, it may be due to network issues. In this case, you can try entering "**rosdep update**" multiple times to attempt updating. If it still fails to update, you should check the contents of "**[9.2.7 Initialization]()**" to ensure that the modifications made are correct. After verifying the changes, the user can try running "**rosdep update**" again to perform the update.
+If you encounter a timeout error as shown in the figure, it may be due to network issues. In this case, you can try entering "**rosdep update**" multiple times to attempt updating. If it still fails to update, you should check the contents of "**[9.2.7 Initialization](#anchor_9_2_7)**" to ensure that the modifications made are correct. After verifying the changes, the user can try running "**rosdep update**" again to perform the update.
 
-<img class="common_img" src="../_static/media/chapter_9\section_2/media/image38.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_2/media/image38.png" style="width:500px" />
 
 ## 9.3 ROS Documents and Terms Instruction
 
@@ -237,7 +239,7 @@ The following table provides explanation on some of ROS basic terms.
 |   **Terms**    |                       **Instruction**                        |
 | :------------: | :----------------------------------------------------------: |
 |   urdf file    | It is a model file describing all elemnts of robot including link, joint, axis, dynamics, visual and collision. |
-|    Srv file    | It is stored in srv folder for ROS service message definition and contains two parts, request and reply. The symbol “--” is used to separate the request from the reply. |
+|    Srv file    | It is stored in srv folder for ROS service message definition and contains two parts, request and reply. The symbol "--" is used to separate the request from the reply. |
 |    Msg file    | It is stored in msg folder and used for ROS topics message definitions. |
 |  package.xml   | Describe the property of function package including its name, version, author, etc. |
 | CmakeLists.txt |         Compile configuration files by using Cmake.          |
@@ -288,7 +290,7 @@ ROS commands can be divided into five types: ROS shell commands, ROS excution co
 |     catkin_create_pkg     |           Automatically generate function package            |
 |        catkin_make        | Build all function packages in diectory on the basis of catkin build system. |
 |      catkin_eclipse       | Modify the package generated with the catkin build system to work in Eclipse environment. |
-|  catkin_prepare_release   | Update CHANGELOG.rst file generated by “catkin_generate_changelog” |
+|  catkin_prepare_release   | Update CHANGELOG.rst file generated by "catkin_generate_changelog" |
 | catkin_generate_changelog |    Generate or upadate CHANGELOG.rst file when publishing    |
 |   catkin_init_workspace   | Initialize the workspace directory of the catkin build system |
 |        catkin_find        |            Find all warkspace directories in use             |
@@ -304,103 +306,105 @@ ROS commands can be divided into five types: ROS shell commands, ROS excution co
 | roscreate-pkg |   ros+create-pkg   | Automatically generate ROS function package (Use for old rosbuild system) |
 |    rosmake    |      ros+make      |  Build ROS function package (used for old rosbuild system)   |
 
+<p id="anchor_9_4"></p>
+
 ## 9.4 Create Workspace and Package
 
-The creation of messages and services, the writing of publishers and subscribers, the writing of servers and clients all operate on the basis of ROS function packages, so it is necessary to create workspace and function packages before performing the operations above.
+The creation of messages and services, the writing of publishers and subscribers, the writing of servers and clients all operate on the basis of ROS function packages, so it is necessary to create workspace and function packages before performing the operations above.
 
-###  9.4.1 Create Workspace
+### 9.4.1 Create Workspace
 
 1. Open the terminal.
 
-2. Input “**mkdir -p ~/catkin_ws/src**” command and press “Enter” to create a workspace named catkin_ws under the specified directory.
+2. Input "**mkdir -p ~/catkin_ws/src**" command and press "**Enter**" to create a workspace named catkin_ws under the specified directory.
 
-   ```py
-   mkdir -p ~/catkin_ws/src
-   ```
+```bash
+mkdir -p ~/catkin_ws/src
+```
 
 <img class="common_img" src="../_static/media/chapter_9/section_4/media/image2.png" style="width:500px" />
 
 <img class="common_img" src="../_static/media/chapter_9/section_4/media/image3.png" style="width:500px" />
 
-###  9.4.2 Create ROS Package
+### 9.4.2 Create ROS Package
 
-1. Input “**cd ~/catkin_ws/src**” command, and then press “Enter” to come to the source file space (src) directory of catkin_ws.
+1. Input "**cd ~/catkin_ws/src**" command, and then press "**Enter**" to come to the source file space (src) directory of catkin_ws.
 
-   ```py
-   cd ~/catkin_ws/src
-   ```
+```bash
+cd ~/catkin_ws/src
+```
 
 <img class="common_img" src="../_static/media/chapter_9/section_4/media/image4.png" style="width:500px" />
 
-2. Input “**catkin_create_pkg beginner_hiwonder std_msgs rospy roscpp**” command, and then press “Enter” to create function package named “beginner_hiwonder” and add dependencies (msgs, rospy, roscpp).
+2. Input "**catkin_create_pkg beginner_hiwonder std_msgs rospy roscpp**" command, and then press "**Enter**" to create function package named "beginner_hiwonder" and add dependencies (msgs, rospy, roscpp).
 
-   ```py
-   catkin_create_pkg beginner_hiwonder std_msgs rospy roscpp
-   ```
+```bash
+catkin_create_pkg beginner_hiwonder std_msgs rospy roscpp
+```
 
 <img class="common_img" src="../_static/media/chapter_9/section_4/media/image5.png" style="width:500px" />
 
-3. Input “**cd ~/catkin_ws**” command and press “Enter” to back to workspace.
+3. Input "**cd ~/catkin_ws**" command and press "**Enter**" to back to workspace.
 
-   ```py
-   cd ~/catkin_ws
-   ```
+```bash
+cd ~/catkin_ws
+```
 
 <img class="common_img" src="../_static/media/chapter_9/section_4/media/image6.png" style="width:500px" />
 
-4. Input “**catkin_make**” command and press “Enter” to complete the creation of function package in catkin workspace.
+4. Input "**catkin_make**" command and press "**Enter**" to complete the creation of function package in catkin workspace.
 
-   ```py
-   catkin_make
-   ```
+```bash
+catkin_make
+```
 
 <img class="common_img" src="../_static/media/chapter_9/section_4/media/image7.png" style="width:500px" />
 
 <img class="common_img" src="../_static/media/chapter_9/section_4/media/image8.png" style="width:500px" />
 
-5. Input “echo "**source ~/catkin_ws/devel/setup.bash" \>\> ~/.bashrc**” command to add catkin_ws workspace to ROS enviroment, which the creation of function package is completed.
+5. Input "echo "**source ~/catkin_ws/devel/setup.bash" \>\> ~/.bashrc**" command to add catkin_ws workspace to ROS enviroment, which the creation of function package is completed.
 
-   ```py
-   source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
-   ```
+```bash
+source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+```
 
 <img class="common_img" src="../_static/media/chapter_9/section_4/media/image9.png" style="width:500px" />
 
-6. Input “**source ~/.bashrc**” command and press “Enter” to add the path.
+6. Input "**source ~/.bashrc**" command and press "**Enter**" to add the path.
 
-   ```py
-   source ~/.bashrc
-   ```
+```bash
+source ~/.bashrc
+```
 
 <img class="common_img" src="../_static/media/chapter_9/section_4/media/image10.png" style="width:500px" />
 
-7. Input “**roscd beginner_hiwonder**” command to enter the directory of funtion package and press “Enter” to verify whether the function package is created.
+7. Input "**roscd beginner_hiwonder**" command to enter the directory of funtion package and press "**Enter**" to verify whether the function package is created.
 
-   ```py
-   roscd beginner_hiwonder
-   ```
+```bash
+roscd beginner_hiwonder
+```
 
-<img class="common_img" src="../_static/media/chapter_9\section_4/media/image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_4/media/image11.png" style="width:500px" />
 
 ## 9.5 Write A Simple Publisher
 
 This section takes the creation of a velocity_publisher.py publisher node as an example to explain.
 
-1)  Input “**roscd beginner_hiwonder**” command and press “Enter” to enter beginner_hiwonder software package.
+1)  Input "**roscd beginner_hiwonder**" command and press "**Enter**" to enter beginner_hiwonder software package.
 
-<img class="common_img" src="../_static/media/chapter_9\section_5\media\image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_5/media/image2.png" style="width:500px" />
 
-2. Input “**mkdir scripts**” command and press “Enter” to create a new scripts directory to store Python scripts.
+2. Input "**mkdir scripts**" command and press "**Enter**" to create a new scripts directory to store Python scripts.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_5\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_5/media/image3.png" style="width:500px" />
 
-3. Input “**cd scripts/**” command and press “Enter”.
+3. Input "**cd scripts/**" command and press "**Enter**".
 
-   <img class="common_img" src="../_static/media/chapter_9\section_5\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_5/media/image4.png" style="width:500px" />
 
-4. Input “**vi velocity_publisher.py**” command to edit program, and then copy the following program. If need to modify, you can press “i” again. After modifying, press “Esc” and input “:wq” to save and exit the file.
+4. Input "**vi velocity_publisher.py**" command to edit program, and then copy the following program. If need to modify, you can press "**i**" again. After modifying, press "**Esc**" and input "**:wq**" to save and exit the file.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_5\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_5/media/image5.png" style="width:500px" />
 
 ```py
 #!/usr/bin/env python
@@ -411,55 +415,55 @@ import rospy
 from geometry_msgs.msg import Twist
 
 def velocity_publisher():
-	# Initialize ROS node
-	rospy.init_node('velocity_publisher', anonymous=True)
-	# Create a Publishr and pubish a topic named /turtle1/cmd_vel. The type of message is geometry_msgs::Twist and the [queue](javascript:;) [size](javascript:;) is 10.
-	turtle_vel_pub = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
-	#set the loop rate
-	rate = rospy.Rate(10)
+# Initialize ROS node
+rospy.init_node('velocity_publisher', anonymous=True)
+# Create a Publishr and pubish a topic named /turtle1/cmd_vel. The type of message is geometry_msgs::Twist and the queue size is 10.
+turtle_vel_pub = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
+#set the loop rate
+rate = rospy.Rate(10)
+
+while not rospy.is_shutdown():
+    # Initialize the message of geometry_msgs::Twist type
+    vel_msg = Twist()
+    vel_msg.linear.x = 0.5
+    vel_msg.angular.z = 0.2
     
-	while not rospy.is_shutdown():
-		# Initialize the message of geometry_msgs::Twist type
-		vel_msg = Twist()
-		vel_msg.linear.x = 0.5
-		vel_msg.angular.z = 0.2
-        
-		# Publish message
-		turtle_vel_pub.publish(vel_msg)
-		rospy.loginfo("Publsh turtle velocity command\[%0.2f m/s, %0.2f rad/s\]",
-			vel_msg.linear.x, vel_msg.angular.z)
-		# Delay on the basis of loop rate
-		rate.sleep()
+    # Publish message
+    turtle_vel_pub.publish(vel_msg)
+    rospy.loginfo("Publsh turtle velocity command\[%0.2f m/s, %0.2f rad/s\]",
+        vel_msg.linear.x, vel_msg.angular.z)
+    # Delay on the basis of loop rate
+    rate.sleep()
 if __name__ == '__main__':
-	try:
-		velocity_publisher()
-	except rospy.ROSInterruptException:
-		pass
+try:
+    velocity_publisher()
+except rospy.ROSInterruptException:
+    pass
 ```
 
-<img class="common_img" src="../_static/media/chapter_9\section_5\media\image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_5/media/image6.png" style="width:500px" />
 
-5)  Input command **“chmod +x velocity_publisher.py**” to give executable permissions to the saved velocity_publisher.py.
+5)  Input command **"chmod +x velocity_publisher.py**" to give executable permissions to the saved velocity_publisher.py.
 
-<img class="common_img" src="../_static/media/chapter_9\section_5\media\image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_5/media/image7.png" style="width:500px" />
 
 6)  The publisher editing is complete.
 
 ## 9.6 Write A Simple Subscriber
 
-The creation of subscriber is based on the edited publisher. The subscription are only possible as long as the message is published. If you have not edited the publisher, you can view the content in “**[9.6 Write A Simple Subscriber](#anchor_9_6)**” and follow the steps to edit it.
+The creation of subscriber is based on the edited publisher. The subscription are only possible as long as the message is published. If you have not edited the publisher, you can view the content in "**9.6 Write A Simple Subscriber**" and follow the steps to edit it.
 
 ### 9.6.1 Write Subscriber Node
 
 This section takes the creation of a pose_subscriber.py node as an example to explain.
 
-1)  Input “**cd catkin_ws/src/beginner_hiwonder/scripts/**” command and press “Enter”.
+1)  Input "**cd catkin_ws/src/beginner_hiwonder/scripts/**" command and press "**Enter**".
 
-<img class="common_img" src="../_static/media/chapter_9\section_6\media\image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_6/media/image2.png" style="width:500px" />
 
-2. Enter “**vi pose_subscriber.py**” command to edit the program, and then copy the following program. If need to modify, press “i”. After modifying, press “Esc” and input “:wq” to save and exit.
+2. Enter "**vi pose_subscriber.py**" command to edit the program, and then copy the following program. If need to modify, press "**i**". After modifying, press "**Esc**" and input "**:wq**" to save and exit.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_6\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_6/media/image3.png" style="width:500px" />
 
 ```py
 #!/usr/bin/env python
@@ -484,35 +488,35 @@ if __name__ == '__main__':
 	pose_subscriber()
 ```
 
-<img class="common_img" src="../_static/media/chapter_9\section_6\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_6/media/image4.png" style="width:500px" />
 
-3)  Input “**chmod +x pose_subscriber.py**” command and press “Enter” to give the executable permission to saved pose_subscriber.py.
+3)  Input "**chmod +x pose_subscriber.py**" command and press "**Enter**" to give the executable permission to saved pose_subscriber.py.
 
-<img class="common_img" src="../_static/media/chapter_9\section_6\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_6/media/image5.png" style="width:500px" />
 
 ### 9.6.2 Test Publisher and Subscriber
 
-1)  Input “roscore” command to start the node manager.
+1)  Input "roscore" command to start the node manager.
 
-<img class="common_img" src="../_static/media/chapter_9\section_6\media\image6.jpeg" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_6/media/image6.jpeg" style="width:500px"  />
 
 After starting, the following prompt will appear:
 
-<img class="common_img" src="../_static/media/chapter_9\section_6\media\image7.jpeg" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_6/media/image7.jpeg" style="width:500px"  />
 
-Input “**rosrun turtlesim turtlesim_node**” command and then press “Enter” to start TurtleSim.
+Input "**rosrun turtlesim turtlesim_node**" command and then press "**Enter**" to start TurtleSim.
 
-<img class="common_img" src="../_static/media/chapter_9\section_6\media\image8.png" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_6/media/image8.png" style="width:500px"  />
 
-<img class="common_img" src="../_static/media/chapter_9\section_6\media\image9.png" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_6/media/image9.png" style="width:500px"  />
 
-Open a new terminal and enter “**rosrun beginner_hiwonder velocity_publisher.py**” command to run the publisher of velocity_publisher.py. Then press “Ctrl+C” to stop running the publisher node.
+Open a new terminal and enter "**rosrun beginner_hiwonder velocity_publisher.py**" command to run the publisher of velocity_publisher.py. Then press "Ctrl+C" to stop running the publisher node.
 
-<img class="common_img" src="../_static/media/chapter_9\section_6\media\image10.png" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_6/media/image10.png" style="width:500px"  />
 
-<img class="common_img" src="../_static/media/chapter_9\section_6\media\image11.png" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_6/media/image11.png" style="width:500px"  />
 
-Open a new terminal and input “**rosrun beginner_hiwonder pose_subscriber.py**” command to run the subscriber of pose_subscriber.py Then press “Ctrl+C” to stop running the subscribe node.
+Open a new terminal and input "**rosrun beginner_hiwonder pose_subscriber.py**" command to run the subscriber of pose_subscriber.py Then press "Ctrl+C" to stop running the subscribe node.
 
 1.  The publisher node needs to be started first, and then the subscriber node can subscribe message.
 
@@ -524,31 +528,31 @@ Open a new terminal and input “**rosrun beginner_hiwonder pose_subscriber.py**
 
 > [!NOTE]
 >
-> **Before customizing the topic message, the workspace and package need to be created first. The specific operation steps can be viewed in “[9. ROS1 Basic Lesson/9.4 Create Workspace and Package]()".**
+> **Before customizing the topic message, the workspace and package need to be created first. The specific operation steps can be viewed in "[9.4 Create Workspace and Package](#anchor_9_4)".**
 
 The specific operation steps for customizing topic massages are as following:
 
 1)  Open the terminal.
 
-2)  Enter “**roscd beginner_hiwonder**” command to locate to the package directory and press “Enter”.
+2)  Enter "**roscd beginner_hiwonder**" command to locate to the package directory and press "**Enter**".
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image2.png" style="width:500px" />
 
 > [!NOTE]
 >
-> If there is a prompt “**No such package/stack ‘beginner_hiwonder**” appears, it means that the package does not exist in the environment variable ROS_PACKAGE_PATH. The specific solution can be viewed in “**[9. ROS1 Basic Lesson/9.4 Create Workspace and Package]()**”. After the problem is solved, please repeat the current step.
+> If there is a prompt "**No such package/stack 'beginner_hiwonder**" appears, it means that the package does not exist in the environment variable ROS_PACKAGE_PATH. The specific solution can be viewed in "**[9.4 Create Workspace and Package](#anchor_9_4)**". After the problem is solved, please repeat the current step.
 
-3)  Enter “**mkdir msg**” command and press “Enter”. Then create a new folder “msg” for storing text files.
+3)  Enter "**mkdir msg**" command and press "**Enter**". Then create a new folder "msg" for storing text files.
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image3.png" style="width:500px" />
 
-4)  Enter “**cd msg**” command and press “Enter”.
+4)  Enter "**cd msg**" command and press "**Enter**".
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image4.png" style="width:500px" />
 
-5. Enter “**vi Person.msg**” command to edit program and copy the following program. If want to modify, you can press “i” key. After modifying, press “Esc” and enter “:wq” to save and exit.
+5. Enter "**vi Person.msg**" command to edit program and copy the following program. If want to modify, you can press "**i**" key. After modifying, press "**Esc**" and enter "**:wq**" to save and exit.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_7\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image5.png" style="width:500px" />
 
 ```py
 string name
@@ -560,11 +564,11 @@ uint8 male = 1
 uint8 female = 2
 ```
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image6.png" style="width:500px" />
 
-6. Enter “**vi package.xml**” command. Then copy the following program and add the package dependencies in the position shown in the figure below. If want to modify, you can press “i” again. After modifying, press “Esc” and enter “:wq” to save and exit.
+6. Enter "**vi package.xml**" command. Then copy the following program and add the package dependencies in the position shown in the figure below. If want to modify, you can press "**i**" again. After modifying, press "**Esc**" and enter "**:wq**" to save and exit.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_7\media\image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image7.png" style="width:500px" />
 
 7. Add the package dependencies in the position shown in the below figure:
 
@@ -573,41 +577,41 @@ uint8 female = 2
 <exec_depend>message_runtime</exec_depend>
 ```
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image8.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image8.png" style="width:500px" />
 
-8)  Enter “**vi CMakeLists.txt**” and press “i” to modify “CMakeLists.txt” file.
+8)  Enter "**vi CMakeLists.txt**" and press "**i**" to modify "CMakeLists.txt" file.
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image9.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image9.png" style="width:500px" />
 
-9)  Add the required compiation option “**message_generation**” in the position shown in the figure below.
+9)  Add the required compiation option "**message_generation**" in the position shown in the figure below.
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image10.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image10.png" style="width:500px" />
 
-10) Locate the code shown in the figure below. Then uncomment the framed code and add the required compilation option “**Person.msg**”.
+10) Locate the code shown in the figure below. Then uncomment the framed code and add the required compilation option "**Person.msg**".
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image11.png" style="width:500px" />
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image12.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image12.png" style="width:500px" />
 
 11) Find the code shown in the figure below. Then uncomment the code in red box and ensure that the required compilation options take effect.
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image13.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image13.png" style="width:500px" />
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image14.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image14.png" style="width:500px" />
 
-12) Find the code shown in the figure below. Then uncomment the code in red box and add the required compilation option “**message_runtime**”.
+12) Find the code shown in the figure below. Then uncomment the code in red box and add the required compilation option "**message_runtime**".
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image15.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image15.png" style="width:500px" />
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image16.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image16.png" style="width:500px" />
 
-13) After modifying, press “Esc” and enter “:wq” to save and exit.
+13) After modifying, press "**Esc**" and enter "**:wq**" to save and exit.
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image17.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image17.png" style="width:500px" />
 
-14) Enter the command “**rosmsg show beginner_hiwonder/Person**” and press “Enter” to check whether the message written can be recognized by system. When the words shown in red box appear, it means that they are recognized successfully.
+14) Enter the command "**rosmsg show beginner_hiwonder/Person**" and press "**Enter**" to check whether the message written can be recognized by system. When the words shown in red box appear, it means that they are recognized successfully.
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image18.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image18.png" style="width:500px" />
 
 ### 9.7.2 The Use of Topic Message
 
@@ -615,17 +619,17 @@ uint8 female = 2
 
 1)  Open the terminal.
 
-2)  Enter “**roscd beginner_hiwonder**” command to locate to the package directory and press “Enter”.
+2)  Enter "**roscd beginner_hiwonder**" command to locate to the package directory and press "**Enter**".
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image2.png" style="width:500px" />
 
-3)  Enter “**cd scripts**” command and press “Enter” to come to the folder “scripts” where Python scripts are stored.
+3)  Enter "**cd scripts**" command and press "**Enter**" to come to the folder "**scripts**" where Python scripts are stored.
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image19.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image19.png" style="width:500px" />
 
-4. Enter “**vi person_publisher.py**” command to edit progam, and then copy the following program. If want to modify, you can press “i”. After modifying, press “Esc” and enter “:wq” to save and exit.
+4. Enter "**vi person_publisher.py**" command to edit progam, and then copy the following program. If want to modify, you can press "**i**". After modifying, press "**Esc**" and enter "**:wq**" to save and exit.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_7\media\image20.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image20.png" style="width:500px" />
 
 ```py
 #!/usr/bin/env python
@@ -667,11 +671,11 @@ if __name__ == '__main__':
 		pass
 ```
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image21.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image21.png" style="width:500px" />
 
-5. Enter “**vi person_subscriber.py**” to edit program, and copy the following program. If want to modify, you can press “i”. After modifying, press “Esc” and enter “:wq” to save and exit.
+5. Enter "**vi person_subscriber.py**" to edit program, and copy the following program. If want to modify, you can press "**i**". After modifying, press "**Esc**" and enter "**:wq**" to save and exit.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_7\media\image22.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image22.png" style="width:500px" />
 
 ```py
 #!/usr/bin/env python
@@ -698,41 +702,41 @@ if __name__ == '__main__':
 	person_subscriber()
 ```
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image23.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image23.png" style="width:500px" />
 
-6)  Enter “**chmod +x person_publisher.py**” command and press “Enter” to give the executable permission to the saved person_publisher.py.
+6)  Enter "**chmod +x person_publisher.py**" command and press "**Enter**" to give the executable permission to the saved person_publisher.py.
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image24.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image24.png" style="width:500px" />
 
 * **Run Publisher And Subscriber Nodes**
 
-1)  Enter “**cd ~/catkin_ws**” command and press “Enter” to enter to catkin workspace.
+1)  Enter "**cd ~/catkin_ws**" command and press "**Enter**" to enter to catkin workspace.
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image25.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image25.png" style="width:500px" />
 
-2)  Enter “**catkin_make**” command and press “Enter” to build all the packages in directory.
+2)  Enter "**catkin_make**" command and press "**Enter**" to build all the packages in directory.
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image26.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image26.png" style="width:500px" />
 
-3)  Enter “**source ./devel/setup.bash**” command and press “Enter” to refresh the workspace environment.
+3)  Enter "**source ./devel/setup.bash**" command and press "**Enter**" to refresh the workspace environment.
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image27.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image27.png" style="width:500px" />
 
-4)  Enter “**roscore**” command to start node manager.
+4)  Enter "**roscore**" command to start node manager.
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image28.jpeg" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image28.jpeg" style="width:500px"  />
 
 After starting, the prompt below will appear:
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image29.jpeg" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image29.jpeg" style="width:500px"  />
 
-5)  Enter “**rosrun beginner_hiwonder person_publisher.py**” command and press “Enter” to run publisher node. If want to stop running node, you can press “Ctrl+C”.
+5)  Enter "**rosrun beginner_hiwonder person_publisher.py**" command and press "**Enter**" to run publisher node. If want to stop running node, you can press "Ctrl+C".
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image30.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image30.png" style="width:500px" />
 
-6)  Open a new terminal. Enter “**rosrun beginner_hiwonder person_subscriber.py**” command and press “Enter” to run the subscriber node. If want to stop running node, you can press “Ctrl+C”.
+6)  Open a new terminal. Enter "**rosrun beginner_hiwonder person_subscriber.py**" command and press "**Enter**" to run the subscriber node. If want to stop running node, you can press "Ctrl+C".
 
-<img class="common_img" src="../_static/media/chapter_9\section_7\media\image31.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_7/media/image31.png" style="width:500px" />
 
 1.  The publisher node needs to be started first, and then the subscriber node can subscribe message.
 
@@ -744,13 +748,13 @@ This section takes the creation of a simple service (Client) node turtle_spawn.p
 
 ### 9.8.1 Configure Client Code Compilation Rule
 
-1. Enter “**cd catkin_ws/src/beginner_hiwonder/scripts/**” command and press “Enter”.
+1. Enter "**cd catkin_ws/src/beginner_hiwonder/scripts/**" command and press "**Enter**".
 
-   <img class="common_img" src="../_static/media/chapter_9\section_8\media\image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_8/media/image2.png" style="width:500px" />
 
-2. Enter “**vi turtle_spawn.py**” command to edit program and copy the following program. If want to program, you can press “i”, and then press “Esc” to enter “:wq” to exit and save.
+2. Enter "**vi turtle_spawn.py**" command to edit program and copy the following program. If want to program, you can press "**i**", and then press "**Esc**" to enter "**:wq**" to exit and save.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_8\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_8/media/image3.png" style="width:500px" />
 
 ```py
 #!/usr/bin/env python
@@ -778,33 +782,33 @@ if __name__ == "__main__":
 	print "Spwan turtle successfully \[name:%s\]" %(turtle_spawn())
 ```
 
-<img class="common_img" src="../_static/media/chapter_9\section_8\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_8/media/image4.png" style="width:500px" />
 
-3. Enter “**chmod +x turtle_spawn.py**” command and press “Enter” to give the executable permission to the saved turtle_spawn.py.
+3. Enter "**chmod +x turtle_spawn.py**" command and press "**Enter**" to give the executable permission to the saved turtle_spawn.py.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_8\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_8/media/image5.png" style="width:500px" />
 
 ### 9.8.2 Run Client
 
-1)  Enter “**roscore**” command to start node manager.
+1)  Enter "**roscore**" command to start node manager.
 
-<img class="common_img" src="../_static/media/chapter_9\section_8\media\image6.png" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_8/media/image6.png" style="width:500px"  />
 
-2. Enter “**rosrun turtlesim turtlesim_node**” command and press “enter” to run turtlesim.
+2. Enter "**rosrun turtlesim turtlesim_node**" command and press "**Enter**" to run turtlesim.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_8\media\image7.png" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_8/media/image7.png" style="width:500px"  />
 
-   At this time, the interface will pop up the turtlesim window, as the figure shown below:
+At this time, the interface will pop up the turtlesim window, as the figure shown below:
 
-<img class="common_img" src="../_static/media/chapter_9\section_8\media\image8.png" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_8/media/image8.png" style="width:500px"  />
 
-3)  Open a new terminal. Enter “**rosrun beginner_hiwonder turtle_spawn.py**” command and press “Enter” to run the client.
+3)  Open a new terminal. Enter "**rosrun beginner_hiwonder turtle_spawn.py**" command and press "**Enter**" to run the client.
 
-<img class="common_img" src="../_static/media/chapter_9\section_8\media\image9.png" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_8/media/image9.png" style="width:500px"  />
 
 At this time, client will send the request to server and respond to start another turtle.
 
-<img class="common_img" src="../_static/media/chapter_9\section_8/media/image10.png" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_8/media/image10.png" style="width:500px"  />
 
 ## 9.9 Write A Simple Server
 
@@ -812,15 +816,15 @@ At this time, client will send the request to server and respond to start anothe
 
 > [!NOTE]
 >
-> **Before creating service code, you need to create workspace and package first. The specific operation steps can be viewed in file “[9. ROS1 Basic Lesson->9.4 Create Workspace and Package]()”.**
+> **Before creating service code, you need to create workspace and package first. The specific operation steps can be viewed in file "[9.4 Create Workspace and Package](#anchor_9_4)".**
 
-1)  Enter “**cd catkin_ws/src/beginner_hiwonder/scripts/**” command and press “Enter”.
+1)  Enter "**cd catkin_ws/src/beginner_hiwonder/scripts/**" command and press "**Enter**".
 
-<img class="common_img" src="../_static/media/chapter_9\section_9\media\image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_9/media/image2.png" style="width:500px" />
 
-2. Enter “**vi turtle_command_server.py**” command to edit program and copy the following program. If want to modify, you can press “i”. After modifying, press “Esc” and enter “:wq” to save and exit.
+2. Enter "**vi turtle_command_server.py**" command to edit program and copy the following program. If want to modify, you can press "**i**". After modifying, press "**Esc**" and enter "**:wq**" to save and exit.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_9\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_9/media/image3.png" style="width:500px" />
 
 ```py
 #!/usr/bin/env python
@@ -859,31 +863,31 @@ if __name__ == "__main__":
 	turtle_command_server()
 ```
 
-<img class="common_img" src="../_static/media/chapter_9\section_9\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_9/media/image4.png" style="width:500px" />
 
-3)  Enter “**chmod +x turtle_command_server.py**” command and press “Enter” to give the executable permission to the saved turtle_command_server.py.
+3)  Enter "**chmod +x turtle_command_server.py**" command and press "**Enter**" to give the executable permission to the saved turtle_command_server.py.
 
-<img class="common_img" src="../_static/media/chapter_9\section_9\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_9/media/image5.png" style="width:500px" />
 
 ###  9.9.2 Run Server Node
 
-1)  Enter “**roscore**” command to start node manager.
+1)  Enter "**roscore**" command to start node manager.
 
-<img class="common_img" src="../_static/media/chapter_9\section_9\media\image6.jpeg" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_9/media/image6.jpeg" style="width:500px"  />
 
-2)  Enter “**rosrun turtlesim turtlesim_node**” command and press “Enter” to start turtlesim simulator window.
+2)  Enter "**rosrun turtlesim turtlesim_node**" command and press "**Enter**" to start turtlesim simulator window.
 
-<img class="common_img" src="../_static/media/chapter_9\section_9\media\image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_9/media/image7.png" style="width:500px" />
 
-3)  Open a new terminal. Then enter “**rosrun beginner_hiwonder turtle_command_server.py**” and press “Enter” to run service node. If need to stop running the node, you can press “Ctrl+C”.
+3)  Open a new terminal. Then enter "**rosrun beginner_hiwonder turtle_command_server.py**" and press "**Enter**" to run service node. If need to stop running the node, you can press "Ctrl+C".
 
-<img class="common_img" src="../_static/media/chapter_9\section_9\media\image8.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_9/media/image8.png" style="width:500px" />
 
-4)  Open a new terminal again. Enter “**rosservice call /turtle_command "{}"**” command and press “Enter” to move the turtle along the circular path.
+4)  Open a new terminal again. Enter "**rosservice call /turtle_command "{}"**" command and press "**Enter**" to move the turtle along the circular path.
 
-<img class="common_img" src="../_static/media/chapter_9\section_9\media\image9.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_9/media/image9.png" style="width:500px" />
 
-<img class="common_img" src="../_static/media/chapter_9\section_9/media/image10.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_9/media/image10.png" style="width:500px" />
 
 ## 9.10 The Definition and Use of Service Data
 
@@ -891,27 +895,27 @@ if __name__ == "__main__":
 
 > [!NOTE]
 >
-> **Before customizing service data, the workspace and package need to be created first. The specific operation steps can be viewed in file “[9. ROS1 Basic Lesson/9.4 Create Workspace and Package]()”.**
+> **Before customizing service data, the workspace and package need to be created first. The specific operation steps can be viewed in file "[9.4 Create Workspace and Package](#anchor_9_4)".**
 
 The specific operation steps to customize service data are as follow:
 
 1)  Open the terminal.
 
-2)  Enter “**roscd beginner_hiwonder**” command to go to the package directory and press “Enter”.
+2)  Enter "**roscd beginner_hiwonder**" command to go to the package directory and press "**Enter**".
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image2.png" style="width:500px" />
 
 > [!NOTE]
 >
-> If there is a prompt “**No such package/stack ‘beginner_hiwonder**” appears, it means that the package does not exist in the environment variable ROS_PACKAGE_PATH. The specific solution can be viewed in “**[9. ROS1 Basic Lesson/9.4 Create Workspace and Package]()**”. After the problem is solved, please repeat the current step.
+> If there is a prompt "**No such package/stack 'beginner_hiwonder**" appears, it means that the package does not exist in the environment variable ROS_PACKAGE_PATH. The specific solution can be viewed in "**[9.4 Create Workspace and Package](#anchor_9_4)**". After the problem is solved, please repeat the current step.
 
-3)  Enter “**mkdir srv**” command and press “**Enter**”. Then create a new folder “**srv**” for storing text files.
+3)  Enter "**mkdir srv**" command and press "**Enter**". Then create a new folder "**srv**" for storing text files.
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image3.png" style="width:500px" />
 
-4. Enter “**vi Person.srv**” command to edit program, and then copy the following program. If want to modify, you can press “i”. After modifying, press “**Esc**” and enter “**:wq**” to save and exit.
+4. Enter "**vi Person.srv**" command to edit program, and then copy the following program. If want to modify, you can press "**i**". After modifying, press "**Esc**" and enter "**:wq**" to save and exit.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_10\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image4.png" style="width:500px" />
 
 ```py
 string name
@@ -926,50 +930,50 @@ int8 female = 2
 string result
 ```
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image5.png" style="width:500px" />
 
-5. Enter “**cd ~/catkin_ws/src/beginner_hiwonder/**” command, and then press “Enter”.
+5. Enter "**cd ~/catkin_ws/src/beginner_hiwonder/**" command, and then press "**Enter**".
 
-   <img class="common_img" src="../_static/media/chapter_9\section_10\media\image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image6.png" style="width:500px" />
 
-6. Enter “**vi package.xml**” command. Then copy the following program and add the package dependencies in the position shown in the figure below. If want to modify, you can press “i” again. After modifying, press “**Esc**” and enter “**:wq**” to save and exit.
+6. Enter "**vi package.xml**" command. Then copy the following program and add the package dependencies in the position shown in the figure below. If want to modify, you can press "**i**" again. After modifying, press "**Esc**" and enter "**:wq**" to save and exit.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_10\media\image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image7.png" style="width:500px" />
 
-```py
+```xml
 <build_depend>message_generation</build_depend>
 <exec_depend>message_runtime</exec_depend>
 ```
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image8.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image8.png" style="width:500px" />
 
-7)  Enter “**vi CMakeLists.txt**” and press “i” to modify “CMakeLists.txt” file.
+7)  Enter "**vi CMakeLists.txt**" and press "**i**" to modify "CMakeLists.txt" file.
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image9.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image9.png" style="width:500px" />
 
-8)  Add the required compilation option “**message_generation**” in the position shown in the figure below.
+8)  Add the required compilation option "**message_generation**" in the position shown in the figure below.
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image10.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image10.png" style="width:500px" />
 
-9)  Find the code shown in the figure below. Then uncomment the framed code and add the required compilation option “**Person.srv**”.
+9)  Find the code shown in the figure below. Then uncomment the framed code and add the required compilation option "**Person.srv**".
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image11.png" style="width:500px" />
 
 10) Find the code shown in the figure below. Then uncomment the code in red box and ensure that the required compilation options take effect.
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image12.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image12.png" style="width:500px" />
 
-11) Find the code shown in the figure below. Then uncomment the code in red box and add the required compilation option “**message_runtime**”.
+11) Find the code shown in the figure below. Then uncomment the code in red box and add the required compilation option "**message_runtime**".
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image13.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image13.png" style="width:500px" />
 
-12) After modifying, press “**Esc**” and enter “**:wq**” to save and exit.
+12) After modifying, press "**Esc**" and enter "**:wq**" to save and exit.
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image14.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image14.png" style="width:500px" />
 
-13) Enter the command “**rosmsg show beginner_hiwonder/Person**” and press “**Enter**” to check whether the massage written can be recognized by system. When the words shown in red box appear, it means that they are recognized successfully.
+13) Enter the command "**rosmsg show beginner_hiwonder/Person**" and press "**Enter**" to check whether the massage written can be recognized by system. When the words shown in red box appear, it means that they are recognized successfully.
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image15.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image15.png" style="width:500px" />
 
 ###  9.10.2 The Use of Service Data
 
@@ -977,13 +981,13 @@ string result
 
 1. Open the terminal.
 
-2. Enter “**cd catkin_ws/src/beginner_hiwonder/scripts/**” command and press “Enter” to come to the folder “**scripts**” where Python scripts are stored.
+2. Enter "**cd catkin_ws/src/beginner_hiwonder/scripts/**" command and press "**Enter**" to come to the folder "**scripts**" where Python scripts are stored.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_10\media\image16.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image16.png" style="width:500px" />
 
-3. Enter “**vi person_server.py**” command to edit program, and then copy the following program. If want to modify, you can press “i”. After modifying, press “**Esc**” and enter “**:wq**” to save and exit.
+3. Enter "**vi person_server.py**" command to edit program, and then copy the following program. If want to modify, you can press "**i**". After modifying, press "**Esc**" and enter "**:wq**" to save and exit.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_10\media\image17.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image17.png" style="width:500px" />
 
 ```py
 #!/usr/bin/env python
@@ -1014,11 +1018,11 @@ if __name__ == "__main__":
 	person_server()
 ```
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image18.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image18.png" style="width:500px" />
 
-4. Enter “**vi person_subscriber.py**” to edit program, and copy the following program. If want to modify, you can press “i”. After modifying, press “Esc” and enter “:wq” to save and exit.
+4. Enter "**vi person_subscriber.py**" to edit program, and copy the following program. If want to modify, you can press "**i**". After modifying, press "**Esc**" and enter "**:wq**" to save and exit.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_10\media\image19.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image19.png" style="width:500px" />
 
 ```py
 #!/usr/bin/env python
@@ -1049,43 +1053,43 @@ if __name__ == "__main__":
 	print "Show person result : %s" %(person_client())
 ```
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image20.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image20.png" style="width:500px" />
 
-5)  Enter “**chmod +x person_server.py**” and “**chmod +x person_client.py**” command, and then press “Enter” to give the executable permission to the saved person_publisher.py.
+5)  Enter "**chmod +x person_server.py**" and "**chmod +x person_client.py**" command, and then press "**Enter**" to give the executable permission to the saved person_publisher.py.
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image21.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image21.png" style="width:500px" />
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image22.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image22.png" style="width:500px" />
 
 ### 9.10.3 Run Server and Client Nodes
 
-1)  Enter “**cd ~/catkin_ws**” command and press “Enter” to enter to catkin workspace.
+1)  Enter "**cd ~/catkin_ws**" command and press "**Enter**" to enter to catkin workspace.
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image23.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image23.png" style="width:500px" />
 
-2)  Enter “**catkin_make**” command and press “Enter” to build all the packages in directory.
+2)  Enter "**catkin_make**" command and press "**Enter**" to build all the packages in directory.
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image24.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image24.png" style="width:500px" />
 
-3)  Enter “**source ./devel/setup.bash**” command and press “Enter” to refresh the workspace environment.
+3)  Enter "**source ./devel/setup.bash**" command and press "**Enter**" to refresh the workspace environment.
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image25.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image25.png" style="width:500px" />
 
-4)  Enter “**roscore**” command to start node manager.
+4)  Enter "**roscore**" command to start node manager.
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image26.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image26.png" style="width:500px" />
 
-5)  Enter “**rosrun beginner_hiwonder person_publisher.py**” command and press “Enter” to run publisher node. If want to stop running node, you can press “Ctrl+C”.
+5)  Enter "**rosrun beginner_hiwonder person_publisher.py**" command and press "**Enter**" to run publisher node. If want to stop running node, you can press "Ctrl+C".
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image27.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image27.png" style="width:500px" />
 
-6)  Open a new terminal. Enter “**rosrun beginner_hiwonder person_client.py**” command and press “Enter” to run the client node.
+6)  Open a new terminal. Enter "**rosrun beginner_hiwonder person_client.py**" command and press "**Enter**" to run the client node.
 
-<img class="common_img" src="../_static/media/chapter_9\section_10\media\image28.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image28.png" style="width:500px" />
 
 7)  After running the client node, the terminal window for starting server node will print the content shown in the red box in the figure below.
 
-<img class="common_img" src="../_static/media/chapter_9\section_10/media/image29.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_10/media/image29.png" style="width:500px" />
 
 ## 9.11 Parameters Usage and Programming Method
 
@@ -1093,7 +1097,7 @@ if __name__ == "__main__":
 
 There is a parameter server in ROS master, which is a global dictionary to store configuration parameters among nodes. For example, parameter server for saving our name, radius and height can be globally accessible by each node.
 
-If I access the robot name in Node A, I will get a value of “my_rot”. It only needs to send a query request to our ROS master, and then return the result of “my_rot”. The same goes for Node B, Node C, and Node D.
+If I access the robot name in Node A, I will get a value of "**my_rot**". It only needs to send a query request to our ROS master, and then return the result of "**my_rot**". The same goes for Node B, Node C, and Node D.
 
 The parameter server model is shown in the following figure:
 
@@ -1103,7 +1107,7 @@ The parameter server model is shown in the following figure:
 
 * **rosparam Detailed Parameter** 
 
-Let’s get to know rosparam first and the detailed parameters are as follow:
+Let's get to know rosparam first and the detailed parameters are as follow:
 
 <img class="common_img" src="../_static/media/chapter_9/section_11/media/image3.jpeg" style="width:500px"  />
 
@@ -1111,15 +1115,15 @@ Let’s get to know rosparam first and the detailed parameters are as follow:
 
 Taking turtlesim project as an example, run the turtlesim routine first. The specific operation steps are as follows:
 
-1)  Enter “**roscore**” command and press “Enter”.
+1)  Enter "**roscore**" command and press "**Enter**".
 
 <img class="common_img" src="../_static/media/chapter_9/section_11/media/image4.png" style="width:500px" />
 
 > [!NOTE]
 >
-> If the prompt “**roscore cannot run as another roscore/master is already running**” appears, which means node manager has been started before and this step can be skipped.
+> If the prompt "**roscore cannot run as another roscore/master is already running**" appears, which means node manager has been started before and this step can be skipped.
 
-2)  Enter the command “**rosrun turtlesim turtlesim_node**”, and then press “Enter” to open the turtle simulator.
+2)  Enter the command "**rosrun turtlesim turtlesim_node**", and then press "**Enter**" to open the turtle simulator.
 
 <img class="common_img" src="../_static/media/chapter_9/section_11/media/image5.png" style="width:500px"  />
 
@@ -1129,107 +1133,107 @@ The operation steps for the use of rosparam are as follow:
 
 1)  Open a new terminal.
 
-2)  Enter “**rosparam**” command and press “**Enter**”.
+2)  Enter "**rosparam**" command and press "**Enter**".
 
 <img class="common_img" src="../_static/media/chapter_9/section_11/media/image6.png" style="width:500px" />
 
-3. Enter the command "**rosparam list**" and press “**Enter**” to query the number of turtle parameters.
+3. Enter the command "**rosparam list**" and press "**Enter**" to query the number of turtle parameters.
 
-   <img class="common_img" src="../_static/media/chapter_9/section_11/media/image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image7.png" style="width:500px" />
 
-4. Enter “**rosparam get /turtlesim/background_b**” command and press “**Enter**” to get the value of“**background_b**”. The same method goes for getting other values.
+4. Enter "**rosparam get /turtlesim/background_b**" command and press "**Enter**" to get the value of"**background_b**". The same method goes for getting other values.
 
-   <img class="common_img" src="../_static/media/chapter_9/section_11/media/image8.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image8.png" style="width:500px" />
 
-5. Enter “**rosparam set /turtlesim/background_b 100**” command and press “Enter” to set “**background_b**” value. The same method goes for setting other values.
+5. Enter "**rosparam set /turtlesim/background_b 100**" command and press "**Enter**" to set "**background_b**" value. The same method goes for setting other values.
 
-   <img class="common_img" src="../_static/media/chapter_9/section_11/media/image9.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image9.png" style="width:500px" />
 
-6. Enter “**rosparam get /turtlesim/background_b**” command and press “Enter”. Then you can find that the value has been modified to 100.
+6. Enter "**rosparam get /turtlesim/background_b**" command and press "**Enter**". Then you can find that the value has been modified to 100.
 
-   <img class="common_img" src="../_static/media/chapter_9/section_11/media/image10.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image10.png" style="width:500px" />
 
-7. Enter “**rosservice call clear "{}"** ” command and press “Enter” to send the request to change color.
+7. Enter "**rosservice call clear "{}"** " command and press "**Enter**" to send the request to change color.
 
-   <img class="common_img" src="../_static/media/chapter_9/section_11/media/image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image11.png" style="width:500px" />
 
-   <img class="common_img" src="../_static/media/chapter_9/section_11/media/image12.png" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image12.png" style="width:500px"  />
 
-8. Enter “**rosparam dump param.yaml**” command and press “Enter” to save file.
+8. Enter "**rosparam dump param.yaml**" command and press "**Enter**" to save file.
 
-   <img class="common_img" src="../_static/media/chapter_9/section_11/media/image13.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image13.png" style="width:500px" />
 
 9. The created file is saved in the following path and open it directly.
 
-   <img class="common_img" src="../_static/media/chapter_9/section_11/media/image14.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image14.png" style="width:500px" />
 
-10. Enter “**vi param.yaml**” command and press “Enter”. Then press “i” to modify “param.yaml”.
+10. Enter "**vi param.yaml**" command and press "**Enter**". Then press "**i**" to modify "param.yaml".
 
-    <img class="common_img" src="../_static/media/chapter_9/section_11/media/image15.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image15.png" style="width:500px" />
 
-    <img class="common_img" src="../_static/media/chapter_9/section_11/media/image16.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image16.png" style="width:500px" />
 
-11. The color can be modified to 0 which is black. After modifying, press “Esc” and enter “:wq” to save and exit.
+11. The color can be modified to 0 which is black. After modifying, press "**Esc**" and enter "**:wq**" to save and exit.
 
-    <img class="common_img" src="../_static/media/chapter_9/section_11/media/image17.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image17.png" style="width:500px" />
 
-12. Enter “**rosparam load param.yaml**” command and press “Enter” to load the file.
+12. Enter "**rosparam load param.yaml**" command and press "**Enter**" to load the file.
 
-    <img class="common_img" src="../_static/media/chapter_9/section_11/media/image18.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image18.png" style="width:500px" />
 
-13. Enter “**rosparam get /turtlesim/background_b**” command and press “Enter” to check the loading effect.
+13. Enter "**rosparam get /turtlesim/background_b**" command and press "**Enter**" to check the loading effect.
 
-    <img class="common_img" src="../_static/media/chapter_9/section_11/media/image19.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image19.png" style="width:500px" />
 
-14. Enter “**rosservice call clear "{}"** ” command and press “Enter” to send a request that changes the background scolor to black.
+14. Enter "**rosservice call clear "{}"** " command and press "**Enter**" to send a request that changes the background scolor to black.
 
-    <img class="common_img" src="../_static/media/chapter_9/section_11/media/image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image11.png" style="width:500px" />
 
-    <img class="common_img" src="../_static/media/chapter_9/section_11/media/image20.png" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image20.png" style="width:500px"  />
 
-15. Enter “**rosparam delete /turtlesim/background_g**” command and press “**Enter**” to delete the color of g.
+15. Enter "**rosparam delete /turtlesim/background_g**" command and press "**Enter**" to delete the color of g.
 
-    <img class="common_img" src="../_static/media/chapter_9/section_11/media/image21.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image21.png" style="width:500px" />
 
-16. Enter “**rosparam list**” command and press “**Enter**” to check effect.
+16. Enter "**rosparam list**" command and press "**Enter**" to check effect.
 
-    <img class="common_img" src="../_static/media/chapter_9/section_11/media/image22.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image22.png" style="width:500px" />
 
-17. Enter “**rosservice call clear "{}"** ” command and press “Enter” to refesh the blackground color to check effect.
+17. Enter "**rosservice call clear "{}"** " command and press "**Enter**" to refesh the blackground color to check effect.
 
-    <img class="common_img" src="../_static/media/chapter_9/section_11/media/image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image11.png" style="width:500px" />
 
-    <img class="common_img" src="../_static/media/chapter_9/section_11/media/image23.png" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image23.png" style="width:500px"  />
 
 ###  9.11.3 Programming Method 
 
 The operation steps for creating package is as follow:
 
-1)  Enter “**cd catkin_ws/src/**” command and press “**Enter**” to come to workspace.
+1)  Enter "**cd catkin_ws/src/**" command and press "**Enter**" to come to workspace.
 
 <img class="common_img" src="../_static/media/chapter_9/section_11/media/image24.png" style="width:500px" />
 
-2)  Enter “**catkin_create_pkg parameter_hiwonder rospy std_msgs**” command and press “**Enter**” to create package.
+2)  Enter "**catkin_create_pkg parameter_hiwonder rospy std_msgs**" command and press "**Enter**" to create package.
 
 * **Write Control Program**
 
 <img class="common_img" src="../_static/media/chapter_9/section_11/media/image25.png" style="width:500px" />
 
-1)  Open the terminial.
+1)  Open the terminal.
 
-2)  Enter “**roscd parameter_hiwonder**” command and press “**Enter**” to come to the package directory.
+2)  Enter "**roscd parameter_hiwonder**" command and press "**Enter**" to come to the package directory.
 
 <img class="common_img" src="../_static/media/chapter_9/section_11/media/image26.png" style="width:500px" />
 
-3)  Enter “**mkdir scripts**” command and press “Enter” to create a new folder “scripts” where Python scripts are stored.
+3)  Enter "**mkdir scripts**" command and press "**Enter**" to create a new folder "**scripts**" where Python scripts are stored.
 
 <img class="common_img" src="../_static/media/chapter_9/section_11/media/image27.png" style="width:500px" />
 
-4. Enter “**cd scripts/**” command and press “Enter” to come to the “scripts” folder.
+4. Enter "**cd scripts/**" command and press "**Enter**" to come to the "**scripts**" folder.
 
    <img class="common_img" src="../_static/media/chapter_9/section_11/media/image28.png" style="width:500px" />
 
-5. Enter the command “**vi parameter_config.py**” to edit the program, and then copy the following program. If want to modify, you can press “i”. After modifying, press “Esc” and enter “:wq” to save and exit.
+5. Enter the command "**vi parameter_config.py**" to edit the program, and then copy the following program. If want to modify, you can press "**i**". After modifying, press "**Esc**" and enter "**:wq**" to save and exit.
 
    <img class="common_img" src="../_static/media/chapter_9/section_11/media/image29.png" style="width:500px" />
 
@@ -1281,31 +1285,31 @@ if __name__ == "__main__":
 
 <img class="common_img" src="../_static/media/chapter_9/section_11/media/image30.png" style="width:500px" />
 
-6)  Enter “**chmod +x parameter_config.py**” command and press “Enter” to give the executable permission to the saved parameter_config.py.
+6)  Enter "**chmod +x parameter_config.py**" command and press "**Enter**" to give the executable permission to the saved parameter_config.py.
 
 <img class="common_img" src="../_static/media/chapter_9/section_11/media/image31.png" style="width:500px" />
 
 * **Run Program** 
 
-1)  Enter “**roscore**” command and press “**Enter**” to start node manager.
+1)  Enter "**roscore**" command and press "**Enter**" to start node manager.
 
 <img class="common_img" src="../_static/media/chapter_9/section_11/media/image32.png" style="width:500px" />
 
 > [!NOTE]
 >
-> **If the prompt “roscore cannot run as another roscore/master is already running” appears, it means node manager has been started up so this step can be skipped directly.**
+> **If the prompt "roscore cannot run as another roscore/master is already running" appears, it means node manager has been started up so this step can be skipped directly.**
 
-2. Enter “**rosrun turtlesim turtlesim_node**” command and press “Enter” to open the turtle simulator.
+2. Enter "**rosrun turtlesim turtlesim_node**" command and press "**Enter**" to open the turtle simulator.
 
-   <img class="common_img" src="../_static/media/chapter_9/section_11/media/image5.png" style="width:500px"  />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image5.png" style="width:500px"  />
 
-3. Enter “**rosrun parameter_hiwonder parameter_config.py**” command and press “Enter” to run the program, which changes the background color of turtle to white, as the figure shown below:
+3. Enter "**rosrun parameter_hiwonder parameter_config.py**" command and press "**Enter**" to run the program, which changes the background color of turtle to white, as the figure shown below:
 
-   <img class="common_img" src="../_static/media/chapter_9/section_11/media/image33.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image33.png" style="width:500px" />
 
-   <img class="common_img" src="../_static/media/chapter_9/section_11/media/image34.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_11/media/image34.png" style="width:500px" />
 
-4. If want to stop running program, you can press “**Ctrl+C**”.
+4. If want to stop running program, you can press "**Ctrl+C**".
 
 ## 9.12 The Use of Launch File
 
@@ -1321,10 +1325,10 @@ Therefore, through creating a launch file, we can start up and configure multipl
 
 Launch file: the configuration and startup of multiple nodes through XML file.
 
-```py
+```xml
 <launch>
-<node pkg=”turtlesim” name=”sim1” type=”turtlesim_node”/>
-<node pkg=”turtlesim” name=”sim2” type=”turtlesim_node”/>
+<node pkg="turtlesim" name="sim1" type="turtlesim_node"/>
+<node pkg="turtlesim" name="sim2" type="turtlesim_node"/>
 </launch>
 ```
 
@@ -1332,21 +1336,21 @@ The above is an example of the simplest Lanuch file. The root element in the Lau
 
 The node tag is one of the most commonly used tags in Launch files.
 
-```py
-<node pkg=”package-name”type=”executable-name”name=”node-name”/>
+```xml
+<node pkg="package-name"type="executable-name"name="node-name"/>
 ```
 
 1. `<node>`：The starting node.
 
 2. `pkg`：The name of package in which the node is located.
 
-3. `type`：The name of the node executable file. If it is written in python, the suffix “.py” needs to be added. If it is written in C++, the name of the executable file can be written directly without the suffix “.cpp”.
+3. `type`：The name of the node executable file. If it is written in python, the suffix "**.py**" needs to be added. If it is written in C++, the name of the executable file can be written directly without the suffix "**.cpp**".
 
 4. The name of the node when it runs. Each node needs its own unique name. If want to start up two identical files, you can write two different names, for example, start two turtles.
 
    More parameters in \<node\> can be set in addition to pkg、type、name, as follow:
 
-```py
+```xml
 <launch>
 	<node
 		pkg=""
@@ -1364,7 +1368,7 @@ The node tag is one of the most commonly used tags in Launch files.
 
 | **Parameter** |                         **Function**                         |
 | :-----------: | :----------------------------------------------------------: |
-|    output     | By default, information about launching node is stored in the following log file （/.ros/log/run_id/node_name-number-stdout.log）by which set the parameters, which can be set here to make the information appear on the screen. For example, output = “screen”. |
+|    output     | By default, information about launching node is stored in the following log file （/.ros/log/run_id/node_name-number-stdout.log）by which set the parameters, which can be set here to make the information appear on the screen. For example, output = "**screen**". |
 |   required    |     Whether all the nodes started by node are shut down      |
 |    respawn    | Whether to automatically restart the node if it shuts down unexpectedly |
 |      ns       | The node is classified into a different namespace, that is, the prefix given by ns is added in front of the node name |
@@ -1373,8 +1377,8 @@ The node tag is one of the most commonly used tags in Launch files.
 
 \<param\>/：Set the parameters running in ROS and store them in parameter server.
 
-```py
-<param name=”output_frame”value=”odom”/>
+```xml
+<param name="output_frame"value="odom"/>
 ```
 
 1. `name`：parameter name
@@ -1383,14 +1387,14 @@ The node tag is one of the most commonly used tags in Launch files.
 
 <rosparam\>：load multiple paramters in a parameter file
 
-```py
-<rosparam file=”params.yaml”command=”load”ns=”params” />
+```xml
+<rosparam file="params.yaml"command="load"ns="params" />
 ```
 
-\<arg\>：the [local](javascript:;) [variable](javascript:;) in launch file. It is restricted to Launch file.
+\<arg\>：the local variable in launch file. It is restricted to Launch file.
 
-```py
-<arg name=”arg-name” default=”arg-value” />
+```xml
+<arg name="arg-name" default="arg-value" />
 ```
 
 1)  `name`：parameter name
@@ -1401,8 +1405,8 @@ The node tag is one of the most commonly used tags in Launch files.
 
 \<remap\>：remap the name of ROS computation graph resource
 
-```py
-<remap from=”/turtlebot/cmd_vel”to=”/cmd_vel”/”>
+```xml
+<remap from="/turtlebot/cmd_vel"to="/cmd_vel"/">
 ```
 
 1. `from`：the original name
@@ -1411,8 +1415,8 @@ The node tag is one of the most commonly used tags in Launch files.
 
 <include\>：Include other launch files which is similar to header in C programming language.
 
-```py
-<include file="$(dirname)/other.launch”>
+```xml
+<include file="$(dirname)/other.launch">
 ```
 
 `file`：The path to the other Launch files included.
@@ -1421,19 +1425,19 @@ The node tag is one of the most commonly used tags in Launch files.
 
 Take the startup of turtle sporting program with a launch file as an exmple, and the steps are as follow:
 
-Step 1: Open the terminal, and then enter “**cd catkin_ws/src/beginner_hiwonder**” command.
+Step 1: Open the terminal, and then enter "**cd catkin_ws/src/beginner_hiwonder**" command.
 
 <img class="common_img" src="../_static/media/chapter_9/section_12/media/image2.png" style="width:500px" />
 
-Step 2: enter “**mkdir lanuch**” command to create a launch folder.
+Step 2: enter "**mkdir lanuch**" command to create a launch folder.
 
 <img class="common_img" src="../_static/media/chapter_9/section_12/media/image3.png" style="width:500px" />
 
-Step 3: Enter “**cd lanuch**” command to enter the launch folder.
+Step 3: Enter "**cd lanuch**" command to enter the launch folder.
 
 <img class="common_img" src="../_static/media/chapter_9/section_12/media/image4.png" style="width:500px" />
 
-Step 4: Enter “**vi turtlesim_launch_test.lanuch**” command to open the file created in step 1 through vi eiditor.
+Step 4: Enter "**vi turtlesim_launch_test.lanuch**" command to open the file created in step 1 through vi eiditor.
 
 <img class="common_img" src="../_static/media/chapter_9/section_12/media/image5.png" style="width:500px" />
 
@@ -1441,7 +1445,7 @@ Step 4: Enter “**vi turtlesim_launch_test.lanuch**” command to open the file
 
 Step 5: Copy the following content into the folder.
 
-```py
+```xml
 	<launch>
 	<node pkg="turtlesim" type="turtlesim_node" name="turtlesim" />
 	<node pkg="turtlesim" type="turtle_teleop_key" name="turtle_teleop_key" output="screen" />
@@ -1452,15 +1456,15 @@ Step 5: Copy the following content into the folder.
 
 <img class="common_img" src="../_static/media/chapter_9/section_12/media/image8.png" style="width:500px" />
 
-Step 6: Press “**Esc**” and enter “**:wq**” to save and exit.
+Step 6: Press "**Esc**" and enter "**:wq**" to save and exit.
 
 <img class="common_img" src="../_static/media/chapter_9/section_12/media/image9.png" style="width:500px" />
 
-Step 7: Enter “**roslaunch beginner_hiwonder turtlesim_launch_test.lanuch**” command to start TurtleSim.
+Step 7: Enter "**roslaunch beginner_hiwonder turtlesim_launch_test.lanuch**" command to start TurtleSim.
 
 <img class="common_img" src="../_static/media/chapter_9/section_12/media/image10.png" style="width:500px" />
 
-<img class="common_img" src="../_static/media/chapter_9\section_12/media/image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_12/media/image11.png" style="width:500px" />
 
 ## 9.13 The Programming Realization of TF Coordinates Broadcasting and Listening
 
@@ -1468,47 +1472,47 @@ Step 7: Enter “**roslaunch beginner_hiwonder turtlesim_launch_test.lanuch**”
 
 Before programming, the coordinates transformation of robot needs to be learned about first. Here takes running TurtleSim project as an example and the operation steps are as follow:
 
-1. Enter “**sudo apt-get install ros-melodic-turtle-tf**” command to install the package.
+1. Enter "**sudo apt-get install ros-melodic-turtle-tf**" command to install the package.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_13\media\image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image2.png" style="width:500px" />
 
-Among them, “**melodic**” corresponds to ROS version.
+Among them, "**melodic**" corresponds to ROS version.
 
-2. Enter “**roslaunch turtle_tf turtle_tf_demo.launch**” command to run launch file.
+2. Enter "**roslaunch turtle_tf turtle_tf_demo.launch**" command to run launch file.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_13\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image3.png" style="width:500px" />
 
-   <img class="common_img" src="../_static/media/chapter_9\section_13\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image4.png" style="width:500px" />
 
-3. Enter “**rosrun turtlesim turtle_teleop_key**” command to run turtle keyboard control node.
+3. Enter "**rosrun turtlesim turtle_teleop_key**" command to run turtle keyboard control node.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_13\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image5.png" style="width:500px" />
 
-   <img class="common_img" src="../_static/media/chapter_9\section_13\media\image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image6.png" style="width:500px" />
 
-4. Enter “**rosrun tf view_frames**” command to view the frame.
+4. Enter "**rosrun tf view_frames**" command to view the frame.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_13\media\image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image7.png" style="width:500px" />
 
-5. Find the file “**frames.pdf**” under the main directory as the figure shown below:
+5. Find the file "**frames.pdf**" under the main directory as the figure shown below:
 
-   <img class="common_img" src="../_static/media/chapter_9\section_13\media\image8.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image8.png" style="width:500px" />
 
-6. Open the file “**frames.pdf**”, and then the position relationship between TF coordinates in current system can be viewed, as the figure shown below:
+6. Open the file "**frames.pdf**", and then the position relationship between TF coordinates in current system can be viewed, as the figure shown below:
 
-   <img class="common_img" src="../_static/media/chapter_9\section_13\media\image9.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image9.png" style="width:500px" />
 
 ### 9.13.2 Create Package
 
 The following operation are going to create the package:
 
-1)  Enter “**cd catkin_ws/src/**” command and press “Eenter” to come to the workspace.
+1)  Enter "**cd catkin_ws/src/**" command and press "Enter" to come to the workspace.
 
-<img class="common_img" src="../_static/media/chapter_9\section_13\media\image10.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image10.png" style="width:500px" />
 
-2)  Enter “**catkin_create_pkg tf_hiwonder rospy std_msgs**” command and press “Enter” to create package.
+2)  Enter "**catkin_create_pkg tf_hiwonder rospy std_msgs**" command and press "**Enter**" to create package.
 
-<img class="common_img" src="../_static/media/chapter_9\section_13\media\image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image11.png" style="width:500px" />
 
 ### 9.13.3 Programming Method
 
@@ -1516,21 +1520,21 @@ The following operation are going to create the package:
 
 1)  Open the terminal.
 
-2)  Enter “**roscd tf_hiwonder**” command to enter the package directory and press “Enter”.
+2)  Enter "**roscd tf_hiwonder**" command to enter the package directory and press "**Enter**".
 
-<img class="common_img" src="../_static/media/chapter_9\section_13\media\image12.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image12.png" style="width:500px" />
 
-3)  Enter “**mkdir scripts**” command and press “Enter” to create a new folder “scripts” where Python scripts are stored.
+3)  Enter "**mkdir scripts**" command and press "**Enter**" to create a new folder "**scripts**" where Python scripts are stored.
 
-<img class="common_img" src="../_static/media/chapter_9\section_13\media\image13.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image13.png" style="width:500px" />
 
-4. Enter “**cd scripts/**” command and press “Enter” to enter the folder “scripts” where Python scripts are stored.
+4. Enter "**cd scripts/**" command and press "**Enter**" to enter the folder "**scripts**" where Python scripts are stored.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_13\media\image14.png" style="width:500px" />
+   <img class="common_img" src="../_static/media/chapter_9/section_13/media/image14.png" style="width:500px" />
 
-5. Enter “**vi turtle_tf_broadcaster.py**” command to edit program and copy the following program. If want to modify, you can press “i”. After modifying, press “Esc” and enter “:wq” to save and exit.
+5. Enter "**vi turtle_tf_broadcaster.py**" command to edit program and copy the following program. If want to modify, you can press "**i**". After modifying, press "**Esc**" and enter "**:wq**" to save and exit.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_13\media\image15.png" style="width:500px" />
+   <img class="common_img" src="../_static/media/chapter_9/section_13/media/image15.png" style="width:500px" />
 
 ```py
 #!/usr/bin/env python
@@ -1558,11 +1562,11 @@ if __name__ == '__main__':
 	rospy.spin()
 ```
 
-<img class="common_img" src="../_static/media/chapter_9\section_13\media\image16.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image16.png" style="width:500px" />
 
-7. Enter “**vi turtle_tf_listener.py**” command to edit program and copy the following program. If need to modify, you can press “i”. After modifying, press “i” and enter “:wq” to save and exit.
+7. Enter "**vi turtle_tf_listener.py**" command to edit program and copy the following program. If need to modify, you can press "**i**". After modifying, press "**i**" and enter "**:wq**" to save and exit.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_13\media\image17.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image17.png" style="width:500px" />
 
 ```py
 #!/usr/bin/env python
@@ -1603,29 +1607,29 @@ if __name__ == '__main__':
 		rate.sleep()
 ```
 
-<img class="common_img" src="../_static/media/chapter_9\section_13\media\image18.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image18.png" style="width:500px" />
 
-8)  Enter “**chmod +x turtle_tf_broadcaster.py**” and “**chmod +x turtle_tf_listener.py**” command, and then press “Enter” to give the executable permission to the files.
+8)  Enter "**chmod +x turtle_tf_broadcaster.py**" and "**chmod +x turtle_tf_listener.py**" command, and then press "**Enter**" to give the executable permission to the files.
 
-<img class="common_img" src="../_static/media/chapter_9\section_13\media\image19.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image19.png" style="width:500px" />
 
-<img class="common_img" src="../_static/media/chapter_9\section_13\media\image20.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image20.png" style="width:500px" />
 
-9. Enter “**cd ..**” and “**mkdir launch**” command to create a new folder “launch” where the launch scripts are stored.
+9. Enter "**cd ..**" and "**mkdir launch**" command to create a new folder "**launch**" where the launch scripts are stored.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_13\media\image21.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image21.png" style="width:500px" />
 
-   <img class="common_img" src="../_static/media/chapter_9\section_13\media\image22.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image22.png" style="width:500px" />
 
-10. Enter “**cd launch/**” command and press “**Enter**” to enter the folder “**launch**” where Python scripts are stored.
+10. Enter "**cd launch/**" command and press "**Enter**" to enter the folder "**launch**" where Python scripts are stored.
 
-    <img class="common_img" src="../_static/media/chapter_9\section_13\media\image23.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image23.png" style="width:500px" />
 
-11. Enter “**vi start_tf_demo_py.launch**” command to edit program, and then copy the following program. If want to modify, you can press “i”. After modifying, press “Esc” and enter “:wq” to save and exit.
+11. Enter "**vi start_tf_demo_py.launch**" command to edit program, and then copy the following program. If want to modify, you can press "**i**". After modifying, press "**Esc**" and enter "**:wq**" to save and exit.
 
-    <img class="common_img" src="../_static/media/chapter_9\section_13\media\image24.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image24.png" style="width:500px" />
 
-```py
+```xml
 <launch>
 	<!-- Turtlesim Node-->
 	<node pkg="turtlesim" type="turtlesim_node" name="sim"/>
@@ -1645,23 +1649,23 @@ if __name__ == '__main__':
 </launch>
 ```
 
-<img class="common_img" src="../_static/media/chapter_9\section_13\media\image25.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image25.png" style="width:500px" />
 
 * **Run Program**
 
-1. Enter “**source ./devel/setup.bash**” command and press “**Enter**” to set the working environment.
+1. Enter "**source ./devel/setup.bash**" command and press "**Enter**" to set the working environment.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_13\media\image26.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image26.png" style="width:500px" />
 
-2. Enter “**roslaunch tf_hiwonder start_tf_demo_py.launch**” and press “**Enter**” to run launch program.
+2. Enter "**roslaunch tf_hiwonder start_tf_demo_py.launch**" and press "**Enter**" to run launch program.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_13\media\image27.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image27.png" style="width:500px" />
 
-   A turtle automatically moves to the position of another turtle, as the figure shown below.
+A turtle automatically moves to the position of another turtle, as the figure shown below.
 
-   <img class="common_img" src="../_static/media/chapter_9\section_13\media\image28.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_13/media/image28.png" style="width:500px" />
 
-3. If want to stop program, you can press “**Ctrl+C**”.
+3. If want to stop program, you can press "**Ctrl+C**".
 
 ## 9.14 Common Visualization Tools
 
@@ -1669,9 +1673,9 @@ if __name__ == '__main__':
 
 * **Overview**
 
-RQT is a graphical user interface framework that implements various tools and interfaces in the form of plugins.
+RQT is a graphical user interface framework that implements various tools and interfaces in the form of plugins.
 
-One can run all the existing GUI tools as dockable windows within RQT. When in use, RQT tools and plugins can be ran with command “rqt”. This GUI allows you to choose any available plugins on your system. In addition, you can also run plugins in standalone window.
+One can run all the existing GUI tools as dockable windows within RQT. When in use, RQT tools and plugins can be ran with command "rqt". This GUI allows you to choose any available plugins on your system. In addition, you can also run plugins in standalone window.
 
 * **RQT Component Structure**
 
@@ -1695,7 +1699,7 @@ Compared to building your own GUIs from scratch:
 
 4. Expect support at ROS Answers (ROS community website for the questions).
 
-   From system architecture’s perspective:
+   From system architecture's perspective:
 
 1)  Support multi-platformand multi-language (Python, C++).
 
@@ -1707,7 +1711,7 @@ Compared to building your own GUIs from scratch:
 >
 > **After ROS is installed successfully, it comes with RQT tool, no need to reinstall.**
 
-1)  Open the terminal, and then enter “**rosrun rqt_**” and press “Tab” key to unlist the following command:
+1)  Open the terminal, and then enter "**rosrun rqt_**" and press "**Tab**" key to unlist the following command:
 
 <img class="common_img" src="../_static/media/chapter_9/section_14/media/image2.png" style="width:500px" />
 
@@ -1719,7 +1723,7 @@ Several tools are introduced for you:
 
 1. rqt_console：Log output tool
 
-   <img class="common_img" src="../_static/media/chapter_9/section_14/media/image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_9/section_14/media/image4.png" style="width:500px" />
 
 2. graph visualization tool
 

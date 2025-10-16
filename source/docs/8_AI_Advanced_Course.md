@@ -4,11 +4,11 @@
 
 ### 8.1.1 Machine Learning Introduction
 
-* **What “Machine Learning” is**
+* **What "Machine Learning" is**
 
 Machine Learning forms the cornerstone of artificial intelligence, serving as the fundamental approach to endow machines with intelligence. It spans multiple interdisciplinary fields such as probability theory, statistics, approximation theory, convex analysis, and algorithm complexity theory.
 
-<img class="common_img" src="../_static/media/chapter_8\section_1\media\image2.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_1/media/image2.png" style="width:500px" />
 
 In essence, machine learning explores how computers can acquire new knowledge or skills by mimicking human learning behaviors and continuously enhancing their performance by reorganizing existing knowledge structures. Practically, it entails utilizing data to train models and leveraging these models for predictions.
 
@@ -24,7 +24,7 @@ Supervised learning involves providing a labeled dataset to the algorithm, where
 
 For instance, in image recognition, a large dataset of dog pictures can be provided, with each picture labeled as "dog". This labeled dataset serves as the "correct answer". By learning from this dataset, the machine can develop the ability to recognize dogs in new images.
 
-<img class="common_img" src="../_static/media/chapter_8\section_1\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_1/media/image3.png" style="width:500px" />
 
 Model Selection: In supervised learning, selecting the right model to represent the data relationship is crucial. Common supervised learning models encompass linear regression, logistic regression, decision trees, support vector machines (SVM), and deep neural networks. The choice of model hinges on the data's characteristics and the problem's nature.
 
@@ -42,7 +42,7 @@ Unsupervised learning involves providing an unlabeled dataset to the algorithm, 
 
 For instance, in image classification, a large dataset of cat and dog pictures can be provided without any labels. Through unsupervised learning, the machine can learn to divide the pictures into two categories: cat pictures and dog pictures.
 
-<img class="common_img" src="../_static/media/chapter_8\section_1\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_1/media/image4.png" style="width:500px" />
 
 ### 8.1.2 Machine Learning Library Introduction
 
@@ -82,61 +82,61 @@ The installation of TensorFlow GPU version requires the configured CUDA. Before 
 
 ### 8.2.2 Operation Steps
 
-<img class="common_img" src="../_static/media/chapter_8\section_2\media\image2.png" style="width:50px" />The input command should be case sensitive, and “Tab” key can be used to complement the key words.
+<img src="../_static/media/chapter_8/section_2/media/image2.png" style="width:50px" />The input command should be case sensitive, and "Tab" key can be used to complement the key words.
 
-If you use the system image we provide, you can find the corresponding program in the folder “**[3. Basic Operation Course -> 3.2 Introduction to System Desktop]()** .”
+If you use the system image we provide, you can find the corresponding program in the folder "**[3. Basic Operation Course -> 3.2 Introduction to System Desktop](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html#introduction-to-system-desktop)** ."
 
 It is necessary to use NoMachine to connect to Jetson Orin Nano for installation.
 
 * **Install pip** 
 
-Python 3.10 is already installed on the Jetson Orin Nano, making it easy to install pip. Double click <img class="common_img" src="../_static/media/chapter_8\section_2\media\image3.png" style="width:50px" /> on the remote desktop to open the command-line terminal, and then follow the steps below to install the pip,
+Python 3.10 is already installed on the Jetson Orin Nano, making it easy to install pip. Double click <img src="../_static/media/chapter_8/section_2/media/image3.png" style="width:50px" /> on the remote desktop to open the command-line terminal, and then follow the steps below to install the pip,
 
 1. Enter the command to install pip:
 
-```py
+```bash
 sudo apt-get install python3-pip python3-dev
 ```
 
 2. The installed pip will be an older version, so it needs to be upgraded to the latest version:
 
-```py
+```bash
 python3 -m pip install --upgrade pip
 ```
 
 3. After running the pip3 -V successfully, if you see a prompt message similar to the following, it indicates that the pip3 has been installed successfully.
 
-<img class="common_img" src="../_static/media/chapter_8\section_2\media\image4.png" style="width:5.76736in;height:0.29514in" />
+<img class="common_img" src="../_static/media/chapter_8/section_2/media/image4.png" style="width:5.76736in;height:0.29514in" />
 
 * **Install Important Machine Learning Packages**
 
 **NumPy**: A Python library extension that supports a wide range of array and matrix operations, and provides numerous mathematical functions for array computations.
 
-```py
+```bash
 sudo apt-get install python3-numpy
 ```
 
 **SciPy**: A commonly used software package for mathematics, science, and engineering, capable of handling interpolation, integration, optimization, image processing, solving ordinary differential equations, signal processing, and more.
 
-```py
+```bash
 sudo apt-get install python3-scipy
 ```
 
 **Pandas:** A tool based on NumPy designed for data analysis tasks. It includes numerous libraries and standard data models, providing tools needed for efficient handling of large datasets. Pandas offers a wide range of functions and methods for quick and easy data processing, making Python a powerful and efficient environment for data analysis.
 
-```py
+```bash
 sudo apt-get install python3-pandas
 ```
 
 **Matplotlib**: A 2D plotting library for Python that produces publication-quality graphics in various formats and interactive environments across platforms.
 
-```py
+```bash
 sudo apt-get install python3-matplotlib
 ```
 
 **Scikit-learn**: A simple and efficient tool for data mining and data analysis.
 
-```py
+```bash
 sudo apt-get install python3-sklearn
 ```
 
@@ -144,7 +144,7 @@ sudo apt-get install python3-sklearn
 
 1)  Confirm that CUDA is installed correctly by running nvcc -V. If you see the CUDA version number, it means CUDA is installed properly.
 
-<img class="common_img" src="../_static/media/chapter_8\section_2\media\image5.png" style="width:600px" />
+<img class="common_img" src="../_static/media/chapter_8/section_2/media/image5.png" style="width:600px" />
 
 If an error occurs, refer to the solution methods provided in this link:
 
@@ -154,41 +154,41 @@ https://zhuanlan.zhihu.com/p/513220749
 
 2. Install the required packages
 
-   ```py
-   sudo apt-get install python3-pip
-   sudo python3 -m pip install --upgrade pip
-   pip install onnx-graphsurgeon
-   sudo pip3 install -U testresources setuptools
-   ```
+```bash
+sudo apt-get install python3-pip
+sudo python3 -m pip install --upgrade pip
+pip install onnx-graphsurgeon
+sudo pip3 install -U testresources setuptools
+```
 
 3. Install the Python dependencies
 
-   ```py
-   sudo pip3 install -U numpy future mock
-   sudo pip3 install -U keras_preprocessing
-   sudo pip3 install -U keras_applications gast
-   sudo pip3 install -U protobuf pybind11 cython pkgconfig packaging h5py==3.10
-   ```
+```bash
+sudo pip3 install -U numpy future mock
+sudo pip3 install -U keras_preprocessing
+sudo pip3 install -U keras_applications gast
+sudo pip3 install -U protobuf pybind11 cython pkgconfig packaging h5py==3.10
+```
 
 4. To install the TensorFlow GPU version, you need to install the version of TensorFlow that corresponds to your current JetPack version. We also have an offline package in our environment setup attachments, but you should check if it matches your current JetPack version.
 
-   <https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform-release-notes/tf-jetson-rel.html#tf-jetson-rel>
+<https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform-release-notes/tf-jetson-rel.html#tf-jetson-rel>
 
-<img class="common_img" src="../_static/media/chapter_8\section_2\media\image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_2/media/image6.png" style="width:500px" />
 
 5. Enter the command to install using the installation package provided in the attachments.
 
-   ```py
-   pip3 install tensorflow==2.16.1
-   ```
+```bash
+pip3 install tensorflow==2.16.1
+```
 
-<img class="common_img" src="../_static/media/chapter_8\section_2\media\image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_2/media/image7.png" style="width:500px" />
 
-During the download, you might also need to install some software packages online, just type “Y” to proceed.
+During the download, you might also need to install some software packages online, just type "Y" to proceed.
 
 If no errors occur, the installation was successful:
 
-<img class="common_img" src="../_static/media/chapter_8\section_2\media\image8.png" style="width:600px" />
+<img class="common_img" src="../_static/media/chapter_8/section_2/media/image8.png" style="width:600px" />
 
 ### 8.2.3 Other Available Tutorials:
 
@@ -204,67 +204,67 @@ PyTorch is a specialized deep learning software library, using both GPU and CPU.
 
 ### 8.3.2 Operation Steps
 
-<img class="common_img" src="../_static/media/chapter_8\section_3\media\image2.png" style="width:50px" />The input command should be case sensitive, and “Tab” key can be used to complement the key words.
+<img src="../_static/media/chapter_8/section_3/media/image2.png" style="width:50px" />The input command should be case sensitive, and "**Tab**" key can be used to complement the key words.
 
-If you use the system image we provide, you can find the corresponding program in the folder “**[3. Basic Operation Course -> 3.2 Introduction to System Desktop]()** .”
+If you use the system image we provide, you can find the corresponding program in the folder "**[3. Basic Operation Course -> 3.2 Introduction to System Desktop](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html#introduction-to-system-desktop)** ."
 
 Use NoMachine to connect to Jetson Orin Nano, then access the remote desktop.
 
 1. Open the terminal on the remote desktop and enter the command install the required dependencies.
 
-   ```py
-   sudo apt-get install libopenblas-dev
-   ```
+```bash
+sudo apt-get install libopenblas-dev
+```
 
-   <img class="common_img" src="../_static/media/chapter_8\section_3\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_3/media/image3.png" style="width:500px" />
 
-2. Copy the file “**torch-2.3.0a0+ebedce2.nv24.02-cp310-cp310-linux_aarch64.whl**” provided in Appendix to the remote system desktop.
+2. Copy the file "**torch-2.3.0a0+ebedce2.nv24.02-cp310-cp310-linux_aarch64.whl**" provided in Appendix to the remote system desktop.
 
-   <img class="common_img" src="../_static/media/chapter_8\section_3\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_3/media/image4.png" style="width:500px" />
 
-3. Right click on a blank area of the system desktop to select “**Open in Terminal**” to open the command-line terminal.
+3. Right click on a blank area of the system desktop to select "**Open in Terminal**" to open the command-line terminal.
 
-   <img class="common_img" src="../_static/media/chapter_8\section_3\media\image5.png" style="width:250px" />
+<img class="common_img" src="../_static/media/chapter_8/section_3/media/image5.png" style="width:250px" />
 
 4. Enter the command:
 
-   ```py
-   pip3 install torch-2.3.0a0+ebedce2.nv24.02-cp310-cp310-linux_aarch64.whl
-   ```
+```bash
+pip3 install torch-2.3.0a0+ebedce2.nv24.02-cp310-cp310-linux_aarch64.whl
+```
 
-   <img class="common_img" src="../_static/media/chapter_8\section_3\media\image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_3/media/image6.png" style="width:500px" />
 
 5. Then enter the following command to check if pytorch is installed successfully.
 
-   ```py
-   python3
-   import torch
-   print(torch.__version__)
-   ```
+```bash
+python3
+import torch
+print(torch.__version__)
+```
 
 6. If the pytorch version information appears, it indicates Pytorch has been successfully installed.
 
-   <img class="common_img" src="../_static/media/chapter_8\section_3\media\image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_3/media/image7.png" style="width:500px" />
 
 ### 8.3.3 Install torchvision
 
 Use NoMachine to connect to Jetson Orin Nano, then access the remote desktop.
 
-1. Copy the file “**torchvision-0.18.0-cp310-cp310-linux_aarch64.whl**” provided in Appendix to the remote system desktop.
+1. Copy the file "**torchvision-0.18.0-cp310-cp310-linux_aarch64.whl**" provided in Appendix to the remote system desktop.
 
-   <img class="common_img" src="../_static/media/chapter_8\section_3\media\image8.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_3/media/image8.png" style="width:500px" />
 
-2. Right click on a blank area on the system desktop to select “**Open in Terminal**” to open the command-line terminal.
+2. Right click on a blank area on the system desktop to select "**Open in Terminal**" to open the command-line terminal.
 
-   <img class="common_img" src="../_static/media/chapter_8\section_3\media\image5.png" style="width:250px" />
+<img class="common_img" src="../_static/media/chapter_8/section_3/media/image5.png" style="width:250px" />
 
 3. Run the command to install torchvision:
 
-   ```py
-   pip3 install torchvision-0.18.0-cp310-cp310-linux_aarch64.whl
-   ```
+```bash
+pip3 install torchvision-0.18.0-cp310-cp310-linux_aarch64.whl
+```
 
-   <img class="common_img" src="../_static/media/chapter_8\section_3/media/image9.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_3/media/image9.png" style="width:500px" />
 
 ## 8.4 Yolov5 Model Training
 
@@ -332,7 +332,7 @@ Maximum pooling can extract the most distinctive features from an image, while d
 
 **3. Upsampling layer: restore the size of an image**
 
-This process is sometimes referred to as "anti-pooling". While upsampling restores the size of the image, it does not fully recover the features that were lost during pooling. Instead, it tries to interpolate the missing information based on the available information.
+This process is sometimes referred to as "**anti-pooling**". While upsampling restores the size of the image, it does not fully recover the features that were lost during pooling. Instead, it tries to interpolate the missing information based on the available information.
 
 For example, let's consider an image with a resolution of 6 ×6 pixels. Before upsampling, use 3X3 filter to calculate the original image so as to get the new image.
 
@@ -480,103 +480,103 @@ Each newly generated prediction will be influenced by the last generated anchor 
 
 ### 8.5.5 Installation & Experience
 
-<img class="common_img" src="../_static/media/chapter_8/section_5/media/image6.png" style="width:50px" />The input command should be case sensitive, and “Tab” key can be used to complement the key words.
+<img src="../_static/media/chapter_8/section_5/media/image6.png" style="width:50px" /> The input command should be case sensitive, and "**Tab**" key can be used to complement the key words.
 
-If you use the system image we provide, you can find the corresponding program in the folder “**[3. Basic Operation Course -> 3.2 Introduction to System Desktop]()** .”
+If you use the system image we provide, you can find the corresponding program in the folder "**[3. Basic Operation Course -> 3.2 Introduction to System Desktop](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html#introduction-to-system-desktop)** ."
 
 * **Installation**
 
 Use NoMachine to connect to Jetson Orin Nano, then access the remote desktop.
 
-1. Drag the file “**yolov5.zip**” provided in “Appendix/AI Courses” to the remote system desktop.
+1. Drag the file "**yolov5.zip**" provided in "Appendix/AI Courses" to the remote system desktop.
 
-   <img class="common_img" src="../_static/media/chapter_8/section_5/media/image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_5/media/image7.png" style="width:500px" />
 
-2. Right click on a blank area of the system desktop to select “**Open in Terminal**” to open the command-line terminal.
+2. Right click on a blank area of the system desktop to select "**Open in Terminal**" to open the command-line terminal.
 
-   <img class="common_img" src="../_static/media/chapter_8/section_5/media/image8.png" style="width:250px" />
+<img class="common_img" src="../_static/media/chapter_8/section_5/media/image8.png" style="width:250px" />
 
 3. Enter the command to extract the file.
 
-   ```py
-   unzip yolov5.zip
-   ```
+```bash
+unzip yolov5.zip
+```
 
 <img class="common_img" src="../_static/media/chapter_8/section_5/media/image9.png" style="width:500px" />
 
 4. Enter the command to modify the dependencies in the txt file.
 
-   ```py
-   gedit yolov5/requirements.txt
-   ```
+```bash
+gedit yolov5/requirements.txt
+```
 
-   <img class="common_img" src="../_static/media/chapter_8/section_5/media/image10.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_5/media/image10.png" style="width:500px" />
 
-5. Since torch and torchvision are already installed, comment out the lines indicated by the red box in the image by adding a ‘#’ at the beginning of the lines. Then, press '**Ctrl + S**' or click '**Save**' in the top right corner to save and exit. If they were not previously installed, you can skip this step.
+5. Since torch and torchvision are already installed, comment out the lines indicated by the red box in the image by adding a '#' at the beginning of the lines. Then, press '**Ctrl + S**' or click '**Save**' in the top right corner to save and exit. If they were not previously installed, you can skip this step.
 
-   <img class="common_img" src="../_static/media/chapter_8/section_5/media/image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_5/media/image11.png" style="width:500px" />
 
 6. Then enter the command to install the related image libraries such as libjpeg，libpython3, libvocade and other dynamic libaray dependencies for the Python interpreter.
 
-   ```py
-   sudo apt-get install libjpeg-dev zlib1g-dev libpython3-dev libavcodec-dev libavformat-dev libswscale-dev
-   ```
+```bash
+sudo apt-get install libjpeg-dev zlib1g-dev libpython3-dev libavcodec-dev libavformat-dev libswscale-dev
+```
 
-   <img class="common_img" src="../_static/media/chapter_8/section_5/media/image12.png" style="width:650px" />
+<img class="common_img" src="../_static/media/chapter_8/section_5/media/image12.png" style="width:650px" />
 
 7. Enter the command to navigate to the extracted YoloV5 folder：
 
-   ```py
-   cd yolov5/
-   ```
+```bash
+cd yolov5/
+```
 
-   <img class="common_img" src="../_static/media/chapter_8/section_5/media/image13.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_5/media/image13.png" style="width:500px" />
 
 8. Enter the command:
 
-   ```py
-   pip3 install -r requirements.txt
-   ```
+```bash
+pip3 install -r requirements.txt
+```
 
-   <img class="common_img" src="../_static/media/chapter_8/section_5/media/image14.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_5/media/image14.png" style="width:500px" />
 
 9. If no error occurs during the installation and the prompt message appears at the end, it means that the installation was successful:
 
-   <img class="common_img" src="../_static/media/chapter_8/section_5/media/image15.png" style="width:700px" />
+<img class="common_img" src="../_static/media/chapter_8/section_5/media/image15.png" style="width:700px" />
 
 * **User Experience**
 
-1. Double click <img class="common_img" src="../_static/media/chapter_8/section_5/media/image16.png" style="width:50px" /> on the system desktop to open a command-line terminal.
+1. Double click <img src="../_static/media/chapter_8/section_5/media/image16.png" style="width:50px" /> on the system desktop to open a command-line terminal.
 
 2. Enter the command to run the Yolov5 detection script:
 
-   ```py
-   python3 detect.py
-   ```
+```bash
+python3 detect.py
+```
 
-   <img class="common_img" src="../_static/media/chapter_8/section_5/media/image17.png" style="width:600px" />
+<img class="common_img" src="../_static/media/chapter_8/section_5/media/image17.png" style="width:600px" />
 
-3. If no errors occur, it indicated that Yolov5 is set up successfully, and the recognition results will be stored in the “**yolov5/runs/detect/exp**” directory:
+3. If no errors occur, it indicated that Yolov5 is set up successfully, and the recognition results will be stored in the "**yolov5/runs/detect/exp**" directory:
 
-   <img class="common_img" src="../_static/media/chapter_8/section_5/media/image18.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_5/media/image18.png" style="width:500px" />
 
 4. Similarly, you can also read and detect the USB camera after connecting it by entering the following command:
 
-   ```py
-   python3 detect.py --source 0
-   ```
+```bash
+python3 detect.py --source 0
+```
 
-   <img class="common_img" src="../_static/media/chapter_8/section_5/media/image19.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_5/media/image19.png" style="width:500px" />
 
-   <img class="common_img" src="../_static/media/chapter_8\section_5/media/image20.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_5/media/image20.png" style="width:500px" />
 
 ## 8.6 Train YOLOv5 Model - Dateset Collection
 
 ### 8.6.1 Image Collection 
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image2.png" style="width:50px" />The input command should be case sensitive, and “Tab” key can be used to complement the key words.
+<img src="../_static/media/chapter_8/section_6/media/image2.png" style="width:50px" />The input command should be case sensitive, and "**Tab**" key can be used to complement the key words.
 
-If you use the system image we provide, you can find the corresponding program in the folder “**[3. Basic Operation Course -> 3.2 Introduction to System Desktop]()** .”
+If you use the system image we provide, you can find the corresponding program in the folder "**[3. Basic Operation Course -> 3.2 Introduction to System Desktop](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html)** ."
 
 Training a YOLOv5 model requires a large amount of data, so we need to start with the data collection and annotation the data for model training.
 
@@ -584,212 +584,212 @@ Training a YOLOv5 model requires a large amount of data, so we need to start wit
 
 2)  Connect the USB camera to the Jetson Orin Nano.
 
-3)  Minimize the NoMachine desktop, then drag the “**data_gather.py**” file from the same directory to the system desktop.
+3)  Minimize the NoMachine desktop, then drag the "**data_gather.py**" file from the same directory to the system desktop.
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image3.png" style="width:500px" />
 
-4. Double click <img class="common_img" src="../_static/media/chapter_8\section_6\media\image4.png" style="width:50px" /> to open the command-line terminal.
+4. Double click <img src="../_static/media/chapter_8/section_6/media/image4.png" style="width:50px" /> to open the command-line terminal.
 
 5. Enter the command to access the system desktop.
 
-   ```py
-   cd Desktop/
-   ```
+```bash
+cd Desktop/
+```
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image5.png" style="width:500px" />
 
 6. Enter the command to start collecting the data.
 
-   ```py
-   python3 data_gather.py
-   ```
+```bash
+python3 data_gather.py
+```
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image6.png" style="width:500px" />
 
-Press “s” to capture images, and press “q” to exit the program.
+Press "**s**" to capture images, and press "**q**" to exit the program.
 
 7. During the image capture process, the images will be saved in the directory specified by the text prompt.
 
-   <img class="common_img" src="../_static/media/chapter_8\section_6\media\image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image7.png" style="width:500px" />
 
-   If the camera feed appears, it indicates that the program is running properly:
+If the camera feed appears, it indicates that the program is running properly:
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image8.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image8.png" style="width:500px" />
 
 > [!NOTE]
 >
-> * **Press “s” to save the captured image. Holding it down will save images continuously.**
+> * **Press "s" to save the captured image. Holding it down will save images continuously.**
 >
-> * **Press “q” to exit the program.**
+> * **Press "q" to exit the program.**
 >
 > * **To improve model reliability, capture target recognition content from different distances, angles, and orientations.**
 
-After starting data collection, a “My_data” folder will be created on the desktop. It will contain three subfolders: Annotations, imageSets, and JPEGImages. The JPEGImages folder is used to store images, Annotations is for staring annotation files, imageSets is for storing image paths.
+After starting data collection, a "**My_data**" folder will be created on the desktop. It will contain three subfolders: Annotations, imageSets, and JPEGImages. The JPEGImages folder is used to store images, Annotations is for staring annotation files, imageSets is for storing image paths.
 
 ### 8.6.2 Image Annotation
 
 > [!NOTE]
 >
-> **The entered command should be case sensitive and “Tab” key can be used to auto-complete keywords.**
+> **The entered command should be case sensitive and "Tab" key can be used to auto-complete keywords.**
 
-1)  Minimize NoMachine desktop, and drag “**labelImg.zip**” from the same directory with this document to NoMachine desktop.
+1)  Minimize NoMachine desktop, and drag "**labelImg.zip**" from the same directory with this document to NoMachine desktop.
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image9.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image9.png" style="width:500px" />
 
-2. Double click <img class="common_img" src="../_static/media/chapter_8\section_6\media\image4.png" style="width:50px" /> to open the command-line terminal.
+2. Double click <img src="../_static/media/chapter_8/section_6/media/image4.png" style="width:50px" /> to open the command-line terminal.
 
 3. Enter the command to access the system desktop.
 
-   ```py
-   cd Desktop/
-   ```
+```bash
+cd Desktop/
+```
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image5.png" style="width:500px" />
 
 4. Enter command to extract the file to the desktop.
 
-   ```py
-   unzip labelImg.zip -d ./
-   ```
+```bash
+unzip labelImg.zip -d ./
+```
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image10.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image10.png" style="width:500px" />
 
 5. Enter the command to enter the labelImg folder.
 
-   ```py
-   cd labelImg/
-   ```
+```bash
+cd labelImg/
+```
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image11.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image11.png" style="width:500px" />
 
 6. Enter the command to install qyqt6 and the necessary extension tools.
 
-   ```py
-   sudo apt-get install pyqt5-dev-tools
-   ```
+```bash
+sudo apt-get install pyqt5-dev-tools
+```
 
-   <img class="common_img" src="../_static/media/chapter_8\section_6\media\image12.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image12.png" style="width:500px" />
 
 7. Enter the command to open the annotation software:
 
-   ```py
-   python3 labelImg.py
-   ```
+```bash
+python3 labelImg.py
+```
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image13.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image13.png" style="width:500px" />
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image14.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image14.png" style="width:500px" />
 
 8)  The icon functions are outlined in the below table:
 
 |                           **Icon**                           | **Shortcut Key** |                      **Instruction**                      |
 | :----------------------------------------------------------: | :--------------: | :-------------------------------------------------------: |
-| <img class="common_img" src="../_static/media/chapter_8\section_6/media/image15.png" style="width:150px" /> |      Ctrl+U      |     Select the directory where the picture is saved.      |
-| <img class="common_img" src="../_static/media/chapter_8\section_6/media/image16.png" style="width:150px" /> |      Ctrl+R      | Select the directory where the calibration data is saved. |
-| <img class="common_img" src="../_static/media/chapter_8\section_6/media/image17.png" style="width:150px" /> |        W         |                   Create annotation box                   |
-| <img class="common_img" src="../_static/media/chapter_8\section_6/media/image18.png" style="width:150px" /> |      Ctrl+S      |                      Save annotation                      |
-| <img class="common_img" src="../_static/media/chapter_8\section_6/media/image19.png" style="width:150px" /> |        A         |                Swap to the previous image                 |
-| <img class="common_img" src="../_static/media/chapter_8\section_6/media/image20.png" style="width:150px"> |        D         |                  Swap to the next image                   |
+| <img src="../_static/media/chapter_8/section_6/media/image15.png" style="width:150px" /> |      Ctrl+U      |     Select the directory where the picture is saved.      |
+| <img src="../_static/media/chapter_8/section_6/media/image16.png" style="width:150px" /> |      Ctrl+R      | Select the directory where the calibration data is saved. |
+| <img src="../_static/media/chapter_8/section_6/media/image17.png" style="width:150px" /> |        W         |                   Create annotation box                   |
+| <img src="../_static/media/chapter_8/section_6/media/image18.png" style="width:150px" /> |      Ctrl+S      |                      Save annotation                      |
+| <img src="../_static/media/chapter_8/section_6/media/image19.png" style="width:150px" /> |        A         |                Swap to the previous image                 |
+| <img src="../_static/media/chapter_8/section_6/media/image20.png" style="width:150px"> |        D         |                  Swap to the next image                   |
 
-9)  Use the shortcut “**Ctrl+U**,” select the image storage directory as “**/home/ubuntu/Desktop/my_data/JPEGImages/**,” and click the “**Open**” button.
+9)  Use the shortcut "**Ctrl+U**," select the image storage directory as "**/home/ubuntu/Desktop/my_data/JPEGImages/**," and click the "**Open**" button.
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image21.png" style="width:600px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image21.png" style="width:600px" />
 
-10) Use the shortcut “**Ctrl+R**,” select the annotation data directory as “**/home/hiwonder/Desktop/my_data/Annotations/**,” and click the “Open” button.
+10) Use the shortcut "**Ctrl+R**," select the annotation data directory as "**/home/hiwonder/Desktop/my_data/Annotations/**," and click the "**Open**" button.
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image22.png" style="width:600px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image22.png" style="width:600px" />
 
-11. Press “**W**” to create an annotation box.
+11. Press "**W**" to create an annotation box.
 
-    Move the mouse to the appropriate position, press and hold the left mouse button to drag and create a bounding box that covers the entire target recognition content. Release the left mouse button to complete the selection of the target content.
+ Move the mouse to the appropriate position, press and hold the left mouse button to drag and create a bounding box that covers the entire target recognition content. Release the left mouse button to complete the selection of the target content.
 
 > [!NOTE]
 >
 > **The object in the image below is only for demonstrating how to perform annotations and is not included in the materials package provided. You can select any object for annotation and set any label name.**
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image23.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image23.png" style="width:500px" />
 
-In the pop-up window, name the target recognition category, for example, “left.” After naming, click the “OK” button or press “Enter” key to save the category.
+In the pop-up window, name the target recognition category, for example, "**left**." After naming, click the "**OK**" button or press "**Enter**" key to save the category.
 
 > [!NOTE]
 >
 > **Labels can be named with any desired name.**
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image24.png" style="width:300px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image24.png" style="width:300px" />
 
-1. Use the shortcut key “Ctrl+S” to save the annotation data for the current image.
+1. Use the shortcut key "Ctrl+S" to save the annotation data for the current image.
 
-2. Press “D” to move to the next image for annotation. Same steps are applies to the annotation for the remaining images.
+2. Press "D" to move to the next image for annotation. Same steps are applies to the annotation for the remaining images.
 
 3. To facilitate annotation, check the option for the automatic saving in the software. Then follow the previous annotation steps to operate:
 
-   <img class="common_img" src="../_static/media/chapter_8\section_6\media\image25.png" style="width:400px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image25.png" style="width:400px" />
 
-4. Click <img class="common_img" src="../_static/media/chapter_8\section_6\media\image26.png" style="width:50px" /> in the system status bar to open the file manger, then navigate to the directory “**~/Desktop/my_data/Annotations**” to view the annotation files for the images.
+4. Click <img src="../_static/media/chapter_8/section_6/media/image26.png" style="width:50px" /> in the system status bar to open the file manger, then navigate to the directory "**~/Desktop/my_data/Annotations**" to view the annotation files for the images.
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image27.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image27.png" style="width:500px" />
 
 ### 8.6.3 Format Conversion
 
 > [!NOTE]
 >
-> **The entered command should be case sensitive and “Tab” key can be used to auto-complete keywords.**
+> **The entered command should be case sensitive and "Tab" key can be used to auto-complete keywords.**
 
 1)  Power on Jetson Orin Nano, and connect it to the system desktop using NoMachine.
 
-2)  Minimize NoMachine desktop, and drag “xml2yolo.py” provided in “**Appendix/ AI Course**” to NoMachine desktop.
+2)  Minimize NoMachine desktop, and drag "xml2yolo.py" provided in "**Appendix/ AI Course**" to NoMachine desktop.
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image28.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image28.png" style="width:500px" />
 
-3. Double click <img class="common_img" src="../_static/media/chapter_8\section_6\media\image29.png" style="width:50px" /> to open the command0-line terminal.
+3. Double click <img src="../_static/media/chapter_8/section_6/media/image29.png" style="width:50px" /> to open the command0-line terminal.
 
 4. Enter the command and press Enter.
 
-   ```py
-   cp ./Desktop/xml2yolo.py ./Desktop/my_data/
-   ```
+```bash
+cp ./Desktop/xml2yolo.py ./Desktop/my_data/
+```
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image30.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image30.png" style="width:500px" />
 
 5. Run the command:
 
-   ```py
-   cd Desktop/my_data/
-   ```
+```bash
+cd Desktop/my_data/
+```
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image31.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image31.png" style="width:500px" />
 
 6. Run the command:
 
-   ```py
-   gedit classes.names
-   ```
+```bash
+gedit classes.names
+```
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image32.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image32.png" style="width:500px" />
 
-7)  Edit the file and enter the class name you annotated, such as “left.” If you added other categories during the annotation process, make sure to add them to this document in the correct order. Press the shortcut “Ctrl + S” or click the “Save” button in the upper right corner to save and exit.
+7)  Edit the file and enter the class name you annotated, such as "**left**." If you added other categories during the annotation process, make sure to add them to this document in the correct order. Press the shortcut "**Ctrl + S**" or click the "**Save**" button in the upper right corner to save and exit.
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image33.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image33.png" style="width:500px" />
 
 > [!NOTE]
 >
-> The class names added here must match those used in the image annotation software “**labelImg**”.
+> The class names added here must match those used in the image annotation software "**labelImg**".
 
-8. Enter the command to navigate back to the desktop directory (which is the parent directory of the “my_data” folder). If you have moved your “my_data” folder to a different location, adjust the command accordingly to go to the parent directory.
+8. Enter the command to navigate back to the desktop directory (which is the parent directory of the "**my_data**" folder). If you have moved your "**my_data**" folder to a different location, adjust the command accordingly to go to the parent directory.
 
-   ```py
-   cd ..
-   ```
+```bash
+cd ..
+```
 
-   <img class="common_img" src="../_static/media/chapter_8\section_6\media\image34.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image34.png" style="width:500px" />
 
 9. nter the command to convert the data format and press Enter. If the prompt shown in the image appears, the conversion was successful.
 
-   ```py
-   python3 xml2yolo.py --data /home/ubuntu/Desktop/my_data --yaml /home/ubuntu/Desktop/my_data/data.yaml
-   ```
+```bash
+python3 xml2yolo.py --data /home/ubuntu/Desktop/my_data --yaml /home/ubuntu/Desktop/my_data/data.yaml
+```
 
-<img class="common_img" src="../_static/media/chapter_8\section_6\media\image35.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_6/media/image35.png" style="width:500px" />
 
 > [!NOTE]
 >
@@ -797,29 +797,29 @@ In the pop-up window, name the target recognition category, for example, “left
 
 ## 8.7 Train YOLOv5 Model - Training Process
 
-<img class="common_img" src="../_static/media/chapter_8\section_7\media\image2.png" style="width:50px" />The input command should be case sensitive, and “Tab” key can be used to complement the key words.
+<img src="../_static/media/chapter_8/section_7/media/image2.png" style="width:50px" />The input command should be case sensitive, and "**Tab**" key can be used to complement the key words.
 
-If you use the system image we provide, you can find the corresponding program in the folder “**[3. Basic Operation Course -> 3.2 Introduction to System Desktop]()** .”
+If you use the system image we provide, you can find the corresponding program in the folder "**[3. Basic Operation Course -> 3.2 Introduction to System Desktop](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html#introduction-to-system-desktop)** ."
 
 1. Power on Jetson Orin Nano, and connect it to NoMachine.
 
 2. Connect the USB camera to the Jetson Orin Nano.
 
-3. Based on the location of YOLOv5 folder (In the previous tutorials, it is stored in “~/Desktop” folder), enter the command. The folder location can be modified according to your actual need.
+3. Based on the location of YOLOv5 folder (In the previous tutorials, it is stored in "~/Desktop" folder), enter the command. The folder location can be modified according to your actual need.
 
-   ```py
-   cd Desktop/yolov5/
-   ```
+```bash
+cd Desktop/yolov5/
+```
 
-<img class="common_img" src="../_static/media/chapter_8\section_7\media\image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_7/media/image3.png" style="width:500px" />
 
 4. Enter the command and press Enter to train the model:
 
-   ```py
-   python3 train.py --data ~/Desktop/my_data/data.yaml --weights yolov5s.pt --img 160 --epochs 10 --batch 8
-   ```
+```bash
+python3 train.py --data ~/Desktop/my_data/data.yaml --weights yolov5s.pt --img 160 --epochs 10 --batch 8
+```
 
-<img class="common_img" src="../_static/media/chapter_8\section_7\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_7/media/image4.png" style="width:500px" />
 
 In the command, `--img` specifies the image size; `--batch` denotes the number of images per batch; `--epochs` refers to the number of training epochs; `--data` is the path to the dataset; and `--weights` is the name and path of the weights. The final model will be saved in the yolov5 folder with the name yolov5s.pt.
 
@@ -827,15 +827,15 @@ We can adjust the parameters mentioned above according to the actual situation. 
 
 If the following content appears, it indicates that training is in progress.
 
-<img class="common_img" src="../_static/media/chapter_8\section_7\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_7/media/image5.png" style="width:500px" />
 
-5. After training is complete, the model file is usually stored in the “**yolov5/run/train/exp...**” folder. Check the actual location based on the string printed after training. For example, as shown in the image below, the generated model is located in run/train/exp13.
+5. After training is complete, the model file is usually stored in the "**yolov5/run/train/exp...**" folder. Check the actual location based on the string printed after training. For example, as shown in the image below, the generated model is located in run/train/exp13.
 
-   <img class="common_img" src="../_static/media/chapter_8\section_7\media\image6.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_7/media/image6.png" style="width:500px" />
 
 6. You can use the file explorer to view and obtain the following:
 
-   <img class="common_img" src="../_static/media/chapter_8\section_7/media/image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_7/media/image7.png" style="width:500px" />
 
 ## 8.8 Train YOLOv5 Model - Model Testing
 
@@ -845,47 +845,47 @@ The path mentioned in this lesson should based on your own configured environmen
 
 ### 8.8.1 Target Detection Using an USB Camera
 
-<img class="common_img" src="../_static/media/chapter_8\section_8\media\image2.png" style="width:50px" />The input command should be case sensitive, and “Tab” key can be used to complement the key words.
+<img src="../_static/media/chapter_8/section_8/media/image2.png" style="width:50px" /> The input command should be case sensitive, and "Tab" key can be used to complement the key words.
 
-If you use the system image we provide, you can find the corresponding program in the folder “**[3. Basic Operation Course -> 3.2 Introduction to System Desktop]()** .”
+If you use the system image we provide, you can find the corresponding program in the folder "**[3. Basic Operation Course -> 3.2 Introduction to System Desktop](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html#introduction-to-system-desktop)** ."
 
 Additionally, if all the required environments are already installed in the image, you can skip this step.
 
 1. Power on Jetson Orin Nano, and connect it to NoMachine.
 
-2. Double click <img class="common_img" src="../_static/media/chapter_8\section_8\media\image3.png" style="width:50px" /> to open the command-line terminal.
+2. Double click <img src="../_static/media/chapter_8/section_8/media/image3.png" style="width:50px" /> to open the command-line terminal.
 
 3. Enter the command and press Enter to enter the specified directory.
 
-   ```py
-   cd Desktop/yolov5/
-   ```
+```bash
+cd Desktop/yolov5/
+```
 
-<img class="common_img" src="../_static/media/chapter_8\section_8\media\image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_8/media/image4.png" style="width:500px" />
 
 4. Enter the command to star the target detection.
 
-   ```py
-   python3 detect.py --weights runs/train/exp13/weights/best.pt --source 0
-   ```
+```bash
+python3 detect.py --weights runs/train/exp13/weights/best.pt --source 0
+```
 
-   <img class="common_img" src="../_static/media/chapter_8\section_8\media\image5.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_8/media/image5.png" style="width:500px" />
 
 > [!NOTE]
 >
 > **This step requires you to have a USB camera connected to the USB port on the motherboard. If you have completed this step and see the live camera feed, it indicates that the model has started, and you do not need to proceed with the following steps.**
 >
-> **In “runs/train/exp13/weights/best.pt”, exp13 represents the path generated for this operation. Adjust the specific path according to your actual situation."**
+> **In "runs/train/exp13/weights/best.pt", exp13 represents the path generated for this operation. Adjust the specific path according to your actual situation."**
 >
-> <img class="common_img" src="../_static/media/chapter_8\section_8\media\image6.png" style="width:500px" />
+> <img class="common_img" src="../_static/media/chapter_8/section_8/media/image6.png" style="width:500px" />
 
 After waiting for a while, if the bounding box shown in the image appears in the live camera feed, it indicates that the setup was successful.
 
 class_name refers to the category name of the detected object; box denotes the starting coordinates (top-left corner) and ending coordinates (bottom-right corner) of the bounding box.
 
-Finally, select the command line and press “Ctrl+C” to close it
+Finally, select the command line and press "Ctrl+C" to close it
 
-<img class="common_img" src="../_static/media/chapter_8\section_8\media\image7.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_8/media/image7.png" style="width:500px" />
 
 ### 8.8.2 Target Detection Using an Image 
 
@@ -893,31 +893,31 @@ Use the images from the previous training process for detection as an example.
 
 1. Enter the command and press Enter to navigate to the specified directory.
 
-   ```py
-   cd Desktop/yolov5/
-   ```
+```bash
+cd Desktop/yolov5/
+```
 
-<img class="common_img" src="../_static/media/chapter_8\section_8\media\image4.png" style="width:5.74931in;height:0.17708in" />
+<img class="common_img" src="../_static/media/chapter_8/section_8/media/image4.png" style="width:5.74931in;height:0.17708in" />
 
 2. Enter the command to start detection:
 
-   ```py
-   python3 detect.py --weights runs/train/exp13/weights/best.pt --source ~/Desktop/my_data/JPEGImages/11.jpg
-   ```
+```bash
+python3 detect.py --weights runs/train/exp13/weights/best.pt --source ~/Desktop/my_data/JPEGImages/11.jpg
+```
 
-   <img class="common_img" src="../_static/media/chapter_8\section_8\media\image8.png" style="width:600px" />
+<img class="common_img" src="../_static/media/chapter_8/section_8/media/image8.png" style="width:600px" />
 
 3. The following content indicates that detection is complete. The results are stored in the run/detect/exp4 folder. The specific path should be based on the output from the command line terminal.
 
-   <img class="common_img" src="../_static/media/chapter_8\section_8\media\image9.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_8/media/image9.png" style="width:500px" />
 
 4. Use the file explorer to navigate to the corresponding path and view the detected images, as shown in the image below:
 
-   <img class="common_img" src="../_static/media/chapter_8\section_8\media\image10.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_8/media/image10.png" style="width:500px" />
 
-   For the following operations, you can adjust the recognition performance by increasing the number of training epochs as taught in the previous course.
+For the following operations, you can adjust the recognition performance by increasing the number of training epochs as taught in the previous course.
 
-## **8.9 TensorRT Acceleration**
+## 8.9 TensorRT Acceleration
 
 ### 8.9.1 TensorRT Acceleration Description
 
@@ -949,7 +949,6 @@ The dynamic ranges of different precision are listed below.
 | FP16      | −65504 +65504−65504 +65504                     |
 | INT8      | −128 +127−128 +127                             |
 
-
 INT8 has only 256 different values. Using INT8 to represent values with FP32 precision will definitely omit information and engender performance degradation. However, TensorRT can provide a fully automated calibration that can reduce FP32 precision to INT8 precision with the best matching
 
 performance to minimize performance loss.
@@ -966,51 +965,51 @@ After extensive training, we obtained a new model. Proceed with converting the n
 
 ### 8.10.1 Format Conversion
 
-<img class="common_img" src="../_static/media/chapter_8/section_10/media/image2.png" style="width:50px" />The input command should be case sensitive, and “Tab” key can be used to complement the key words.
+<img src="../_static/media/chapter_8/section_10/media/image2.png" style="width:50px" /> The input command should be case sensitive, and "**Tab**" key can be used to complement the key words.
 
-If you use the system image we provide, you can find the corresponding program in the folder “**[3. Basic Operation Course -> 3.2 Introduction to System Desktop]()** .”
+If you use the system image we provide, you can find the corresponding program in the folder "**[3. Basic Operation Course -> 3.2 Introduction to System Desktop](https://wiki.hiwonder.com/projects/Jetson-Orin-Nano/en/latest/docs/3_Basic_Operation_Course.html#introduction-to-system-desktop)** ."
 
 Additionally, if all the required environments are already installed in the image, you can skip this step.
 
 1. Power on Jetson Orin Nano, and connect it to NoMachine.
 
-2. Drag the file “**tensorrtx-yolov5-v7.0.zip**” to the remote system desktop:
+2. Drag the file "**tensorrtx-yolov5-v7.0.zip**" to the remote system desktop:
 
-   <img class="common_img" src="../_static/media/chapter_8/section_10/media/image3.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_10/media/image3.png" style="width:500px" />
 
-3. Right click on a blank area of the system desktop to select “Open in Terminal” to open a command-line terminal.
+3. Right click on a blank area of the system desktop to select "Open in Terminal" to open a command-line terminal.
 
-   <img class="common_img" src="../_static/media/chapter_8/section_10/media/image4.png" style="width:250px" />
+<img class="common_img" src="../_static/media/chapter_8/section_10/media/image4.png" style="width:250px" />
 
 4. Enter the command to extract the file and wait for this process to complete.
 
-   ```py
-   unzip tensorrtx-yolov5-v7.0.zip
-   ```
+```bash
+unzip tensorrtx-yolov5-v7.0.zip
+```
 
 <img class="common_img" src="../_static/media/chapter_8/section_10/media/image5.png" style="width:5.76806in;height:0.39514in" />
 
 5. Based on the location of the yolov5 folder (according to the previous tutorial, it is stored in the ~/Desktop folder), enter the command here. You can modify it according to the actual location of your folder.
 
-   ```py
-   cd Desktop/yolov5/
-   ```
+```bash
+cd Desktop/yolov5/
+```
 
 <img class="common_img" src="../_static/media/chapter_8/section_10/media/image6.png" style="width:5.74931in;height:0.17708in" />
 
 6. Enter the command to copy the yolov5/gen_wts.py file from the tensorrtx folder to the current YOLOv5 folder.
 
-   ```py
-   cp ~/Desktop/tensorrtx-yolov5-v7.0/yolov5/gen_wts.py .
-   ```
+```bash
+cp ~/Desktop/tensorrtx-yolov5-v7.0/yolov5/gen_wts.py .
+```
 
 <img class="common_img" src="../_static/media/chapter_8/section_10/media/image7.png" style="width:5.76181in;height:0.31667in" />
 
 7. Enter the command and press Enter to convert the pt file to a wts file.
 
-   ```py
-   python3 gen_wts.py -w runs/train/exp4/weights/best.pt -o best.wts
-   ```
+```bash
+python3 gen_wts.py -w runs/train/exp4/weights/best.pt -o best.wts
+```
 
 <img class="common_img" src="../_static/media/chapter_8/section_10/media/image8.png" style="width:5.76319in;height:0.67986in" />
 
@@ -1020,17 +1019,17 @@ Additionally, if all the required environments are already installed in the imag
 
 8. Then enter the command to navigate to the tensorrtx/yolov folder
 
-   ```py
-   cd ~/Desktop/tensorrtx-yolov5-v7.0/yolov5/
-   ```
+```bash
+cd ~/Desktop/tensorrtx-yolov5-v7.0/yolov5/
+```
 
 <img class="common_img" src="../_static/media/chapter_8/section_10/media/image9.png" style="width:5.76597in;height:0.29097in" />
 
 9. Enter the command and press Enter to open yololayer.h file and edit it.
 
-   ```py
-   gedit src/config.h
-   ```
+```bash
+gedit src/config.h
+```
 
 <img class="common_img" src="../_static/media/chapter_8/section_10/media/image10.png" style="width:5.76597in;height:0.15556in" />
 
@@ -1042,55 +1041,55 @@ Additionally, if all the required environments are already installed in the imag
 
 <img class="common_img" src="../_static/media/chapter_8/section_10/media/image11.png" style="width:500px" />
 
-11. After the modification completes, press the shortcut key “Ctrl+S” or click “Save” to save and exit the file.
+11. After the modification completes, press the shortcut key "**Ctrl+S**" or click "**Save**" to save and exit the file.
 
-12. Enter the command to create the “build” folder.
+12. Enter the command to create the "**build**" folder.
 
-    ```py
-    mkdir build
-    ```
+```bash
+mkdir build
+```
 
 <img class="common_img" src="../_static/media/chapter_8/section_10/media/image12.png" style="width:500px" />
 
-13. Enter the command and press Enter to navigate to the “build” folder.
+13. Enter the command and press Enter to navigate to the "build" folder.
 
-    ```py
-    cd build/
-    ```
+```bash
+cd build/
+```
 
 <img class="common_img" src="../_static/media/chapter_8/section_10/media/image13.png" style="width:500px" />
 
-14. Enter the command and press “Enter” to compile the “build” folder.
+14. Enter the command and press "**Enter**" to compile the "**build**" folder.
 
-    ```py
-    cmake ..
-    ```
+```bash
+cmake ..
+```
 
 <img class="common_img" src="../_static/media/chapter_8/section_10/media/image14.png" style="width:500px" />
 
-15. Enter the command and press “Enter” to compile the contents of the “build” folder.
+15. Enter the command and press "**Enter**" to compile the contents of the "**build**" folder.
 
-    ```py
-    make
-    ```
+```bash
+make
+```
 
-16. Enter the command to copy the previously generated “.wts” file from YOLOv5 to the current directory “build”:
+16. Enter the command to copy the previously generated ".wts" file from YOLOv5 to the current directory "build":
 
-    ```py
-    cp ~/Desktop/yolov5/best.wts .
-    ```
+```bash
+cp ~/Desktop/yolov5/best.wts .
+```
 
-    <img class="common_img" src="../_static/media/chapter_8/section_10/media/image15.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_10/media/image15.png" style="width:500px" />
 
-17. Enter the command and press Enter to generate TensorRT model file “yolov5n.engine”. Then wait for the model conversion to complete.
+17. Enter the command and press Enter to generate TensorRT model file "**yolov5n.engine**". Then wait for the model conversion to complete.
 
-    ```py
-    sudo ./yolov5_det -s best.wts best.engine s
-    ```
+```bash
+sudo ./yolov5_det -s best.wts best.engine s
+```
 
 <img class="common_img" src="../_static/media/chapter_8/section_10/media/image16.png" style="width:650px" />
 
-In the command, best.wts refers to the path where the best.wts file is located. Since you are currently in the directory where the .wts file is located, you can simply enter the .wts file name here. best.engine is the name of the TensorRT model file. The last parameter, ‘s’, indicates the type of model used for training. If the model is yolov5n, you can use ‘n’ as the suffix.
+In the command, best.wts refers to the path where the best.wts file is located. Since you are currently in the directory where the .wts file is located, you can simply enter the .wts file name here. best.engine is the name of the TensorRT model file. The last parameter, 's', indicates the type of model used for training. If the model is yolov5n, you can use 'n' as the suffix.
 
 18) If the command line terminal displays the following text, it indicates that the engine file has been successfully converted.
 
@@ -1102,78 +1101,78 @@ Before start the detection, adjust and modify the configuration file as follow:
 
 1. Access the remote desktop
 
-2. Drag and drop the decompressed file “testimages.zip” to the remote desktop.
+2. Drag and drop the decompressed file "**testimages.zip**" to the remote desktop.
 
-   <img class="common_img" src="../_static/media/chapter_8/section_10/media/image18.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_10/media/image18.png" style="width:500px" />
 
-3. Double click <img class="common_img" src="../_static/media/chapter_8/section_10/media/image19.png" style="width:50px" />to open a command-line terminal. Enter the command to navigate to the “**tensorrtx/yolov5**” file. The path should be based on the location of your Jetson Orin Nano. Here, we refer to the previous path.
+3. Double click <img src="../_static/media/chapter_8/section_10/media/image19.png" style="width:50px" /> to open a command-line terminal. Enter the command to navigate to the "**tensorrtx/yolov5**" file. The path should be based on the location of your Jetson Orin Nano. Here, we refer to the previous path.
 
-   ```py
-   cd ~/Desktop/tensorrtx-yolov5-v7.0/yolov5
-   ```
+```bash
+cd ~/Desktop/tensorrtx-yolov5-v7.0/yolov5
+```
 
-   <img class="common_img" src="../_static/media/chapter_8/section_10/media/image20.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_10/media/image20.png" style="width:500px" />
 
-4. Enter the command to edit the parameters in the “**yolov5_det_trt.py**” file.
+4. Enter the command to edit the parameters in the "**yolov5_det_trt.py**" file.
 
-   ```py
-   gedit yolov5_det_trt.py
-   ```
+```bash
+gedit yolov5_det_trt.py
+```
 
-   <img class="common_img" src="../_static/media/chapter_8/section_10/media/image21.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_10/media/image21.png" style="width:500px" />
 
 - In the script file, pay attention to the three parameters highlighted in the red box below:
 
-  **PLUGIN_LIBRARY** (Dynamic library for executing detection)
+**PLUGIN_LIBRARY** (Dynamic library for executing detection)
 
-  **engine_file_path** (Path to the generated engine model)
+**engine_file_path** (Path to the generated engine model)
 
-  **image_dir** (Path to the folder containing test images. Note that the path should only include the image format.)
+**image_dir** (Path to the folder containing test images. Note that the path should only include the image format.)
 
-  <img class="common_img" src="../_static/media/chapter_8/section_10/media/image22.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_10/media/image22.png" style="width:500px" />
 
-  Among the three parameters in the image above, fill them in according to their actual locations. For example, in the previous tutorial, the dynamic library and model engine file were both stored in the build folder within the current directory. You can define and provide the test files as needed and make changes according to your specific situation.
+Among the three parameters in the image above, fill them in according to their actual locations. For example, in the previous tutorial, the dynamic library and model engine file were both stored in the build folder within the current directory. You can define and provide the test files as needed and make changes according to your specific situation.
 
 - Modification of Detection Classes:
 
-  <img class="common_img" src="../_static/media/chapter_8/section_10/media/image23.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_10/media/image23.png" style="width:500px" />
 
-  Based on the previous label categories, use left as the category in the script, as specified in the tutorial. Ensure that it matches the labels used during the annotation process.
+Based on the previous label categories, use left as the category in the script, as specified in the tutorial. Ensure that it matches the labels used during the annotation process.
 
 - **Modify the detection confidence:** Find the parameter content highlighted in the red box in the image below, and make the necessary modifications and adjustments:
 
-  <img class="common_img" src="../_static/media/chapter_8/section_10/media/image24.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_10/media/image24.png" style="width:500px" />
 
-  Similarly, adjust the parameter at this location based on the performance of the trained model. For example, adjust the CONF_THRESH parameter, which ranges from 0 to 1. Values within this range will be compared against actual detection results; if the detection result exceeds this value, it will be recognized as an object in the model.
+Similarly, adjust the parameter at this location based on the performance of the trained model. For example, adjust the CONF_THRESH parameter, which ranges from 0 to 1. Values within this range will be compared against actual detection results; if the detection result exceeds this value, it will be recognized as an object in the model.
 
-  After confirming the above parameters, save and exit the file, and you can proceed with detection and recognition.
+After confirming the above parameters, save and exit the file, and you can proceed with detection and recognition.
 
 1. Enter the command to install pycuda.
 
-   ```py
-   pip3 install pycuda -i https://mirrors.aliyun.com/pypi/simple/
-   ```
+```bash
+pip3 install pycuda -i https://mirrors.aliyun.com/pypi/simple/
+```
 
-   <img class="common_img" src="../_static/media/chapter_8/section_10/media/image25.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_10/media/image25.png" style="width:500px" />
 
 2. Enter the command, ensuring that the path in the current command line terminal is correct.
 
-   ```py
-   python3 yolov5_det_trt.py
-   ```
+```bash
+python3 yolov5_det_trt.py
+```
 
-   <img class="common_img" src="../_static/media/chapter_8/section_10/media/image26.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_10/media/image26.png" style="width:500px" />
 
 3. Check the output result in the terminal:
 
-   <img class="common_img" src="../_static/media/chapter_8/section_10/media/image27.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_10/media/image27.png" style="width:500px" />
 
-   As shown in the image above, the result files for the detection are stored in the output folder. Open it using the file explorer:
+As shown in the image above, the result files for the detection are stored in the output folder. Open it using the file explorer:
 
-   <img class="common_img" src="../_static/media/chapter_8/section_10/media/image28.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_10/media/image28.png" style="width:500px" />
 
 4. View the detection results by double-clicking and opening the images in the output folder generated in the previous step to review the detection performance:
 
-   <img class="common_img" src="../_static/media/chapter_8/section_10/media/image29.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_8/section_10/media/image29.png" style="width:500px" />
 
-   When the recognition results are unsatisfactory, adjust the detection parameters such as CONF_THRESH. If the results are still not ideal after adjusting the parameters, you may need to re-collect data and retrain the model.
+When the recognition results are unsatisfactory, adjust the detection parameters such as CONF_THRESH. If the results are still not ideal after adjusting the parameters, you may need to re-collect data and retrain the model.
