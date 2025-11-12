@@ -684,9 +684,9 @@ Use the `imshow()` function from the cv2 library to display the camera feed in a
 
 The first parameter inside the function's parentheses, `'MediaPipe Hands'`, is the window name, and the second parameter, `image`, is the image to be displayed.
 
-## 5.9 Human Body Key point Detection
+## 7.9 Human Body Key point Detection
 
-### 5.9.1 Program Logic
+### 7.9.1 Program Logic
 
 First, import the human body detection model.
 
@@ -698,7 +698,7 @@ After importing MediaPipe's body detection model, obtain the real-time camera fe
 
 Finally, detect and draw the body key points in the image.
 
-### 5.9.2 Operation Steps
+### 7.9.2 Operation Steps
 
 <img src="../_static/media/chapter_7/section_9/media/image2.png" style="width:50px" /> The input command should be case sensitive, and "Tab" key can be used to complement the key words.
 
@@ -726,13 +726,13 @@ python3 pose.py
 
 6)  To close the program, please use the shortcut key "Ctrl+C" to exit the program.
 
-### 5.9.3 Program Outcom
+### 7.9.3 Program Outcom
 
 After starting the program, if the camera detects a human pose, it will display the human body key points and the connections between them in the transmitted image.
 
 <img class="common_img" src="../_static/media/chapter_7/section_9/media/image6.png" style="width:500px" />
 
-### 5.9.4 Program Analysis
+### 7.9.4 Program Analysis
 
 - **Build a Human Body Detection Model**
 

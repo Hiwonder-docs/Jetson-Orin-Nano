@@ -21,5 +21,6 @@ Jetson Orin Nano (Offical Version)
    docs/8_AI_Advanced_Course.md
    docs/9_ROS1_Basic_Lesson.md
    docs/10_ROS2_Basic_Lesson.md
+   docs/11_Large_AI_Model_Courses.md
    docs/Appendix.md
    Download <https://drive.google.com/drive/folders/1W0Esz_inD5t0X_bMcHDDBZNl2UY6exOO?usp=drive_link>
